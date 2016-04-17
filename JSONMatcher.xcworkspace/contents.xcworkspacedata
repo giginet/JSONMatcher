@@ -4,4 +4,7 @@
    <FileRef
       location = "group:JSONMatcher.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/Nimble/Nimble.xcodeproj">
+   </FileRef>
 </Workspace>

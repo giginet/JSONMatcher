@@ -11,6 +11,6 @@ class BeJSONAsTestCase: XCTestCase {
     }
     
     func testBeJSONAsRegexMatching() {
-        expect("{\"name\": \"hoge\"}").to(beJSONAs(["name": Regex(pattern: "^ho")]))
+        expect("{\"name\": \"hoge\"}").to(beJSONAs(["name": Regex("^ho")]))
     }
 }

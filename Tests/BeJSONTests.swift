@@ -1,5 +1,6 @@
 import XCTest
 import Nimble
+@testable import JSONMatcher
 
 class BeJSONTestCase: XCTestCase {
     func testBeJSON() {

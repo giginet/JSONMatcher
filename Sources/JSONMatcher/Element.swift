@@ -10,28 +10,34 @@ enum Type: Int {
     case Unknown
 }
 
-struct Element<T> {
-    let type: Type
-    let value: T?
+protocol ElementType {
+    associatedtype T
+    var type: Type { get }
+}
+
+struct Element<T>: ElementType {
+    typealias T = Any
+    let value: T
     
-    init(_ value: T?) {
-        switch value  {
-        case is Double, is Int, is Float:
-            self.type = .Number
-        case is String:
-            self.type = .String
-        case is Bool:
-            self.type = .Bool
-        case is [Any], is [NSObject], is NSArray:
-            self.type = .Array
-        case is [String: Any], is [String: NSObject], is NSDictionary:
-            self.type = .Dictionary
-        case nil:
-            self.type = .Null
-        default:
-            self.type = .Unknown
-        }
+    init(_ value: T) {
         self.value = value
+    }
+
+    var type: Type {
+        return .Unknown
+    }
+}
+
+extension Element where T: NSNumber {
+    var type: Type {
+        return .Number
+    }
+}
+
+/*
+extension Element where T: String {
+    var type: Type {
+        return .String
     }
     
     func match(regex: Regex) -> Bool {
@@ -42,10 +48,36 @@ struct Element<T> {
         return regex.match(self.value as! String)
     }
 }
+*/
 
+/*
+extension Element where T == Bool? {
+    var type: Type {
+        return .Bool
+    }
+}*/
+
+extension Element where T: NSArray {
+    var type: Type {
+        return .Array
+    }
+}
+
+extension Element where T: NSDictionary {
+    var type: Type {
+        return .Dictionary
+    }
+}
+
+extension Element where T: NSNull {
+    var type: Type {
+        return .Null
+    }
+}
+/*
 func ==<T: Comparable>(lhs: Element<T>, rhs: Element<T>) -> Bool {
     guard lhs.type == rhs.type else {
         return false
     }
     return lhs.value == rhs.value
-}
+}*/

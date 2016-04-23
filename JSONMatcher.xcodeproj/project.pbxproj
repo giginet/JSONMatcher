@@ -19,6 +19,7 @@
 		54E062201CCB246400C174E1 /* JSON+Matcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E0621F1CCB246400C174E1 /* JSON+Matcher.swift */; };
 		54E062221CCB248700C174E1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E062211CCB248700C174E1 /* SwiftyJSON.framework */; };
 		54E0623B1CCB25D900C174E1 /* BeJSONAsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B2C1CC38A9400101893 /* BeJSONAsTests.swift */; };
+		54E0623D1CCB29C700C174E1 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E0623C1CCB29C700C174E1 /* Regex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		07A1AF771CC360720033C783 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		54E0621F1CCB246400C174E1 /* JSON+Matcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Matcher.swift"; path = "Sources/JSONMatcher/JSON+Matcher.swift"; sourceTree = SOURCE_ROOT; };
 		54E062211CCB248700C174E1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		54E0623C1CCB29C700C174E1 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				07A1AF641CC3582E0033C783 /* Info.plist */,
 				07A1AF751CC35C910033C783 /* BeJSONTests.swift */,
 				07805B2C1CC38A9400101893 /* BeJSONAsTests.swift */,
+				54E0623C1CCB29C700C174E1 /* Regex.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			files = (
 				07A1AF761CC35C910033C783 /* BeJSONTests.swift in Sources */,
 				54E0623B1CCB25D900C174E1 /* BeJSONAsTests.swift in Sources */,
+				54E0623D1CCB29C700C174E1 /* Regex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

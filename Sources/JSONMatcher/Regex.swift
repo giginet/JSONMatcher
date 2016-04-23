@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Regex {
+public class Regex {
     let pattern: String
     let options: NSRegularExpressionOptions!
     
@@ -16,22 +16,5 @@ public struct Regex {
     func match(string: String) -> Bool {
         let matches = self.matcher.matchesInString(string, options:[], range:NSMakeRange(0, string.characters.count))
         return !matches.isEmpty
-    }
-}
-
-extension Regex: StringLiteralConvertible {
-    public typealias ExtendedGraphemeClusterLiteralType = StringLiteralType
-    public typealias UnicodeScalarLiteralType = StringLiteralType
-    
-    public init(unicodeScalarLiteral value: UnicodeScalarLiteralType) {
-        self.init("\(value)")
-    }
-    
-    public init(extendedGraphemeClusterLiteral value: ExtendedGraphemeClusterLiteralType) {
-        self.init(value)
-    }
-    
-    public init(stringLiteral value: StringLiteralType) {
-        self.init(value)
     }
 }

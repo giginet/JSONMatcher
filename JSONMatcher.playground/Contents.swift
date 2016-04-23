@@ -9,3 +9,10 @@ let json = JSON(data: data)
 json.isEmpty
 json.isExists()
 json.null
+
+let ac: AnyObject.Type = UIView.self
+"hoge".dynamicType
+
+NSStringFromClass(ac)
+
+ObjectIdentifier(ac) == ObjectIdentifier("".dynamicType)

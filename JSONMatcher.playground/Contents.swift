@@ -34,3 +34,5 @@ let elementDictionary = [
     "piyo" : RegexElement(".+"),
     "type" : TypeElement(String.self)
 ]
+
+Comparer.compare(["foo", 10, 20], ["foo", 10, 20])

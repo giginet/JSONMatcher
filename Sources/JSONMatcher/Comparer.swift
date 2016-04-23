@@ -1,58 +1,49 @@
 import Foundation
-import SwiftyJSON
 
 struct  Comparer {
-    let json: JSON
-    let expected: AnyObject
-    
-    init(json: JSON, expected: AnyObject) {
-        self.json = json
-        self.expected = expected
+    static func compare(lhs: JSONElement, _ rhs: JSONElement) -> Bool {
+        return self.compareElements(lhs, rhs)
     }
     
-    func compare() -> Bool {
-        return self.compareElements(self.json, self.expected)
-    }
-    
-    private func compareElements(json: JSON,
-                                 _ object: AnyObject) -> Bool {
-        switch json.type {
-        case .Array:
-            for (index, elem) in json.arrayValue.enumerate() {
-                guard let array = object as? Array<AnyObject> else {
-                    return false
-                }
-                
-                if (!compareElements(elem, array[index])) {
-                    return false
-                }
-            }
-        case .Dictionary:
-            for (key, elem) in json {
-                guard let dict = object as? Dictionary<String, AnyObject> else {
-                    return false
-                }
-                guard let expectedElem = dict[key] else {
-                    return false
-                }
-                if (!compareElements(elem, expectedElem)) {
-                    return false
-                }
-            }
-        default:
-            switch object {
-            case let object as Regex:
-                if let string = json.string {
-                    return object.match(string)
-                }
+    private static func compareElements(lhs: JSONElement, _ rhs: JSONElement) -> Bool {
+        switch rhs.value {
+        case let expectedArray as [JSONElement]:
+            guard let array = lhs.value as? [JSONElement] else {
                 return false
-            case let object as Type:
-                return json.type == object
-            default:
-                let expectedJSON = JSON(object)
-                return json == expectedJSON
             }
             
+            guard array.count == expectedArray.count else {
+                return false
+            }
+            
+            for (element0, element1) in zip(array, expectedArray) {
+                if (!compareElements(element0, element1)) {
+                    return false
+                }
+            }
+        case let expectedDictionary as [String: JSONElement]:
+            guard let dictionary = lhs.value as? [String: JSONElement] else {
+                return false
+            }
+            
+            guard dictionary.count == expectedDictionary.count else {
+                return false
+            }
+            
+            for ((key0, value0), (key1, value1)) in zip(dictionary, expectedDictionary) {
+                if (key0 != key1 || !compareElements(value0, value1)) {
+                    return false
+                }
+            }
+        case let regex as RegexElement:
+            guard let string = lhs.value as? String else {
+                return false
+            }
+            return regex.value.match(string)
+        case let classType as TypeElement:
+            return classType.isTypeOf(lhs.value)
+        default:
+            return lhs == rhs
         }
         
         return true

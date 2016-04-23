@@ -16,3 +16,21 @@ let ac: AnyObject.Type = UIView.self
 NSStringFromClass(ac)
 
 ObjectIdentifier(ac) == ObjectIdentifier("".dynamicType)
+
+let string: JSONElement = "foo"
+let element = JSONElement("foo")
+
+let elementArray: JSONElement = [
+    "foo",
+    "bar",
+    ["hoge", 10, 30],
+    [
+        "key" : "value",
+        "tags" : ["a", "b", "c"]
+    ],
+]
+
+let elementDictionary = [
+    "piyo" : RegexElement(".+"),
+    "type" : TypeElement(String.self)
+]

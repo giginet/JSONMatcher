@@ -38,13 +38,12 @@ struct JSONElement: ElementType {
             return .Array
         case is [String: Any]:
             return .Dictionary
-        case is NSNull:
+        case is NSNull, is ():
             return .Null
         default:
             return .Unknown
         }
     }
-    
 }
 
 func ==(lhs: JSONElement, rhs: JSONElement) -> Bool {
@@ -77,6 +76,18 @@ func ==(lhs: JSONElement, rhs: JSONElement) -> Bool {
     }
     
     return false
+}
+
+extension JSONElement: IntegerLiteralConvertible {
+    init(integerLiteral value: IntegerLiteralType) {
+        self.value = value
+    }
+}
+
+extension JSONElement: FloatLiteralConvertible {
+    init(floatLiteral value: FloatLiteralType) {
+        self.value = value
+    }
 }
 
 extension JSONElement: StringLiteralConvertible {
@@ -133,41 +144,4 @@ extension JSONElement: DictionaryLiteralConvertible {
         }
         self.value = elementDictionary
     }
-}
-
-class RegexElement: ElementType {
-    typealias T = Regex
-    var value: T
-    let type: Type = .Regex
-    
-    init(_ value: T) {
-        self.value = value
-    }
-    
-    init(_ pattern: String) {
-        self.value = Regex(pattern)
-    }
-}
-
-func ==(lhs: RegexElement, rhs: RegexElement) -> Bool {
-    return false
-}
-
-class TypeElement: ElementType {
-    typealias T = Type
-    var value: T
-    let type: Type = .Class
-    
-    init(_ value: T) {
-        self.value = value
-    }
-    
-    func isTypeOf(obj: Any) -> Bool {
-        let element = JSONElement(obj)
-        return element.type == self.value
-    }
-}
-
-func ==(lhs: TypeElement, rhs: TypeElement) -> Bool {
-    return false
 }

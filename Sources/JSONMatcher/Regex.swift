@@ -18,3 +18,9 @@ public class Regex {
         return !matches.isEmpty
     }
 }
+
+extension StringLiteralConvertible {
+    func regex() -> JSONElement {
+        return JSONElement("aaa")
+    }
+}

@@ -35,13 +35,13 @@ struct  Comparer {
                     return false
                 }
             }
-        case let regex as RegexElement:
+        /*case let regex as RegexElement:
             guard let string = lhs.value as? String else {
                 return false
             }
             return regex.value.match(string)
         case let classType as TypeElement:
-            return classType.isTypeOf(lhs.value)
+            return classType.isTypeOf(lhs.value)*/
         default:
             return lhs == rhs
         }

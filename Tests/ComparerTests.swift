@@ -1,49 +1,55 @@
 import XCTest
 import Nimble
-import SwiftyJSON
 @testable import JSONMatcher
 
 class ComparerTestCase: XCTestCase {
     func testSimpleStringElement() {
-        expect(Comparer(json: JSON("foo"), expected: "foo").compare()).to(beTrue())
-        expect(Comparer(json: JSON("foo"), expected: "bar").compare()).to(beFalse())
+        expect(Comparer.compare("foo", "foo")).to(beTrue())
+        expect(Comparer.compare("foo", "bar")).to(beFalse())
     }
     
     func testSimpleNumberElement() {
-        expect(Comparer(json: JSON(10), expected: 10).compare()).to(beTrue())
-        expect(Comparer(json: JSON(100), expected: 100.000).compare()).to(beTrue())
-        expect(Comparer(json: JSON(10.1), expected: 30).compare()).to(beFalse())
-        
+        expect(Comparer.compare(10, 10)).to(beTrue())
+        expect(Comparer.compare(10, 10.0)).to(beTrue())
+        expect(Comparer.compare(2, 0x10)).to(beTrue())
+        expect(Comparer.compare(30, 30.0000001)).to(beTrue())
     }
     
     func testSimpleBoolElement() {
-        expect(Comparer(json: JSON(true), expected: true).compare()).to(beTrue())
-        expect(Comparer(json: JSON(true), expected: false).compare()).to(beFalse())
+        expect(Comparer.compare(true, true)).to(beTrue())
+        expect(Comparer.compare(false, true)).to(beFalse())
     }
     
-    func testSimpleRegex() {
-        expect(Comparer(json: JSON("foo"), expected: Regex(".+")).compare()).to(beTrue())
-        expect(Comparer(json: JSON("10"), expected: Regex("[0-9]{2}")).compare()).to(beTrue())
-        expect(Comparer(json: JSON(10), expected: Regex("10")).compare()).to(beFalse())
-        expect(Comparer(json: JSON(false), expected: Regex(".+")).compare()).to(beFalse())
+    func testSimpleNilElement() {
+        expect(Comparer.compare(nil, nil)).to(beTrue())
+        //expect(Comparer.compare(nil, NSNull())).to(beTrue())
+        expect(Comparer.compare(nil, true)).to(beFalse())
     }
+    /*
+    func testSimpleRegex() {
+        expect(Comparer.compare("foo", RegexElement(".+"))).to(beTrue())
+        expect(Comparer.compare("10", RegexElement("[0-9]{2}"))).to(beTrue())
+        expect(Comparer.compare(10, RegexElement("10"))).to(beFalse())
+        expect(Comparer.compare(false, RegexElement(".+"))).to(beFalse())
+    }*/
     
     func testSimpleArray() {
-        expect(Comparer(json: JSON([10, 20]), expected: [10, 20]).compare()).to(beTrue())
-        expect(Comparer(json: JSON([10, "foo", true]), expected: [10, "foo", true]).compare()).to(beTrue())
-        expect(Comparer(json: JSON([10, 20, 50]), expected: [10, 30, 50]).compare()).to(beFalse())
+        expect(Comparer.compare([10, 20], [10, 20])).to(beTrue())
+        expect(Comparer.compare([10, "foo", true], [10, "foo", true])).to(beTrue())
+        expect(Comparer.compare([10, 20], [10])).to(beFalse())
+        expect(Comparer.compare([5, 10, 15], ["5", "10", "15"])).to(beFalse())
     }
     
     func testSimpleDictionary() {
-        expect(Comparer(json: JSON(["name": "bob", "age": 30]), expected: ["name": "bob", "age": 30]).compare()).to(beTrue())
+        expect(Comparer.compare(["name": "bob", "age": 30], ["name": "bob", "age": 30])).to(beTrue())
     }
-    
+    /*
     func testArrayWithRegex() {
-        expect(Comparer(json: JSON([10, "foo", "bar", "apple"]), expected: [10, Regex("^fo+$"), "bar", Regex("[a-z]+")]).compare()).to(beTrue())
-    }
+        expect(Comparer.compare([10, "foo", "bar", "apple"], [10, RegexElement("^fo+$"), "bar", RegexElement("[a-z]+")])).to(beTrue())
+    }*/
     
-    func testComplexObject() {
-        expect(Comparer(json: JSON([
+    /*func testComplexObject() {
+        expect(Comparer.compare(json: JSON([
                 "title" : "Introduce new feature!",
                 "body" : "New feature is now available. Please check it out",
                 "url" : "https://example.com/articles/305/",
@@ -68,6 +74,6 @@ class ComparerTestCase: XCTestCase {
                 "tags" : ["new feature", "update", "diary"]
                 
             ]).compare()).to(beTrue())
-    }
+    }*/
 
 }

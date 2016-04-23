@@ -10,15 +10,15 @@
 		07805B231CC3683500101893 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07805B221CC3683500101893 /* Nimble.framework */; };
 		07805B271CC3852500101893 /* BeJSONAs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B261CC3852500101893 /* BeJSONAs.swift */; };
 		07805B291CC386C900101893 /* Comparer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B281CC386C900101893 /* Comparer.swift */; };
-		07805B2B1CC389E400101893 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B2A1CC389E400101893 /* Element.swift */; };
-		07805B2D1CC38A9400101893 /* BeJSONAsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B2C1CC38A9400101893 /* BeJSONAsTests.swift */; };
 		07805B301CC38E4600101893 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B2F1CC38E4600101893 /* Regex.swift */; };
-		07805B321CC3955F00101893 /* ElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B311CC3955F00101893 /* ElementTests.swift */; };
 		07A1AF531CC357C90033C783 /* JSONMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A1AF521CC357C90033C783 /* JSONMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07A1AF5D1CC3580A0033C783 /* JSONMatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A1AF471CC3576F0033C783 /* JSONMatcher.framework */; };
 		07A1AF721CC35A740033C783 /* BeJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1AF711CC35A740033C783 /* BeJSON.swift */; };
 		07A1AF761CC35C910033C783 /* BeJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1AF751CC35C910033C783 /* BeJSONTests.swift */; };
 		07A1AF781CC360720033C783 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A1AF771CC360720033C783 /* Nimble.framework */; };
+		54E062201CCB246400C174E1 /* JSON+Matcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E0621F1CCB246400C174E1 /* JSON+Matcher.swift */; };
+		54E062221CCB248700C174E1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E062211CCB248700C174E1 /* SwiftyJSON.framework */; };
+		54E0623B1CCB25D900C174E1 /* BeJSONAsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B2C1CC38A9400101893 /* BeJSONAsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +35,8 @@
 		07805B221CC3683500101893 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "../../Library/Developer/Xcode/DerivedData/JSONMatcher-dtaubdkxgryzrmaobmogcnydkzmh/Build/Products/Debug-iphonesimulator/Nimble.framework"; sourceTree = "<group>"; };
 		07805B261CC3852500101893 /* BeJSONAs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeJSONAs.swift; sourceTree = "<group>"; };
 		07805B281CC386C900101893 /* Comparer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comparer.swift; path = Sources/JSONMatcher/Comparer.swift; sourceTree = SOURCE_ROOT; };
-		07805B2A1CC389E400101893 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Element.swift; path = Sources/JSONMatcher/Element.swift; sourceTree = SOURCE_ROOT; };
 		07805B2C1CC38A9400101893 /* BeJSONAsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeJSONAsTests.swift; sourceTree = "<group>"; };
 		07805B2F1CC38E4600101893 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Regex.swift; path = Sources/JSONMatcher/Regex.swift; sourceTree = SOURCE_ROOT; };
-		07805B311CC3955F00101893 /* ElementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementTests.swift; sourceTree = "<group>"; };
 		07A1AF471CC3576F0033C783 /* JSONMatcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONMatcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A1AF521CC357C90033C783 /* JSONMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONMatcher.h; path = Sources/JSONMatcher/JSONMatcher.h; sourceTree = SOURCE_ROOT; };
 		07A1AF581CC3580A0033C783 /* JSONMatcher-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JSONMatcher-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +45,8 @@
 		07A1AF711CC35A740033C783 /* BeJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeJSON.swift; sourceTree = "<group>"; };
 		07A1AF751CC35C910033C783 /* BeJSONTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeJSONTests.swift; sourceTree = "<group>"; };
 		07A1AF771CC360720033C783 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		54E0621F1CCB246400C174E1 /* JSON+Matcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Matcher.swift"; path = "Sources/JSONMatcher/JSON+Matcher.swift"; sourceTree = SOURCE_ROOT; };
+		54E062211CCB248700C174E1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54E062221CCB248700C174E1 /* SwiftyJSON.framework in Frameworks */,
 				07A1AF781CC360720033C783 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +81,7 @@
 		07A1AF3D1CC3576F0033C783 = {
 			isa = PBXGroup;
 			children = (
+				54E062211CCB248700C174E1 /* SwiftyJSON.framework */,
 				07805B221CC3683500101893 /* Nimble.framework */,
 				07A1AF771CC360720033C783 /* Nimble.framework */,
 				07A1AF491CC3576F0033C783 /* JSONMatcher */,
@@ -104,8 +106,8 @@
 				07A1AF521CC357C90033C783 /* JSONMatcher.h */,
 				07A1AF701CC35A740033C783 /* Matcher */,
 				07805B281CC386C900101893 /* Comparer.swift */,
-				07805B2A1CC389E400101893 /* Element.swift */,
 				07805B2F1CC38E4600101893 /* Regex.swift */,
+				54E0621F1CCB246400C174E1 /* JSON+Matcher.swift */,
 			);
 			path = JSONMatcher;
 			sourceTree = "<group>";
@@ -117,7 +119,6 @@
 				07A1AF641CC3582E0033C783 /* Info.plist */,
 				07A1AF751CC35C910033C783 /* BeJSONTests.swift */,
 				07805B2C1CC38A9400101893 /* BeJSONAsTests.swift */,
-				07805B311CC3955F00101893 /* ElementTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -242,9 +243,8 @@
 			files = (
 				07805B271CC3852500101893 /* BeJSONAs.swift in Sources */,
 				07A1AF721CC35A740033C783 /* BeJSON.swift in Sources */,
-				07805B2B1CC389E400101893 /* Element.swift in Sources */,
+				54E062201CCB246400C174E1 /* JSON+Matcher.swift in Sources */,
 				07805B291CC386C900101893 /* Comparer.swift in Sources */,
-				07805B2D1CC38A9400101893 /* BeJSONAsTests.swift in Sources */,
 				07805B301CC38E4600101893 /* Regex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,8 +253,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07805B321CC3955F00101893 /* ElementTests.swift in Sources */,
 				07A1AF761CC35C910033C783 /* BeJSONTests.swift in Sources */,
+				54E0623B1CCB25D900C174E1 /* BeJSONAsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

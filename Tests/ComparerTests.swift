@@ -25,13 +25,13 @@ class ComparerTestCase: XCTestCase {
         //expect(Comparer.compare(nil, NSNull())).to(beTrue())
         expect(Comparer.compare(nil, true)).to(beFalse())
     }
-    /*
+    
     func testSimpleRegex() {
-        expect(Comparer.compare("foo", RegexElement(".+"))).to(beTrue())
-        expect(Comparer.compare("10", RegexElement("[0-9]{2}"))).to(beTrue())
-        expect(Comparer.compare(10, RegexElement("10"))).to(beFalse())
-        expect(Comparer.compare(false, RegexElement(".+"))).to(beFalse())
-    }*/
+        expect(Comparer.compare("foo", ".+".regex())).to(beTrue())
+        expect(Comparer.compare("10", "[0-9]{2}".regex())).to(beTrue())
+        expect(Comparer.compare(10, "10".regex())).to(beFalse())
+        expect(Comparer.compare(false, ".+".regex())).to(beFalse())
+    }
     
     func testSimpleArray() {
         expect(Comparer.compare([10, 20], [10, 20])).to(beTrue())

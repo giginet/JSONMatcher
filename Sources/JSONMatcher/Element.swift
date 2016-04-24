@@ -40,6 +40,10 @@ struct JSONElement: ElementType {
             return .Dictionary
         case is NSNull, is ():
             return .Null
+        case is Regex:
+            return .Regex
+        case is Type:
+            return .Class
         default:
             return .Unknown
         }

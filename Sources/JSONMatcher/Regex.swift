@@ -21,6 +21,7 @@ public class Regex {
 
 extension StringLiteralConvertible {
     func regex() -> JSONElement {
-        return JSONElement("aaa")
+        let regex = Regex(self as! String)
+        return JSONElement(regex)
     }
 }

@@ -44,3 +44,33 @@ protocol AnyProtocol { }
 0x10 == 16
 
 [10, "^foo".regex, "bar", "[a-z]+"]
+
+protocol Test { }
+extension String: Test { }
+extension Int: Test { }
+extension NSObject: Test { }
+
+let stringArray: [String] = ["a", "b", "c"]
+"a" is Test
+//stringArray is [Test]
+
+func compareArray<T: CollectionType where T.Generator.Element == Test>(lhs: T) -> Bool {
+    return true
+}
+
+func compareDictionary<T: CollectionType where T.Generator.Element == (String, Test)>(lhs: T) {
+}
+
+let list: [Test] = [1, 2, "aaa"]
+compareArray(list)
+
+func testFunction(lhs: AcceptableValueType, _ rhs: AcceptableValueType) -> Bool {
+    switch (lhs, rhs) {
+    case let (number as String, expectedNumber as String):
+        return number == expectedNumber
+    default:
+        return false
+    }
+    return false
+}
+testFunction("a", "a")

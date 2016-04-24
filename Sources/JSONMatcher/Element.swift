@@ -1,23 +1,21 @@
 import Foundation
 
-typealias ElementArray = [JSONElement]
-typealias ElementDictionary = [String: JSONElement]
-
 protocol AcceptableValueType { }
-extension NSNumber: AcceptableValueType { }
-extension String: AcceptableValueType { }
-extension Bool: AcceptableValueType { }
+protocol RawValueType: AcceptableValueType { }
+
+extension NSNumber: RawValueType { }
+extension String: RawValueType { }
+extension Bool: RawValueType { }
 extension Array: AcceptableValueType { }
 extension Dictionary: AcceptableValueType { }
-extension NSNull: AcceptableValueType { }
+extension NSNull: RawValueType { }
 extension Regex: AcceptableValueType { }
 extension Type: AcceptableValueType { }
-extension JSONElement: AcceptableValueType { }
 
 struct JSONElement {
     var value: AcceptableValueType
     
-    init(_ value: AcceptableValueType) {
+    init(_ value: RawValueType) {
         self.value = value
     }
 }
@@ -69,16 +67,14 @@ extension JSONElement {
         self.value = recursiveArray
     }
     
-    private static func makeJSONElementsArrayRecursively(elements: [Element]) -> [JSONElement] {
-        var elementArray: [JSONElement] = []
+    private static func makeJSONElementsArrayRecursively(elements: [Element]) -> [Element] {
+        var elementArray: [Element] = []
         for rawElement: Element in elements {
             if let array = rawElement as? [Element] {
                 let array = self.makeJSONElementsArrayRecursively(array)
-                let element: JSONElement = JSONElement(array)
-                elementArray.append(element)
+                elementArray.append(array)
             } else {
-                let element: JSONElement = JSONElement(rawElement)
-                elementArray.append(element)
+                elementArray.append(rawElement)
             }
         }
         return elementArray
@@ -100,16 +96,14 @@ extension JSONElement {
         self.value = recursiveDictionary
     }
     
-    private static func makeJSONElementsDictionaryRecursively(elements: [Key: Value]) -> [Key: JSONElement] {
-        var elementDictionary: [Key: JSONElement] = [:]
+    private static func makeJSONElementsDictionaryRecursively(elements: [Key: Value]) -> [Key: Value] {
+        var elementDictionary: [Key: Value] = [:]
         for (rawKey, rawElement): (Key, Value) in elements {
             if let dictionary = rawElement as? [Key: Value] {
                 let dictionary = makeJSONElementsDictionaryRecursively(dictionary)
-                let element: JSONElement = JSONElement(dictionary)
-                elementDictionary[rawKey] = element
+                elementDictionary[rawKey] = dictionary
             } else {
-                let element: JSONElement = JSONElement(rawElement)
-                elementDictionary[rawKey] = element
+                elementDictionary[rawKey] = rawElement
             }
         }
         return elementDictionary

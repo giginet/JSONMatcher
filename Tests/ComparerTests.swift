@@ -45,35 +45,34 @@ class ComparerTestCase: XCTestCase {
     }
     
     func testArrayWithRegex() {
-        expect(Comparer.compare([10, "foo", "bar", "apple"], [10, "^f++".regex, "bar", "[a-z]+"])).to(beTrue())
+        expect(Comparer.compare([10, "foo", "bar", "apple"], [10, "foo".regex, "bar", "[a-z]+".regex])).to(beTrue())
     }
     
-    /*func testComplexObject() {
-        expect(Comparer.compare(json: JSON([
+    func testComplexObject() {
+        expect(Comparer.compare([
                 "title" : "Introduce new feature!",
                 "body" : "New feature is now available. Please check it out",
                 "url" : "https://example.com/articles/305/",
                 "published_at" : "2016-04-23T15:50:00+09:00",
                 "published" : true,
-                "author" : [
+                /*"author" : [
                     "name" : "alice",
                     "age" : 30
                 ],
-                "tags" : ["new feature", "update", "diary"]
-                ]),
-            expected: [
+                "tags" : ["new feature", "update", "diary"]*/
+                ],
+               [
                 "title" : "Introduce new feature!",
                 "body" : "New feature is now available. Please check it out",
                 "url" : "https://example.com/articles/305/",
-                "published_at" : Regex("\\d{4}\\-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\+\\d{2}:0{2}"),
+                "published_at" : "\\d{4}\\-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\+\\d{2}:0{2}".regex,
                 "published" : true,
-                "author" : [
+                /*"author" : [
                     "name" : "alice",
                     "age" : 30
                 ],
-                "tags" : ["new feature", "update", "diary"]
-                
-            ]).compare()).to(beTrue())
-    }*/
+                "tags" : ["new feature", "update", "diary"]*/
+            ])).to(beTrue())
+    }
 
 }

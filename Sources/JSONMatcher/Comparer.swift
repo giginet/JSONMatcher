@@ -7,6 +7,21 @@ struct  Comparer {
     
     private static func compareElements(lhs: JSONElement, _ rhs: JSONElement) -> Bool {
         switch rhs.value {
+        case let expectedNumber as NSNumber:
+            guard let number = lhs.value as? NSNumber else {
+                return false
+            }
+            return number == expectedNumber
+        case let expectedString as String:
+            guard let string = lhs.value as? String else {
+                return false
+            }
+            return string == expectedString
+        case let expectedBool as Bool:
+            guard let bool = lhs.value as? Bool else {
+                return false
+            }
+            return bool == expectedBool
         case let expectedArray as [JSONElement]:
             guard let array = lhs.value as? [JSONElement] else {
                 return false
@@ -21,6 +36,11 @@ struct  Comparer {
                     return false
                 }
             }
+        case let expectedNull as NSNull:
+            guard let null = lhs.value as? NSNull else {
+                return false
+            }
+            return null == expectedNull
         case let expectedDictionary as [String: JSONElement]:
             guard let dictionary = lhs.value as? [String: JSONElement] else {
                 return false
@@ -41,10 +61,9 @@ struct  Comparer {
             }
             return regex.match(string)
         case let type as Type:
-            return true
-        //return classType.isTypeOf(lhs.value)
+            return type.isKindOf(lhs.value)
         default:
-            return lhs == rhs
+            return false
         }
         
         return true

@@ -37,5 +37,20 @@ let elementArray: JSONElement = [
 
 Comparer.compare(["foo", 10, 20], ["foo", 10, 20])
 
-protocol Type {
+let a = Numeric(10.0)
+let b = Numeric(10)
+
+print(a == b)
+
+func test<T, U>(a: T, b: U) -> Bool {
+    if let a = a as? Numeric, let b = b as? Numeric {
+        return a == b
+    }
+    return false
 }
+
+["a", 10].dynamicType
+
+protocol AnyProtocol { }
+
+0x10 == 16

@@ -1,96 +1,32 @@
 import Foundation
 
-enum Type: Int {
-    case Number
-    case String
-    case Boolean
-    case Array
-    case Dictionary
-    case Null
-    case Unknown
-    case Regex
-    case Class
-}
+protocol AcceptableValueType { }
+extension NSNumber: AcceptableValueType { }
+extension String: AcceptableValueType { }
+extension Bool: AcceptableValueType { }
+extension Array: AcceptableValueType { }
+extension Dictionary: AcceptableValueType { }
+extension NSNull: AcceptableValueType { }
+extension Regex: AcceptableValueType { }
+extension Type: AcceptableValueType { }
 
-protocol ElementType: Equatable {
-    associatedtype T
-    var value: T { get set }
-    var type: Type { get }
-}
-
-struct JSONElement: ElementType {
-    typealias T = Any
-    var value: T
+struct JSONElement: AcceptableValueType {
+    var value: AcceptableValueType
     
-    init(_ value: T) {
+    init(_ value: AcceptableValueType) {
         self.value = value
     }
-    
-    var type: Type {
-        switch self.value {
-        case is Int, is UInt, is Float, is Double:
-            return .Number
-        case is String:
-            return .String
-        case is Bool:
-            return .Boolean
-        case is [Any]:
-            return .Array
-        case is [String: Any]:
-            return .Dictionary
-        case is NSNull, is ():
-            return .Null
-        case is Regex:
-            return .Regex
-        case is Type:
-            return .Class
-        default:
-            return .Unknown
-        }
-    }
-}
-
-func ==(lhs: JSONElement, rhs: JSONElement) -> Bool {
-    guard lhs.type == rhs.type else {
-        return false
-    }
-    
-    if let l = lhs.value as? Double, let r = rhs.value as? Double {
-        return l == r
-    }
-    
-    if let l = lhs.value as? String, let r = rhs.value as? String {
-        return l == r
-    }
-    
-    if let l = lhs.value as? Bool, let r = rhs.value as? Bool {
-        return l == r
-    }
-    
-    if let l = lhs.value as? NSNull, let r = rhs.value as? NSNull {
-        return l == r
-    }
-    
-    if let l = lhs.value as? [JSONElement], let r = rhs.value as? [JSONElement] {
-        return l == r
-    }
-    
-    if let l = lhs.value as? [String: JSONElement], let r = rhs.value as? [String: JSONElement] {
-        return l == r
-    }
-    
-    return false
 }
 
 extension JSONElement: IntegerLiteralConvertible {
     init(integerLiteral value: IntegerLiteralType) {
-        self.value = value
+        self.value = NSNumber(integer: value)
     }
 }
 
 extension JSONElement: FloatLiteralConvertible {
     init(floatLiteral value: FloatLiteralType) {
-        self.value = value
+        self.value = NSNumber(double: value)
     }
 }
 
@@ -119,12 +55,12 @@ extension JSONElement: BooleanLiteralConvertible {
 
 extension JSONElement: NilLiteralConvertible {
     init(nilLiteral value: ()) {
-        self.value = value
+        self.value = NSNull()
     }
 }
 
 extension JSONElement: ArrayLiteralConvertible {
-    typealias Element = AnyObject
+    typealias Element = AcceptableValueType
     
     init(arrayLiteral elements: Element...) {
         var elementArray: [JSONElement] = []
@@ -138,7 +74,7 @@ extension JSONElement: ArrayLiteralConvertible {
 
 extension JSONElement: DictionaryLiteralConvertible {
     typealias Key = String
-    typealias Value = AnyObject
+    typealias Value = AcceptableValueType
     
     init(dictionaryLiteral elements: (Key, Value)...) {
         var elementDictionary: [Key: JSONElement] = [:]

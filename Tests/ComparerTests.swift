@@ -11,8 +11,8 @@ class ComparerTestCase: XCTestCase {
     func testSimpleNumberElement() {
         expect(Comparer.compare(10, 10)).to(beTrue())
         expect(Comparer.compare(10, 10.0)).to(beTrue())
-        expect(Comparer.compare(2, 0x10)).to(beTrue())
-        expect(Comparer.compare(30, 30.0000001)).to(beTrue())
+        expect(Comparer.compare(16, 0x10)).to(beTrue())
+        expect(Comparer.compare(30, 30.0000001)).to(beFalse())
     }
     
     func testSimpleBoolElement() {
@@ -22,7 +22,7 @@ class ComparerTestCase: XCTestCase {
     
     func testSimpleNilElement() {
         expect(Comparer.compare(nil, nil)).to(beTrue())
-        //expect(Comparer.compare(nil, NSNull())).to(beTrue())
+        expect(Comparer.compare(nil, JSONElement(NSNull()))).to(beTrue())
         expect(Comparer.compare(nil, true)).to(beFalse())
     }
     
@@ -43,10 +43,10 @@ class ComparerTestCase: XCTestCase {
     func testSimpleDictionary() {
         expect(Comparer.compare(["name": "bob", "age": 30], ["name": "bob", "age": 30])).to(beTrue())
     }
-    /*
+    
     func testArrayWithRegex() {
-        expect(Comparer.compare([10, "foo", "bar", "apple"], [10, RegexElement("^fo+$"), "bar", RegexElement("[a-z]+")])).to(beTrue())
-    }*/
+        expect(Comparer.compare([10, "foo", "bar", "apple"], [10, "foo".regex(), "bar", "apple"])).to(beTrue())
+    }
     
     /*func testComplexObject() {
         expect(Comparer.compare(json: JSON([

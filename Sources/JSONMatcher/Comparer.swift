@@ -22,6 +22,11 @@ struct  Comparer {
                 return false
             }
             return bool == expectedBool
+        case let expectedNull as NSNull:
+            guard let null = lhs.value as? NSNull else {
+                return false
+            }
+            return null == expectedNull
         case let expectedArray as [JSONElement]:
             guard let array = lhs.value as? [JSONElement] else {
                 return false
@@ -36,11 +41,6 @@ struct  Comparer {
                     return false
                 }
             }
-        case let expectedNull as NSNull:
-            guard let null = lhs.value as? NSNull else {
-                return false
-            }
-            return null == expectedNull
         case let expectedDictionary as [String: JSONElement]:
             guard let dictionary = lhs.value as? [String: JSONElement] else {
                 return false

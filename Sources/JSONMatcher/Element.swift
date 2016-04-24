@@ -10,7 +10,7 @@ extension NSNull: AcceptableValueType { }
 extension Regex: AcceptableValueType { }
 extension Type: AcceptableValueType { }
 
-struct JSONElement: AcceptableValueType {
+struct JSONElement {
     var value: AcceptableValueType
     
     init(_ value: AcceptableValueType) {

@@ -20,8 +20,8 @@ public class Regex {
 }
 
 extension StringLiteralConvertible {
-    func regex() -> JSONElement {
+    var regex: Regex {
         let regex = Regex(self as! String)
-        return JSONElement(regex)
+        return regex
     }
 }

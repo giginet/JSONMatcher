@@ -58,8 +58,8 @@ class ComparerTestCase: XCTestCase {
                 /*"author" : [
                     "name" : "alice",
                     "age" : 30
-                ],
-                "tags" : ["new feature", "update", "diary"]*/
+                ],*/
+                "tags" : ["new feature", "update", "diary"]
                 ],
                [
                 "title" : "Introduce new feature!",
@@ -70,8 +70,8 @@ class ComparerTestCase: XCTestCase {
                 /*"author" : [
                     "name" : "alice",
                     "age" : 30
-                ],
-                "tags" : ["new feature", "update", "diary"]*/
+                ],*/
+                "tags" : ["new feature", "update", "diary"]
             ])).to(beTrue())
     }
 

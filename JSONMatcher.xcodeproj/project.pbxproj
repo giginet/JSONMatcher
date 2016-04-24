@@ -20,6 +20,7 @@
 		07A1AF761CC35C910033C783 /* BeJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1AF751CC35C910033C783 /* BeJSONTests.swift */; };
 		07A1AF781CC360720033C783 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A1AF771CC360720033C783 /* Nimble.framework */; };
 		07D2ED7F1CCCDAA6003A5430 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D2ED7E1CCCDAA6003A5430 /* Type.swift */; };
+		07D2ED811CCCF6A4003A5430 /* ElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D2ED801CCCF6A4003A5430 /* ElementTests.swift */; };
 		54E062201CCB246400C174E1 /* JSON+Matcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E0621F1CCB246400C174E1 /* JSON+Matcher.swift */; };
 		54E062221CCB248700C174E1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E062211CCB248700C174E1 /* SwiftyJSON.framework */; };
 		54E0623B1CCB25D900C174E1 /* BeJSONAsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B2C1CC38A9400101893 /* BeJSONAsTests.swift */; };
@@ -53,6 +54,7 @@
 		07A1AF751CC35C910033C783 /* BeJSONTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeJSONTests.swift; sourceTree = "<group>"; };
 		07A1AF771CC360720033C783 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		07D2ED7E1CCCDAA6003A5430 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Type.swift; path = Sources/JSONMatcher/Type.swift; sourceTree = SOURCE_ROOT; };
+		07D2ED801CCCF6A4003A5430 /* ElementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementTests.swift; sourceTree = "<group>"; };
 		54E0621F1CCB246400C174E1 /* JSON+Matcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Matcher.swift"; path = "Sources/JSONMatcher/JSON+Matcher.swift"; sourceTree = SOURCE_ROOT; };
 		54E062211CCB248700C174E1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +133,7 @@
 				07805B2C1CC38A9400101893 /* BeJSONAsTests.swift */,
 				07805B331CCB4DD600101893 /* ComparerTests.swift */,
 				07805B351CCB4DF500101893 /* RegexTests.swift */,
+				07D2ED801CCCF6A4003A5430 /* ElementTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			files = (
 				07A1AF761CC35C910033C783 /* BeJSONTests.swift in Sources */,
 				54E0623B1CCB25D900C174E1 /* BeJSONAsTests.swift in Sources */,
+				07D2ED811CCCF6A4003A5430 /* ElementTests.swift in Sources */,
 				07805B341CCB4DD600101893 /* ComparerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

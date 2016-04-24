@@ -55,6 +55,11 @@ struct  Comparer {
                     return false
                 }
             }
+        case let expectedElement as JSONElement:
+            guard let element = lhs.value as? JSONElement else {
+                return false
+            }
+            return compareElements(element, expectedElement)
         case let regex as Regex:
             guard let string = lhs.value as? String else {
                 return false

@@ -29,6 +29,14 @@ struct NumberElement: ElementType {
     init(_ number: NSNumber) {
         self.value = number
     }
+    
+    init(_ number: Int) {
+        self.value = NSNumber(integer: number)
+    }
+    
+    init(_ number: Double) {
+        self.value = NSNumber(double: number)
+    }
 }
 
 struct StringElement: ElementType {
@@ -40,7 +48,7 @@ struct StringElement: ElementType {
     }
 }
 
-struct BoolElement: ElementType {
+struct BooleanElement: ElementType {
     let value: Bool
     let type: Type = .Boolean
     

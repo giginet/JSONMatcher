@@ -25,7 +25,7 @@ struct Builder {
         case let string as String:
             return StringElement(string)
         case let bool as Bool:
-            return BoolElement(bool)
+            return BooleanElement(bool)
         case let null as NSNull:
             return NullElement(null)
         default:

@@ -1,7 +1,7 @@
 import XCTest
 import Nimble
 @testable import JSONMatcher
-
+/*
 class ComparerTestCase: XCTestCase {
     func testSimpleStringElement() {
         expect(Comparer.compare("foo", "foo")).to(beTrue())
@@ -76,3 +76,4 @@ class ComparerTestCase: XCTestCase {
     }
 
 }
+*/

@@ -13,7 +13,6 @@
 		07805B301CC38E4600101893 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B2F1CC38E4600101893 /* Regex.swift */; };
 		07805B341CCB4DD600101893 /* ComparerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B331CCB4DD600101893 /* ComparerTests.swift */; };
 		07805B361CCB4DF500101893 /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B351CCB4DF500101893 /* RegexTests.swift */; };
-		07805B3A1CCB568000101893 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B391CCB568000101893 /* Element.swift */; };
 		07A1AF531CC357C90033C783 /* JSONMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A1AF521CC357C90033C783 /* JSONMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07A1AF5D1CC3580A0033C783 /* JSONMatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A1AF471CC3576F0033C783 /* JSONMatcher.framework */; };
 		07A1AF721CC35A740033C783 /* BeJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1AF711CC35A740033C783 /* BeJSON.swift */; };
@@ -21,10 +20,9 @@
 		07A1AF781CC360720033C783 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A1AF771CC360720033C783 /* Nimble.framework */; };
 		07D2ED7F1CCCDAA6003A5430 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D2ED7E1CCCDAA6003A5430 /* Type.swift */; };
 		07D2ED811CCCF6A4003A5430 /* ElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D2ED801CCCF6A4003A5430 /* ElementTests.swift */; };
-		54E062201CCB246400C174E1 /* JSON+Matcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E0621F1CCB246400C174E1 /* JSON+Matcher.swift */; };
 		54E062221CCB248700C174E1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E062211CCB248700C174E1 /* SwiftyJSON.framework */; };
 		54E0623B1CCB25D900C174E1 /* BeJSONAsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B2C1CC38A9400101893 /* BeJSONAsTests.swift */; };
-		54E062411CCE1BFE00C174E1 /* JSONElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E062401CCE1BFE00C174E1 /* JSONElement.swift */; };
+		54E062411CCE1BFE00C174E1 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E062401CCE1BFE00C174E1 /* Element.swift */; };
 		54E062431CCE1D7B00C174E1 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E062421CCE1D7B00C174E1 /* Builder.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +44,6 @@
 		07805B2F1CC38E4600101893 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Regex.swift; path = Sources/JSONMatcher/Regex.swift; sourceTree = SOURCE_ROOT; };
 		07805B331CCB4DD600101893 /* ComparerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparerTests.swift; sourceTree = "<group>"; };
 		07805B351CCB4DF500101893 /* RegexTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexTests.swift; sourceTree = "<group>"; };
-		07805B391CCB568000101893 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Element.swift; path = Sources/JSONMatcher/Element.swift; sourceTree = SOURCE_ROOT; };
 		07A1AF471CC3576F0033C783 /* JSONMatcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONMatcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A1AF521CC357C90033C783 /* JSONMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONMatcher.h; path = Sources/JSONMatcher/JSONMatcher.h; sourceTree = SOURCE_ROOT; };
 		07A1AF581CC3580A0033C783 /* JSONMatcher-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JSONMatcher-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,9 +54,8 @@
 		07A1AF771CC360720033C783 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		07D2ED7E1CCCDAA6003A5430 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Type.swift; path = Sources/JSONMatcher/Type.swift; sourceTree = SOURCE_ROOT; };
 		07D2ED801CCCF6A4003A5430 /* ElementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementTests.swift; sourceTree = "<group>"; };
-		54E0621F1CCB246400C174E1 /* JSON+Matcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Matcher.swift"; path = "Sources/JSONMatcher/JSON+Matcher.swift"; sourceTree = SOURCE_ROOT; };
 		54E062211CCB248700C174E1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		54E062401CCE1BFE00C174E1 /* JSONElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONElement.swift; path = Sources/JSONMatcher/JSONElement.swift; sourceTree = SOURCE_ROOT; };
+		54E062401CCE1BFE00C174E1 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Element.swift; path = Sources/JSONMatcher/Element.swift; sourceTree = SOURCE_ROOT; };
 		54E062421CCE1D7B00C174E1 /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Builder.swift; path = Sources/JSONMatcher/Builder.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -121,10 +117,8 @@
 				07A1AF701CC35A740033C783 /* Matcher */,
 				07805B281CC386C900101893 /* Comparer.swift */,
 				07805B2F1CC38E4600101893 /* Regex.swift */,
-				54E0621F1CCB246400C174E1 /* JSON+Matcher.swift */,
-				54E062401CCE1BFE00C174E1 /* JSONElement.swift */,
+				54E062401CCE1BFE00C174E1 /* Element.swift */,
 				54E062421CCE1D7B00C174E1 /* Builder.swift */,
-				07805B391CCB568000101893 /* Element.swift */,
 				07D2ED7E1CCCDAA6003A5430 /* Type.swift */,
 			);
 			path = JSONMatcher;
@@ -263,12 +257,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				07805B271CC3852500101893 /* BeJSONAs.swift in Sources */,
-				54E062411CCE1BFE00C174E1 /* JSONElement.swift in Sources */,
+				54E062411CCE1BFE00C174E1 /* Element.swift in Sources */,
 				07805B361CCB4DF500101893 /* RegexTests.swift in Sources */,
 				07A1AF721CC35A740033C783 /* BeJSON.swift in Sources */,
-				54E062201CCB246400C174E1 /* JSON+Matcher.swift in Sources */,
 				07805B291CC386C900101893 /* Comparer.swift in Sources */,
-				07805B3A1CCB568000101893 /* Element.swift in Sources */,
 				07805B301CC38E4600101893 /* Regex.swift in Sources */,
 				07D2ED7F1CCCDAA6003A5430 /* Type.swift in Sources */,
 				54E062431CCE1D7B00C174E1 /* Builder.swift in Sources */,

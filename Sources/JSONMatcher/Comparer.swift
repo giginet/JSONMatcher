@@ -1,5 +1,5 @@
 import Foundation
-
+/*
 struct  Comparer {
     static func compare(lhs: JSONElement, _ rhs: JSONElement) -> Bool {
         return self.compareElements(lhs, rhs)
@@ -62,4 +62,4 @@ struct  Comparer {
             return false
         }
     }
-}
+}*/

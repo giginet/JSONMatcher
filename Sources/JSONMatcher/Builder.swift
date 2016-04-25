@@ -1,7 +1,7 @@
 import Foundation
 
 struct Builder {
-    func buildJSONElement(object: AnyObject) -> AbstractJSONElementType {
+    func buildJSONElement(object: AnyObject) -> BaseElementType {
         switch object {
         case let array as NSArray:
             let array = buildJSONElementArray(array)
@@ -14,7 +14,7 @@ struct Builder {
         }
     }
     
-    func buildRawJSONElement(object: AnyObject) -> AbstractJSONElementType {
+    func buildRawJSONElement(object: AnyObject) -> BaseElementType {
         switch object {
         case let int as Int:
             let number = NSNumber(integer: int)
@@ -33,8 +33,8 @@ struct Builder {
         }
     }
     
-    func buildJSONElementArray(array: NSArray) -> [AbstractJSONElementType] {
-        var result: [AbstractJSONElementType] = []
+    func buildJSONElementArray(array: NSArray) -> ElementArray {
+        var result: ElementArray = []
         for element in array {
             if let innerRawArray = element as? NSArray {
                 let innerArray = buildJSONElementArray(innerRawArray)
@@ -52,8 +52,8 @@ struct Builder {
         return result
     }
     
-    func buildJSONElementDictionary(dictionary: NSDictionary) -> [String: AbstractJSONElementType] {
-        var result: [String: AbstractJSONElementType] = [:]
+    func buildJSONElementDictionary(dictionary: NSDictionary) -> ElementDictionary {
+        var result: ElementDictionary = [:]
         for (k, v) in dictionary {
             guard let k = k as? String else {
                 continue

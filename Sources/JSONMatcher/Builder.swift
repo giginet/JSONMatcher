@@ -1,7 +1,7 @@
 import Foundation
 
 struct Builder {
-    func buildJSONElement(object: AnyObject) -> BaseElementType {
+    func buildJSONElement<T>(object: T) -> BaseElementType {
         switch object {
         case let array as NSArray:
             let array = buildJSONElementArray(array)
@@ -14,18 +14,18 @@ struct Builder {
         }
     }
     
-    func buildRawJSONElement(object: AnyObject) -> BaseElementType {
+    func buildRawJSONElement<T>(object: T) -> BaseElementType {
         switch object {
+        case let double as Double:
+            let number = NSNumber(double: double)
+            return NumberElement(number)
         case let int as Int:
             let number = NSNumber(integer: int)
             return NumberElement(number)
-        case let int as Double:
-            let number = NSNumber(double: int)
-            return NumberElement(number)
-        case let string as String:
-            return StringElement(string)
         case let bool as Bool:
             return BooleanElement(bool)
+        case let string as String:
+            return StringElement(string)
         case let null as NSNull:
             return NullElement(null)
         default:

@@ -19,3 +19,9 @@ innerArrayElement.value[2]
 let dictionaryElement = builder.buildJSONElement(["name": "hoge", "items": ["a", "b", 10, 100, true]]) as! DictionaryElement
 dictionaryElement.value["name"]
 dictionaryElement.value["items"]
+
+
+let variable: AnyObject = true
+variable is Float
+variable is Double
+variable is Int

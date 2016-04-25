@@ -24,6 +24,8 @@
 		54E062201CCB246400C174E1 /* JSON+Matcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E0621F1CCB246400C174E1 /* JSON+Matcher.swift */; };
 		54E062221CCB248700C174E1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E062211CCB248700C174E1 /* SwiftyJSON.framework */; };
 		54E0623B1CCB25D900C174E1 /* BeJSONAsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B2C1CC38A9400101893 /* BeJSONAsTests.swift */; };
+		54E062411CCE1BFE00C174E1 /* JSONElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E062401CCE1BFE00C174E1 /* JSONElement.swift */; };
+		54E062431CCE1D7B00C174E1 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E062421CCE1D7B00C174E1 /* Builder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		07D2ED801CCCF6A4003A5430 /* ElementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementTests.swift; sourceTree = "<group>"; };
 		54E0621F1CCB246400C174E1 /* JSON+Matcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Matcher.swift"; path = "Sources/JSONMatcher/JSON+Matcher.swift"; sourceTree = SOURCE_ROOT; };
 		54E062211CCB248700C174E1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		54E062401CCE1BFE00C174E1 /* JSONElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONElement.swift; path = Sources/JSONMatcher/JSONElement.swift; sourceTree = SOURCE_ROOT; };
+		54E062421CCE1D7B00C174E1 /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Builder.swift; path = Sources/JSONMatcher/Builder.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 				07805B281CC386C900101893 /* Comparer.swift */,
 				07805B2F1CC38E4600101893 /* Regex.swift */,
 				54E0621F1CCB246400C174E1 /* JSON+Matcher.swift */,
+				54E062401CCE1BFE00C174E1 /* JSONElement.swift */,
+				54E062421CCE1D7B00C174E1 /* Builder.swift */,
 				07805B391CCB568000101893 /* Element.swift */,
 				07D2ED7E1CCCDAA6003A5430 /* Type.swift */,
 			);
@@ -257,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07805B271CC3852500101893 /* BeJSONAs.swift in Sources */,
+				54E062411CCE1BFE00C174E1 /* JSONElement.swift in Sources */,
 				07805B361CCB4DF500101893 /* RegexTests.swift in Sources */,
 				07A1AF721CC35A740033C783 /* BeJSON.swift in Sources */,
 				54E062201CCB246400C174E1 /* JSON+Matcher.swift in Sources */,
@@ -264,6 +271,7 @@
 				07805B3A1CCB568000101893 /* Element.swift in Sources */,
 				07805B301CC38E4600101893 /* Regex.swift in Sources */,
 				07D2ED7F1CCCDAA6003A5430 /* Type.swift in Sources */,
+				54E062431CCE1D7B00C174E1 /* Builder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

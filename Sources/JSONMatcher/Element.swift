@@ -83,3 +83,21 @@ struct DictionaryElement: ElementType {
         self.value = dictionary
     }
 }
+
+struct RegexElement: ElementType {
+    let value: Regex
+    let type: Type = .Unknown
+    
+    init(_ regex: Regex) {
+        self.value = regex
+    }
+}
+
+struct TypeElement: ElementType {
+    let value: Type
+    let type: Type = .Unknown
+    
+    init(_ type: Type) {
+        self.value = type
+    }
+}

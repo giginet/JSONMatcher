@@ -28,6 +28,10 @@ struct Builder {
             return StringElement(string)
         case let null as NSNull:
             return NullElement(null)
+        case let regex as Regex:
+            return RegexElement(regex)
+        case let type as Type:
+            return TypeElement(type)
         default:
             return NullElement(NSNull())
         }

@@ -41,6 +41,16 @@ class BuilderTestCase: XCTestCase {
         expect(null0.value).to(equal(NSNull()))
     }
     
+    func testRegex() {
+        let regex0 = self.builder.buildJSONElement(Regex(".+")) as! RegexElement
+        expect(regex0.value.pattern).to(equal(".+"))
+    }
+    
+    func testType() {
+        let type0 = self.builder.buildJSONElement(Type.Number) as! TypeElement
+        expect(type0.value).to(equal(Type.Number))
+    }
+    
     func testArray() {
         let array0 = self.builder.buildJSONElement([
             42,

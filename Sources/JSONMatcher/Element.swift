@@ -64,6 +64,10 @@ struct NullElement: ElementType {
     init(_ null: NSNull) {
         self.value = null
     }
+    
+    init() {
+        self.value = NSNull()
+    }
 }
 
 struct ArrayElement: ElementType {

@@ -19,7 +19,7 @@ public class JSONType {
 }
 
 public let NumberType = JSONType(Type.Number)
-public let StingType = JSONType(Type.String)
+public let StringType = JSONType(Type.String)
 public let BooleanType = JSONType(Type.Boolean)
 public let ArrayType = JSONType(Type.Array)
 public let DictionaryType = JSONType(Type.Dictionary)

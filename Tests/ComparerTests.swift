@@ -31,6 +31,19 @@ class ComparerTestCase: XCTestCase {
         expect(Comparer.compare(BooleanElement(false), RegexElement(".+".regex))).to(beFalse())
     }
     
+    func testSimpleType() {
+        expect(Comparer.compare(NumberElement(42), TypeElement(NumberType.type))).to(beTrue())
+        expect(Comparer.compare(NumberElement(42.195), TypeElement(NumberType.type))).to(beTrue())
+        expect(Comparer.compare(StringElement("sushi"), TypeElement(NumberType.type))).to(beFalse())
+        expect(Comparer.compare(StringElement("🍣"), TypeElement(StringType.type))).to(beTrue())
+        expect(Comparer.compare(BooleanElement(true), TypeElement(BooleanType.type))).to(beTrue())
+        expect(Comparer.compare(BooleanElement(false), TypeElement(BooleanType.type))).to(beTrue())
+        expect(Comparer.compare(NullElement(NSNull()), TypeElement(NullType.type))).to(beTrue())
+        expect(Comparer.compare(ArrayElement([StringElement("a"), StringElement("b"), StringElement("c"),]), TypeElement(ArrayType.type))).to(beTrue())        
+        expect(Comparer.compare(DictionaryElement(["a" : StringElement("a"), "b" : StringElement("b"), "c" : StringElement("c"),]), TypeElement(DictionaryType.type))).to(beTrue())
+        
+    }
+    
     func testSimpleArray() {
         expect(Comparer.compare(
             ArrayElement([NumberElement(10), NumberElement(20)]),
@@ -64,6 +77,13 @@ class ComparerTestCase: XCTestCase {
         ).to(beTrue())
     }
     
+    func testArrayWithType() {
+        expect(Comparer.compare(
+            ArrayElement([NumberElement(10), StringElement("foo"), StringElement("bar")]),
+            ArrayElement([TypeElement(NumberType.type), TypeElement(StringType.type), StringElement("bar")]))
+        ).to(beTrue())
+    }
+    
     func testComplexObject() {
         expect(Comparer.compare(DictionaryElement([
             "title" : StringElement("Introduce new feature!"),
@@ -73,7 +93,8 @@ class ComparerTestCase: XCTestCase {
             "published" : BooleanElement(true),
             "author" : DictionaryElement([
              "name" : StringElement("alice"),
-             "age" : NumberElement(30)
+             "age" : NumberElement(30), 
+             "job" : StringElement("engineer")
             ]),
             "tags" : ArrayElement([StringElement("new feature"), StringElement("update"), StringElement("diary")])
         ]), DictionaryElement([
@@ -84,7 +105,8 @@ class ComparerTestCase: XCTestCase {
             "published" : BooleanElement(true),
             "author" : DictionaryElement([
                 "name" : StringElement("alice"),
-                "age" : NumberElement(30)
+                "age" : NumberElement(30),
+                "job" : TypeElement(StringType.type)
             ]),
             "tags" : ArrayElement([StringElement("new feature"), StringElement("update"), StringElement("diary")])
         ]))).to(beTrue())

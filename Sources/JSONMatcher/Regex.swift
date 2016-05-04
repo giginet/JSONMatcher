@@ -19,7 +19,7 @@ public class Regex {
     }
 }
 
-extension StringLiteralConvertible {
+public extension StringLiteralConvertible {
     var regex: Regex {
         let regex = Regex(self as! String)
         return regex

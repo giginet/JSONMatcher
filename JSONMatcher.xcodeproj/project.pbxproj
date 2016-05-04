@@ -21,7 +21,6 @@
 		07D2ED7F1CCCDAA6003A5430 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D2ED7E1CCCDAA6003A5430 /* Type.swift */; };
 		07D2ED811CCCF6A4003A5430 /* ElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D2ED801CCCF6A4003A5430 /* ElementTests.swift */; };
 		07D2ED841CCE67EC003A5430 /* BuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D2ED831CCE67EC003A5430 /* BuilderTests.swift */; };
-		54E062221CCB248700C174E1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E062211CCB248700C174E1 /* SwiftyJSON.framework */; };
 		54E0623B1CCB25D900C174E1 /* BeJSONAsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B2C1CC38A9400101893 /* BeJSONAsTests.swift */; };
 		54E062411CCE1BFE00C174E1 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E062401CCE1BFE00C174E1 /* Element.swift */; };
 		54E062431CCE1D7B00C174E1 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E062421CCE1D7B00C174E1 /* Builder.swift */; };
@@ -56,7 +55,6 @@
 		07D2ED7E1CCCDAA6003A5430 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Type.swift; path = Sources/JSONMatcher/Type.swift; sourceTree = SOURCE_ROOT; };
 		07D2ED801CCCF6A4003A5430 /* ElementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementTests.swift; sourceTree = "<group>"; };
 		07D2ED831CCE67EC003A5430 /* BuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuilderTests.swift; sourceTree = "<group>"; };
-		54E062211CCB248700C174E1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		54E062401CCE1BFE00C174E1 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Element.swift; path = Sources/JSONMatcher/Element.swift; sourceTree = SOURCE_ROOT; };
 		54E062421CCE1D7B00C174E1 /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Builder.swift; path = Sources/JSONMatcher/Builder.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -66,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54E062221CCB248700C174E1 /* SwiftyJSON.framework in Frameworks */,
 				07A1AF781CC360720033C783 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,7 +90,6 @@
 		07A1AF3D1CC3576F0033C783 = {
 			isa = PBXGroup;
 			children = (
-				54E062211CCB248700C174E1 /* SwiftyJSON.framework */,
 				07805B221CC3683500101893 /* Nimble.framework */,
 				07A1AF771CC360720033C783 /* Nimble.framework */,
 				07A1AF491CC3576F0033C783 /* JSONMatcher */,

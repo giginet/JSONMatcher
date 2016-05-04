@@ -47,7 +47,7 @@ class BuilderTestCase: XCTestCase {
     }
     
     func testType() {
-        let type0 = self.builder.buildJSONElement(Type.Number) as! TypeElement
+        let type0 = self.builder.buildJSONElement(NumberType) as! TypeElement
         expect(type0.value).to(equal(Type.Number))
     }
     
@@ -59,6 +59,9 @@ class BuilderTestCase: XCTestCase {
             true,
             NSNull(),
             Model(),
+            ".+".regex,
+            JSONType(Type.Number),
+            NumberType,
             ["cupcake", "donuts", "eclair", "froyo"],
             ["T" : "Tozai", "Z" : "Hanzomon", "H" : "Hibiya"],
         ]) as! ArrayElement
@@ -80,7 +83,13 @@ class BuilderTestCase: XCTestCase {
         if let element = array0.value[5] as? NullElement {
             expect(element.value).to(equal(NSNull()))
         }
-        if let element = array0.value[6] as? ArrayElement {
+        if let element = array0.value[6] as? RegexElement {
+            expect(element.value.pattern).to(equal(".+"))
+        }
+        if let element = array0.value[7] as? TypeElement {
+            expect(element.value).to(equal(Type.Number))
+        }
+        if let element = array0.value[8] as? ArrayElement {
             expect(element.value.count).to(equal(4))
             if let element0 = element.value[0] as? StringElement {
                 expect(element0.value).to(equal("cupcake"))
@@ -95,7 +104,7 @@ class BuilderTestCase: XCTestCase {
                 expect(element3.value).to(equal("froyo"))
             }
         }
-        if let element = array0.value[7] as? DictionaryElement {
+        if let element = array0.value[9] as? DictionaryElement {
             expect(element.value.count).to(equal(3))
             if let element0 = element.value["T"] as? StringElement {
                 expect(element0.value).to(equal("Tozai"))
@@ -117,6 +126,8 @@ class BuilderTestCase: XCTestCase {
             "bool" : true,
             "null" : NSNull(),
             "unknown" : Model(),
+            "regex" : ".+".regex,
+            "type" : NumberType,
             "array" : ["cupcake", "donuts", "eclair", "froyo"],
             "dictionary" : ["T" : "Tozai", "Z" : "Hanzomon", "H" : "Hibiya"]
         ]) as! DictionaryElement
@@ -137,6 +148,12 @@ class BuilderTestCase: XCTestCase {
         }
         if let element = dictionary.value["unknown"] as? NullElement {
             expect(element.value).to(equal(NSNull()))
+        }
+        if let element = dictionary.value["regex"] as? RegexElement {
+            expect(element.value.pattern).to(equal(".+"))
+        }
+        if let element = dictionary.value["type"] as? TypeElement {
+            expect(element.value).to(equal(Type.Number))
         }
         if let element = dictionary.value["array"] as? ArrayElement {
             expect(element.value.count).to(equal(4))

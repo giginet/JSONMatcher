@@ -2,7 +2,7 @@ import Foundation
 
 
 struct  Comparer {
-    static func compare<T: ElementType, U: ElementType>(lhs: T, _ rhs: U) -> Bool {
+    static func compare<T, U>(lhs: T, _ rhs: U) -> Bool {
         return self.compareRawValueType(lhs, rhs)
     }
     

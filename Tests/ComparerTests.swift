@@ -101,8 +101,8 @@ class ComparerTestCase: XCTestCase {
                 "hp" : NumberElement(78),
                 "attack" : NumberElement(84),
                 "defense" : NumberElement(78),
-                "special attack" : NumberElement(109),
-                "special defense" : NumberElement(85),
+                "special_attack" : NumberElement(109),
+                "special_defense" : NumberElement(85),
                 "speed" : NumberElement(100)
             ])
         ]), DictionaryElement([
@@ -114,8 +114,8 @@ class ComparerTestCase: XCTestCase {
                 "hp" : NumberElement(78),
                 "attack" : NumberElement(84),
                 "defense" : NumberElement(78),
-                "special attack" : NumberElement(109),
-                "special defense" : NumberElement(85),
+                "special_attack" : NumberElement(109),
+                "special_defense" : NumberElement(85),
                 "speed" : NumberElement(100)
                 ])
         ]))).to(beTrue())

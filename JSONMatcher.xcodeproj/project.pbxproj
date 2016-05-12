@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0737423C1CE4965B002A4A4B /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737423B1CE4965B002A4A4B /* BaseTestCase.swift */; };
+		0737423E1CE49827002A4A4B /* snorlax.json in Resources */ = {isa = PBXBuildFile; fileRef = 0737423D1CE49827002A4A4B /* snorlax.json */; };
+		073742401CE499F0002A4A4B /* pikachu.json in Resources */ = {isa = PBXBuildFile; fileRef = 0737423F1CE499F0002A4A4B /* pikachu.json */; };
 		07805B231CC3683500101893 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07805B221CC3683500101893 /* Nimble.framework */; };
 		07805B271CC3852500101893 /* BeJSONAs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B261CC3852500101893 /* BeJSONAs.swift */; };
 		07805B291CC386C900101893 /* Comparer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B281CC386C900101893 /* Comparer.swift */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0737423B1CE4965B002A4A4B /* BaseTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
+		0737423D1CE49827002A4A4B /* snorlax.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = snorlax.json; path = fixtures/snorlax.json; sourceTree = "<group>"; };
+		0737423F1CE499F0002A4A4B /* pikachu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = pikachu.json; path = fixtures/pikachu.json; sourceTree = "<group>"; };
 		07805B221CC3683500101893 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "../../Library/Developer/Xcode/DerivedData/JSONMatcher-dtaubdkxgryzrmaobmogcnydkzmh/Build/Products/Debug-iphonesimulator/Nimble.framework"; sourceTree = "<group>"; };
 		07805B261CC3852500101893 /* BeJSONAs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeJSONAs.swift; sourceTree = "<group>"; };
 		07805B281CC386C900101893 /* Comparer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comparer.swift; path = Sources/JSONMatcher/Comparer.swift; sourceTree = SOURCE_ROOT; };
@@ -85,6 +91,8 @@
 		07805B2E1CC38AC500101893 /* fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				0737423F1CE499F0002A4A4B /* pikachu.json */,
+				0737423D1CE49827002A4A4B /* snorlax.json */,
 			);
 			name = fixtures;
 			sourceTree = "<group>";
@@ -136,6 +144,7 @@
 				07805B351CCB4DF500101893 /* RegexTests.swift */,
 				07D2ED801CCCF6A4003A5430 /* ElementTests.swift */,
 				07D2ED831CCE67EC003A5430 /* BuilderTests.swift */,
+				0737423B1CE4965B002A4A4B /* BaseTestCase.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -248,6 +257,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0737423E1CE49827002A4A4B /* snorlax.json in Resources */,
+				073742401CE499F0002A4A4B /* pikachu.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +290,7 @@
 				07D2ED841CCE67EC003A5430 /* BuilderTests.swift in Sources */,
 				07D2ED811CCCF6A4003A5430 /* ElementTests.swift in Sources */,
 				07805B341CCB4DD600101893 /* ComparerTests.swift in Sources */,
+				0737423C1CE4965B002A4A4B /* BaseTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

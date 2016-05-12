@@ -4,16 +4,16 @@ import Nimble
 
 class BeJSONAsTestCase: XCTestCase {
     let pokedex = [
-        "name" : "snorlax",
+        "name" : "Snorlax",
         "no" : 143,
         "species" : "Sleeping",
         "type" : ["normal"],
         "stats" : [
             "hp" : 160,
             "attack" : 110,
-            "defense" : 65,
-            "special attack" : 65,
-            "special defense" : 65,
+            "defence" : 65,
+            "special_attack" : 65,
+            "special_defense" : 65,
             "speed" : 30
         ]
     ]
@@ -32,7 +32,7 @@ class BeJSONAsTestCase: XCTestCase {
     
     func testBeJSONAsExactMatchWithObject() {
         let expected = [
-            "name" : "snorlax",
+            "name" : "Snorlax",
             "no" : 143,
             "species" : "Sleeping",
             "type" : ["normal"],
@@ -40,8 +40,8 @@ class BeJSONAsTestCase: XCTestCase {
                 "hp" : 160,
                 "attack" : 110,
                 "defense" : 65,
-                "special attack" : 65,
-                "special defense" : 65,
+                "special_attack" : 65,
+                "special_defense" : 65,
                 "speed" : 30
             ]
         ]
@@ -58,8 +58,8 @@ class BeJSONAsTestCase: XCTestCase {
                 "hp" : 160,
                 "attack" : 110,
                 "defense" : 65,
-                "special attack" : 65,
-                "special defense" : 65,
+                "special_attack" : 65,
+                "special_defense" : 65,
                 "speed" : 30
             ]
         ]

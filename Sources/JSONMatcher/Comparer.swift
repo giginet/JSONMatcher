@@ -29,6 +29,8 @@ struct  Comparer {
                 if !compareRawValueType(v0, v1) {
                     return false
                 }
+            } else {
+                return false
             }
         }
         return true

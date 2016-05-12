@@ -65,8 +65,8 @@ class ComparerTestCase: XCTestCase {
     
     func testSimpleDictionary() {
         expect(Comparer.compare(
-            DictionaryElement(["name" : StringElement("bob"), "age": NumberElement(30)]),
-            DictionaryElement(["name" : StringElement("bob"), "age": NumberElement(30)]))
+            DictionaryElement(["name" : StringElement("Jigglypuff"), "no": NumberElement(39)]),
+            DictionaryElement(["name" : StringElement("Jigglypuff"), "no": NumberElement(39)]))
         ).to(beTrue())
     }
     
@@ -89,6 +89,25 @@ class ComparerTestCase: XCTestCase {
             ArrayElement([StringElement("Articuno"), ArrayElement([ArrayElement([ArrayElement([StringElement("Zapdos")]), StringElement("Moltres")])])]),
             ArrayElement([TypeElement(Type.String), ArrayElement([ArrayElement([ArrayElement([StringElement("Zapdos")]), RegexElement("[A-Z][a-z].+".regex)])])]))
         ).to(beTrue())
+        expect(Comparer.compare(
+            ArrayElement([StringElement("Articuno"), ArrayElement([ArrayElement([ArrayElement([StringElement("Zapdos")]), StringElement("Moltres")])])]),
+            ArrayElement([TypeElement(Type.String), ArrayElement([ArrayElement([ArrayElement([StringElement("Jigglypuff")]), RegexElement("[A-Z][a-z].+".regex)])])]))
+        ).to(beFalse())
+    }
+    
+    func testRecursiveDictionary() {
+        expect(Comparer.compare(
+            DictionaryElement(["moves" : DictionaryElement(["name" : StringElement("Swift"), "type" : StringElement("normal")])]),
+            DictionaryElement(["moves" : DictionaryElement(["name" : StringElement("Swift"), "type" : StringElement("normal")])]))
+        ).to(beTrue())
+        expect(Comparer.compare(
+            DictionaryElement(["moves" : DictionaryElement(["name" : StringElement("Swift"), "type" : StringElement("normal")])]),
+            DictionaryElement(["moves" : DictionaryElement(["type" : StringElement("Swift"), "name" : StringElement("normal")])]))
+        ).to(beFalse())
+        expect(Comparer.compare(
+            DictionaryElement(["moves" : DictionaryElement(["name" : StringElement("Swift"), "type" : StringElement("normal")])]),
+            DictionaryElement(["moves" : DictionaryElement(["invalid" : StringElement("Swift"), "type" : StringElement("normal")])]))
+        ).to(beFalse())
     }
     
     func testComplexObject() {

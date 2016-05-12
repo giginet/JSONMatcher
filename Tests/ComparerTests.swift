@@ -2,7 +2,7 @@ import XCTest
 import Nimble
 @testable import JSONMatcher
 
-class ComparerTestCase: XCTestCase {
+class CompareTestCase: XCTestCase {
     func testSimpleStringElement() {
         expect(Comparer.compare(StringElement("foo"), StringElement("foo"))).to(beTrue())
         expect(Comparer.compare(StringElement("foo"), StringElement("bar"))).to(beFalse())
@@ -139,5 +139,91 @@ class ComparerTestCase: XCTestCase {
                 ])
         ]))).to(beTrue())
     }
+}
 
+class IncludeTestCase: XCTestCase {
+    func testIncludeExactMatch() {
+        expect(Comparer.include(NumberElement(151), NumberElement(151))).to(beTrue())
+        expect(Comparer.include(NumberElement(10.5), NumberElement(10.5))).to(beTrue())
+        expect(Comparer.include(StringElement("Mew"), StringElement("Mew"))).to(beTrue())
+        expect(Comparer.include(BooleanElement(true), BooleanElement(true))).to(beTrue())
+        expect(Comparer.include(NullElement(NSNull()), NullElement(NSNull()))).to(beTrue())
+        expect(Comparer.include(StringElement("Eevee"), RegexElement("E.+".regex))).to(beTrue())
+        expect(Comparer.include(StringElement("Jigglypuff"), TypeElement(Type.String))).to(beTrue())
+    
+        expect(Comparer.include(NumberElement(151), NumberElement(1))).to(beFalse())
+        expect(Comparer.include(NumberElement(10.5), NumberElement(1.5))).to(beFalse())
+        expect(Comparer.include(StringElement("Mew"), StringElement("Mewtwo"))).to(beFalse())
+        expect(Comparer.include(BooleanElement(true), BooleanElement(false))).to(beFalse())
+        expect(Comparer.include(NullElement(NSNull()), StringElement("Hi"))).to(beFalse())
+        expect(Comparer.include(StringElement("Eevee"), RegexElement("a+".regex))).to(beFalse())
+        expect(Comparer.include(StringElement("Jigglypuff"), TypeElement(Type.Number))).to(beFalse())
+    }
+    
+    func testIncludeArray() {
+        let array = ArrayElement([
+            NumberElement(151),
+            StringElement("Mew"),
+            BooleanElement(true),
+            NullElement(NSNull()),
+        ])
+        expect(Comparer.include(array, NumberElement(151))).to(beTrue())
+        expect(Comparer.include(array, StringElement("Mew"))).to(beTrue())
+        expect(Comparer.include(array, BooleanElement(true))).to(beTrue())
+        expect(Comparer.include(array, NullElement(NSNull()))).to(beTrue())
+        expect(Comparer.include(array, RegexElement("M+".regex))).to(beTrue())
+        expect(Comparer.include(array, TypeElement(Type.Number))).to(beTrue())
+        expect(Comparer.include(array, TypeElement(Type.Array))).to(beTrue())
+        
+        expect(Comparer.include(array, NumberElement(1))).to(beFalse())
+        expect(Comparer.include(array, StringElement("Mewtwo"))).to(beFalse())
+        expect(Comparer.include(array, BooleanElement(false))).to(beFalse())
+        expect(Comparer.include(array, StringElement("Pikachu"))).to(beFalse())
+        expect(Comparer.include(array, RegexElement("P+".regex))).to(beFalse())
+        expect(Comparer.include(array, TypeElement(Type.Dictionary))).to(beFalse())
+    }
+    
+    func testIncludeDictionary() {
+        let dictionary = DictionaryElement([
+            "number" : NumberElement(151),
+            "string" : StringElement("Mew"),
+            "boolean" : BooleanElement(true),
+            "null" : NullElement(NSNull()),
+        ])
+        expect(Comparer.include(dictionary, NumberElement(151))).to(beTrue())
+        expect(Comparer.include(dictionary, StringElement("Mew"))).to(beTrue())
+        expect(Comparer.include(dictionary, BooleanElement(true))).to(beTrue())
+        expect(Comparer.include(dictionary, NullElement(NSNull()))).to(beTrue())
+        expect(Comparer.include(dictionary, RegexElement("M+".regex))).to(beTrue())
+        expect(Comparer.include(dictionary, TypeElement(Type.Number))).to(beTrue())
+        
+        expect(Comparer.include(dictionary, NumberElement(1))).to(beFalse())
+        expect(Comparer.include(dictionary, StringElement("Mewtwo"))).to(beFalse())
+        expect(Comparer.include(dictionary, BooleanElement(false))).to(beFalse())
+        expect(Comparer.include(dictionary, StringElement("Pikachu"))).to(beFalse())
+        expect(Comparer.include(dictionary, RegexElement("P+".regex))).to(beFalse())
+        expect(Comparer.include(dictionary, TypeElement(Type.Array))).to(beFalse())
+    }
+    
+    func testIncludeRecursiveArray() {
+        expect(Comparer.include(
+            ArrayElement([StringElement("Articuno"), ArrayElement([ArrayElement([ArrayElement([StringElement("Zapdos")]), StringElement("Moltres")])])]),
+            StringElement("Zapdos")
+        )).to(beTrue())
+        expect(Comparer.include(
+            ArrayElement([StringElement("Articuno"), ArrayElement([ArrayElement([ArrayElement([StringElement("Zapdos")]), StringElement("Moltres")])])]),
+            StringElement("Pikachu")
+        )).to(beFalse())
+    }
+    
+    func testIncludeRecursiveDictionary() {
+        expect(Comparer.include(
+            DictionaryElement(["moves" : DictionaryElement(["name" : StringElement("Swift"), "type" : StringElement("normal")])]),
+            StringElement("Swift")
+        )).to(beTrue())
+        expect(Comparer.include(
+            DictionaryElement(["moves" : DictionaryElement(["name" : StringElement("Swift"), "type" : StringElement("normal")])]),
+            StringElement("Tackle")
+        )).to(beFalse())
+    }
 }

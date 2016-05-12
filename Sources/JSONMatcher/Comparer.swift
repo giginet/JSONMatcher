@@ -6,6 +6,10 @@ struct  Comparer {
         return self.compareRawValueType(lhs, rhs)
     }
     
+    static func include<T, U>(lhs: T, _ rhs: U) -> Bool {
+        return self.includeRawValueType(lhs, rhs)
+    }
+
     private static func compareArray(lhs: ArrayElement, _ rhs: ArrayElement) -> Bool {
         guard lhs.value.count == rhs.value.count else {
             return false
@@ -67,5 +71,22 @@ struct  Comparer {
         default:
             return false
         }
+    }
+    
+    private static func includeRawValueType<T, U>(lhs: T, _ rhs: U) -> Bool {
+        if let lhs = lhs as? ArrayElement {
+            for element in lhs.value {
+                if includeRawValueType(element, rhs) {
+                    return true
+                }
+            }
+        } else if let lhs = lhs as? DictionaryElement {
+            for (_, value) in lhs.value {
+                if includeRawValueType(value, rhs) {
+                    return true
+                }
+            }
+        }
+        return self.compareRawValueType(lhs, rhs)
     }
 }

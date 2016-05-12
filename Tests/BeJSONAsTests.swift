@@ -2,7 +2,7 @@ import XCTest
 import Nimble
 @testable import JSONMatcher
 
-class BeJSONAsTestCase: XCTestCase {
+class BeJSONAsTestCase: BaseTestCase {
     let pokedex = [
         "name" : "Snorlax",
         "no" : 143,
@@ -11,7 +11,7 @@ class BeJSONAsTestCase: XCTestCase {
         "stats" : [
             "hp" : 160,
             "attack" : 110,
-            "defence" : 65,
+            "defense" : 65,
             "special_attack" : 65,
             "special_defense" : 65,
             "speed" : 30
@@ -19,15 +19,15 @@ class BeJSONAsTestCase: XCTestCase {
     ]
     
     func testBeJSONAsExactMatch() {
-        expect("{\"name\": \"hoge\"}").to(beJSONAs(["name": "hoge"]))
+        expect("{\"name\": \"Snorlax\"}").to(beJSONAs(["name": "Snorlax"]))
     }
     
     func testBeJSONAsTypeMatching() {
-        expect("{\"name\": \"hoge\"}").to(beJSONAs(["name": StringType]))
+        expect("{\"name\": \"Snorlax\"}").to(beJSONAs(["name": StringType]))
     }
     
     func testBeJSONAsRegexMatching() {
-        expect("{\"name\": \"hoge\"}").to(beJSONAs(["name": Regex("^ho")]))
+        expect("{\"name\": \"Snorlax\"}").to(beJSONAs(["name": Regex("^S")]))
     }
     
     func testBeJSONAsExactMatchWithObject() {
@@ -64,5 +64,10 @@ class BeJSONAsTestCase: XCTestCase {
             ]
         ]
         expect(self.pokedex).to(beJSONAs(expected))
+    }
+    
+    func testBeJSONAsWithJSONString() {
+        let snorlax = loadJSONFile("snorlax")
+        expect(snorlax).to(beJSONAs(self.pokedex))
     }
 }

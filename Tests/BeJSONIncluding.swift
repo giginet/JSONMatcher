@@ -3,11 +3,25 @@ import Nimble
 @testable import JSONMatcher
 
 class BeJSONIncluding: BaseTestCase {
-    func testIncludingComplexJSON() {
+    func testIncludingJSON() {
+        expect(["name" : "Pikachu", "no" : 25]).to(beJSONIncluding(["name" : "Pikachu"]))
+        expect(["name" : "Pikachu", "no" : 25]).to(beJSONIncluding([:]))
+        expect(["name" : "Pikachu", "no" : 25]).toNot(beJSONIncluding(["name" : "Mew"]))
+    }
+    
+    func testRecursiveDictionary() {
+        let snorlax = loadJSONFile("snorlax")
+        expect(snorlax).to(beJSONIncluding(["name" : "Snorlax"]))
+        expect(snorlax).to(beJSONIncluding(["hp" : 160]))
+        expect(snorlax).to(beJSONIncluding(["hp" : 160, "attack" : 110]))
+        expect(snorlax).toNot(beJSONIncluding(["hp" : 16, "attack" : 110]))
+        expect(snorlax).to(beJSONIncluding(["hp" : 160, "defense" : 65]))
+        expect(snorlax).to(beJSONIncluding(["stats" : ["hp" : 160]]))
+    }
+    
+    func testComplexJSON() {
         let pikachu = loadJSONFile("pikachu")
-        expect(pikachu).to(beJSONIncluding([
-            "name" : "swift",
-            "url" : StringType
-        ]))
+        expect(pikachu).to(beJSONIncluding(["name" : "swift"]))
+        expect(pikachu).to(beJSONIncluding(["name" : "swift", "url" : StringType]))
     }
 }

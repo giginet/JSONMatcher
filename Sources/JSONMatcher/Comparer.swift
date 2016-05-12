@@ -80,6 +80,15 @@ struct  Comparer {
                     return true
                 }
             }
+        } else if let lhs = lhs as? DictionaryElement, let rhs = rhs as? DictionaryElement {
+            if includeDictionary(lhs, rhs) {
+                return true
+            }
+            for (_, value0) in lhs.value {
+                if includeRawValueType(value0, rhs) {
+                    return true
+                }
+            }
         } else if let lhs = lhs as? DictionaryElement {
             for (_, value) in lhs.value {
                 if includeRawValueType(value, rhs) {
@@ -88,5 +97,18 @@ struct  Comparer {
             }
         }
         return self.compareRawValueType(lhs, rhs)
+    }
+    
+    private static func includeDictionary(lhs: DictionaryElement, _ rhs: DictionaryElement) -> Bool {
+        for (key1, value1) in rhs.value {
+            if let value0 = lhs.value[key1] {
+                if !includeRawValueType(value0, value1) {
+                    return false
+                }
+            } else {
+                return false
+            }
+        }
+        return true
     }
 }

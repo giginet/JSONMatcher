@@ -24,9 +24,11 @@ struct  Comparer {
             return false
         }
         
-        for ((k0, v0), (k1, v1)) in zip(lhs.value, rhs.value) {
-            if (k0 != k1 || !compareRawValueType(v0, v1)) {
-                return false
+        for (k0, v0) in lhs.value {
+            if let v1 = rhs.value[k0] {
+                if !compareRawValueType(v0, v1) {
+                    return false
+                }
             }
         }
         return true

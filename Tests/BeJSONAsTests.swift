@@ -53,7 +53,7 @@ class BeJSONAsTestCase: XCTestCase {
             "name" : StringType,
             "no" : 143,
             "species" : "Sleeping",
-            "type" : ["normal"],
+            "type" : ["n+".regex],
             "stats" : [
                 "hp" : 160,
                 "attack" : 110,
@@ -63,6 +63,6 @@ class BeJSONAsTestCase: XCTestCase {
                 "speed" : 30
             ]
         ]
-        //expect(self.pokedex).to(beJSONAs(expected))
+        expect(self.pokedex).to(beJSONAs(expected))
     }
 }

@@ -84,31 +84,40 @@ class ComparerTestCase: XCTestCase {
         ).to(beTrue())
     }
     
+    func testRecursiveArray() {
+        expect(Comparer.compare(
+            ArrayElement([StringElement("Articuno"), ArrayElement([ArrayElement([ArrayElement([StringElement("Zapdos")]), StringElement("Moltres")])])]),
+            ArrayElement([TypeElement(Type.String), ArrayElement([ArrayElement([ArrayElement([StringElement("Zapdos")]), RegexElement("[A-Z][a-z].+".regex)])])]))
+        ).to(beTrue())
+    }
+    
     func testComplexObject() {
         expect(Comparer.compare(DictionaryElement([
-            "title" : StringElement("Introduce new feature!"),
-            "body" : StringElement("New feature is now available. Please check it out"),
-            "url" : StringElement("https://example.com/articles/305/"),
-            "published_at" : StringElement("2016-04-23T15:50:00+09:00"),
-            "published" : BooleanElement(true),
-            "author" : DictionaryElement([
-             "name" : StringElement("alice"),
-             "age" : NumberElement(30), 
-             "job" : StringElement("engineer")
-            ]),
-            "tags" : ArrayElement([StringElement("new feature"), StringElement("update"), StringElement("diary")])
+            "name" : StringElement("Charizard"),
+            "no" : NumberElement(6),
+            "species" : StringElement("Flame"),
+            "type" : ArrayElement([StringElement("Fire"), StringElement("Frying")]),
+            "stats" : DictionaryElement([
+                "hp" : NumberElement(78),
+                "attack" : NumberElement(84),
+                "defense" : NumberElement(78),
+                "special attack" : NumberElement(109),
+                "special defense" : NumberElement(85),
+                "speed" : NumberElement(100)
+            ])
         ]), DictionaryElement([
-            "title" : StringElement("Introduce new feature!"),
-            "body" : StringElement("New feature is now available. Please check it out"),
-            "url" : StringElement("https://example.com/articles/305/"),
-            "published_at" : RegexElement("\\d{4}\\-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\+\\d{2}:0{2}".regex),
-            "published" : BooleanElement(true),
-            "author" : DictionaryElement([
-                "name" : StringElement("alice"),
-                "age" : NumberElement(30),
-                "job" : TypeElement(StringType.type)
-            ]),
-            "tags" : ArrayElement([StringElement("new feature"), StringElement("update"), StringElement("diary")])
+            "name" : RegexElement("C.+".regex),
+            "no" : TypeElement(Type.Number),
+            "species" : StringElement("Flame"),
+            "type" : ArrayElement([StringElement("Fire"), StringElement("Frying")]),
+            "stats" : DictionaryElement([
+                "hp" : NumberElement(78),
+                "attack" : NumberElement(84),
+                "defense" : NumberElement(78),
+                "special attack" : NumberElement(109),
+                "special defense" : NumberElement(85),
+                "speed" : NumberElement(100)
+                ])
         ]))).to(beTrue())
     }
 

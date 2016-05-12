@@ -62,8 +62,8 @@ class BuilderTestCase: XCTestCase {
             ".+".regex,
             JSONType(Type.Number),
             NumberType,
-            ["cupcake", "donuts", "eclair", "froyo"],
-            ["T" : "Tozai", "Z" : "Hanzomon", "H" : "Hibiya"],
+            ["Bulbasaur", "Charmander", "Squirtle", "Pikachu"],
+            ["Grass" : "Bulbasaur", "Water" : "Squirtle", "Fire" : "Charmander"],
         ]) as! ArrayElement
         if let element = array0.value[0] as? NumberElement {
             expect(element.value).to(equal(42))
@@ -92,28 +92,28 @@ class BuilderTestCase: XCTestCase {
         if let element = array0.value[8] as? ArrayElement {
             expect(element.value.count).to(equal(4))
             if let element0 = element.value[0] as? StringElement {
-                expect(element0.value).to(equal("cupcake"))
+                expect(element0.value).to(equal("Bulbasaur"))
             }
             if let element1 = element.value[1] as? StringElement {
-                expect(element1.value).to(equal("donuts"))
+                expect(element1.value).to(equal("Charmander"))
             }
             if let element2 = element.value[2] as? StringElement {
-                expect(element2.value).to(equal("eclair"))
+                expect(element2.value).to(equal("Squirtle"))
             }
             if let element3 = element.value[3] as? StringElement {
-                expect(element3.value).to(equal("froyo"))
+                expect(element3.value).to(equal("Pikachu"))
             }
         }
         if let element = array0.value[9] as? DictionaryElement {
             expect(element.value.count).to(equal(3))
-            if let element0 = element.value["T"] as? StringElement {
-                expect(element0.value).to(equal("Tozai"))
+            if let element0 = element.value["Grass"] as? StringElement {
+                expect(element0.value).to(equal("Bulbasaur"))
             }
-            if let element1 = element.value["Z"] as? StringElement {
-                expect(element1.value).to(equal("Hanzomon"))
+            if let element1 = element.value["Water"] as? StringElement {
+                expect(element1.value).to(equal("Squirtle"))
             }
-            if let element2 = element.value["H"] as? StringElement {
-                expect(element2.value).to(equal("Hibiya"))
+            if let element2 = element.value["Fire"] as? StringElement {
+                expect(element2.value).to(equal("Charmander"))
             }
         }
     }
@@ -128,8 +128,8 @@ class BuilderTestCase: XCTestCase {
             "unknown" : Model(),
             "regex" : ".+".regex,
             "type" : NumberType,
-            "array" : ["cupcake", "donuts", "eclair", "froyo"],
-            "dictionary" : ["T" : "Tozai", "Z" : "Hanzomon", "H" : "Hibiya"]
+            "array" : ["Bulbasaur", "Charmander", "Squirtle", "Pikachu"],
+            "dictionary" : ["Grass" : "Bulbasaur", "Water" : "Squirtle", "Fire" : "Charmander"]
         ]) as! DictionaryElement
         if let element = dictionary.value["int"] as? NumberElement {
             expect(element.value).to(equal(42))
@@ -158,28 +158,28 @@ class BuilderTestCase: XCTestCase {
         if let element = dictionary.value["array"] as? ArrayElement {
             expect(element.value.count).to(equal(4))
             if let element0 = element.value[0] as? StringElement {
-                expect(element0.value).to(equal("cupcake"))
+                expect(element0.value).to(equal("Bulbasaur"))
             }
             if let element1 = element.value[1] as? StringElement {
-                expect(element1.value).to(equal("donuts"))
+                expect(element1.value).to(equal("Charmander"))
             }
             if let element2 = element.value[2] as? StringElement {
-                expect(element2.value).to(equal("eclair"))
+                expect(element2.value).to(equal("Squirtle"))
             }
             if let element3 = element.value[3] as? StringElement {
-                expect(element3.value).to(equal("froyo"))
+                expect(element3.value).to(equal("Pikachu"))
             }
         }
         if let element = dictionary.value["dictionary"] as? DictionaryElement {
             expect(element.value.count).to(equal(3))
-            if let element0 = element.value["T"] as? StringElement {
-                expect(element0.value).to(equal("Tozai"))
+            if let element0 = element.value["Grass"] as? StringElement {
+                expect(element0.value).to(equal("Bulbasaur"))
             }
-            if let element1 = element.value["Z"] as? StringElement {
-                expect(element1.value).to(equal("Hanzomon"))
+            if let element1 = element.value["Fire"] as? StringElement {
+                expect(element1.value).to(equal("Charmander"))
             }
-            if let element2 = element.value["H"] as? StringElement {
-                expect(element2.value).to(equal("Hibiya"))
+            if let element2 = element.value["Water"] as? StringElement {
+                expect(element2.value).to(equal("Squirtle"))
             }
         }
     }

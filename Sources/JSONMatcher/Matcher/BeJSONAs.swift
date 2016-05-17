@@ -7,6 +7,7 @@ public func beJSONAs<T>(expected: AnyObject) -> MatcherFunc<T> {
         let object = try! actualExpression.evaluate()
         let lhs = extractor.extract(object)
         let rhs = extractor.extract(expected)
-        return Comparer.compare(lhs, rhs)
+        let comparer = Comparer()
+        return comparer.compare(lhs, rhs)
     }
 }

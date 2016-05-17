@@ -24,4 +24,13 @@ class BeJSONIncluding: BaseTestCase {
         expect(pikachu).to(beJSONIncluding(["name" : "swift"]))
         expect(pikachu).to(beJSONIncluding(["name" : "swift", "url" : StringType]))
     }
+    
+    func testFailureMessages() {
+        failsWithErrorMessage("expected to include <{name = Pikachu;}>, got <[\"no\": 25, \"name\": Pikachu]>") {
+            expect(["name" : "Pikachu", "no" : 25]).to(beJSONIncluding(["name" : "Pikachu"]))
+        }
+        failsWithErrorMessage("expected to not include <{name = Mew;}>, got <[\"no\": 25, \"name\": Pikachu]>") {
+            expect(["name" : "Pikachu", "no" : 25]).toNot(beJSONIncluding(["name" : "Mew"]))
+        }
+    }
 }

@@ -7,18 +7,15 @@ protocol BaseElementType {
     
 }
 
-protocol ElementType: BaseElementType {
+protocol ElementType: BaseElementType, CustomStringConvertible {
     associatedtype T;
     var value: T { get }
     var type: Type { get }
 }
 
-struct GenericJSONElement<T>: ElementType {
-    let value: T
-    let type: Type = .Unknown
-
-    init(_ value: T) {
-        self.value = value
+extension ElementType {
+    var description: String {
+        return String(self.value)
     }
 }
 

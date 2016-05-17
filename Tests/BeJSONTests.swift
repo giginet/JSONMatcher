@@ -11,6 +11,15 @@ class BeJSONTestCase: BaseTestCase {
         expect(NSObject()).toNot(beJSON())
     }
     
+    func testFailureMessage() {
+        failsWithErrorMessage("expected to be JSON, got <{>") {
+            expect("{").to(beJSON())
+        }
+        failsWithErrorMessage("expected to not be JSON, got <{}>") {
+            expect("{}").toNot(beJSON())
+        }
+    }
+    
     func testBeJSONWithJSONString() {
         expect("Pikachu").toNot(beJSON())
         expect("{}").to(beJSON())

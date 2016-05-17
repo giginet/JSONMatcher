@@ -1,7 +1,24 @@
 import Foundation
+import Nimble
 
+struct Contract {
+    let actual: String
+    let expect: String
+}
 
 struct  Comparer {
+    var contract: Contract?
+    var failureMessage: FailureMessage? {
+        get {
+            guard let contract = self.contract else {
+                return nil
+            }
+            let message = FailureMessage()
+            message.userDescription = "\(stringify(contract.actual)) to be equal \(stringify(contract.expect))"
+            return message
+        }
+    }
+    
     func compare<T, U>(lhs: T, _ rhs: U) -> Bool {
         return self.compareRawValueType(lhs, rhs)
     }

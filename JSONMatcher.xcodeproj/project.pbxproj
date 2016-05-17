@@ -12,6 +12,7 @@
 		073742401CE499F0002A4A4B /* pikachu.json in Resources */ = {isa = PBXBuildFile; fileRef = 0737423F1CE499F0002A4A4B /* pikachu.json */; };
 		073742421CE4BFB6002A4A4B /* BeJSONIncluding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073742411CE4BFB6002A4A4B /* BeJSONIncluding.swift */; };
 		073742441CE4C00B002A4A4B /* BeJSONIncluding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073742431CE4C00B002A4A4B /* BeJSONIncluding.swift */; };
+		077532CF1CEB4C3600E83F6C /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077532CE1CEB4C3600E83F6C /* utils.swift */; };
 		07805B231CC3683500101893 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07805B221CC3683500101893 /* Nimble.framework */; };
 		07805B271CC3852500101893 /* BeJSONAs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B261CC3852500101893 /* BeJSONAs.swift */; };
 		07805B291CC386C900101893 /* Comparer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B281CC386C900101893 /* Comparer.swift */; };
@@ -48,6 +49,7 @@
 		0737423F1CE499F0002A4A4B /* pikachu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = pikachu.json; path = fixtures/pikachu.json; sourceTree = "<group>"; };
 		073742411CE4BFB6002A4A4B /* BeJSONIncluding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeJSONIncluding.swift; sourceTree = "<group>"; };
 		073742431CE4C00B002A4A4B /* BeJSONIncluding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeJSONIncluding.swift; sourceTree = "<group>"; };
+		077532CE1CEB4C3600E83F6C /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = utils.swift; path = ../Carthage/Checkouts/Nimble/Tests/Nimble/Helpers/utils.swift; sourceTree = "<group>"; };
 		07805B221CC3683500101893 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "../../Library/Developer/Xcode/DerivedData/JSONMatcher-dtaubdkxgryzrmaobmogcnydkzmh/Build/Products/Debug-iphonesimulator/Nimble.framework"; sourceTree = "<group>"; };
 		07805B261CC3852500101893 /* BeJSONAs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeJSONAs.swift; sourceTree = "<group>"; };
 		07805B281CC386C900101893 /* Comparer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comparer.swift; path = Sources/JSONMatcher/Comparer.swift; sourceTree = SOURCE_ROOT; };
@@ -142,6 +144,7 @@
 			children = (
 				07805B2E1CC38AC500101893 /* fixtures */,
 				07A1AF641CC3582E0033C783 /* Info.plist */,
+				077532CE1CEB4C3600E83F6C /* utils.swift */,
 				07A1AF751CC35C910033C783 /* BeJSONTests.swift */,
 				07805B2C1CC38A9400101893 /* BeJSONAsTests.swift */,
 				073742431CE4C00B002A4A4B /* BeJSONIncluding.swift */,
@@ -292,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				077532CF1CEB4C3600E83F6C /* utils.swift in Sources */,
 				07A1AF761CC35C910033C783 /* BeJSONTests.swift in Sources */,
 				54E0623B1CCB25D900C174E1 /* BeJSONAsTests.swift in Sources */,
 				073742441CE4C00B002A4A4B /* BeJSONIncluding.swift in Sources */,

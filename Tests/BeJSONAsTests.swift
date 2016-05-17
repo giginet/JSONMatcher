@@ -88,4 +88,13 @@ class BeJSONAsTestCase: BaseTestCase {
         let snorlax = loadJSONFile("snorlax")
         expect(snorlax).to(beJSONAs(self.pokedex))
     }
+    
+    func testFailureMessages() {
+        failsWithErrorMessage("expected to equal to <[\"name\": Pikachu]>, got <[\"name\": \"Snorlax\"]>") {
+            expect(["name": "Snorlax"]).to(beJSONAs(["name": "Pikachu"]))
+        }
+        failsWithErrorMessage("expected to not equal to <[\"name\": Snorlax]>, got <[\"name\": \"Snorlax\"]>") {
+            expect(["name": "Snorlax"]).toNot(beJSONAs(["name": "Snorlax"]))
+        }
+    }
 }

@@ -8,9 +8,7 @@ public func beJSONAs<T>(expected: AnyObject) -> MatcherFunc<T> {
         let lhs = extractor.extract(object)
         let rhs = extractor.extract(expected)
         var comparer = Comparer()
-        if let message = comparer.failureMessage {
-            failureMessage.userDescription = message
-        }
+        failureMessage.postfixMessage = "equal to <\(stringify(rhs))>"
         return comparer.compare(lhs, rhs)
     }
 }

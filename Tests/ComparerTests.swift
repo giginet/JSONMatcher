@@ -39,15 +39,15 @@ class CompareTestCase: XCTestCase {
     }
     
     func testSimpleType() {
-        expect(self.comparer.compare(NumberElement(42), TypeElement(NumberType.type))).to(beTrue())
-        expect(self.comparer.compare(NumberElement(42.195), TypeElement(NumberType.type))).to(beTrue())
-        expect(self.comparer.compare(StringElement("sushi"), TypeElement(NumberType.type))).to(beFalse())
-        expect(self.comparer.compare(StringElement("🍣"), TypeElement(StringType.type))).to(beTrue())
-        expect(self.comparer.compare(BooleanElement(true), TypeElement(BooleanType.type))).to(beTrue())
-        expect(self.comparer.compare(BooleanElement(false), TypeElement(BooleanType.type))).to(beTrue())
-        expect(self.comparer.compare(NullElement(NSNull()), TypeElement(NullType.type))).to(beTrue())
-        expect(self.comparer.compare(ArrayElement([StringElement("a"), StringElement("b"), StringElement("c"),]), TypeElement(ArrayType.type))).to(beTrue())        
-        expect(self.comparer.compare(DictionaryElement(["a" : StringElement("a"), "b" : StringElement("b"), "c" : StringElement("c"),]), TypeElement(DictionaryType.type))).to(beTrue())
+        expect(self.comparer.compare(NumberElement(42), TypeElement(JSONType.Number.type))).to(beTrue())
+        expect(self.comparer.compare(NumberElement(42.195), TypeElement(JSONType.Number.type))).to(beTrue())
+        expect(self.comparer.compare(StringElement("sushi"), TypeElement(JSONType.Number.type))).to(beFalse())
+        expect(self.comparer.compare(StringElement("🍣"), TypeElement(JSONType.String.type))).to(beTrue())
+        expect(self.comparer.compare(BooleanElement(true), TypeElement(JSONType.Boolean.type))).to(beTrue())
+        expect(self.comparer.compare(BooleanElement(false), TypeElement(JSONType.Boolean.type))).to(beTrue())
+        expect(self.comparer.compare(NullElement(NSNull()), TypeElement(JSONType.Null.type))).to(beTrue())
+        expect(self.comparer.compare(ArrayElement([StringElement("a"), StringElement("b"), StringElement("c"),]), TypeElement(JSONType.Array.type))).to(beTrue())
+        expect(self.comparer.compare(DictionaryElement(["a" : StringElement("a"), "b" : StringElement("b"), "c" : StringElement("c"),]), TypeElement(JSONType.Dictionary.type))).to(beTrue())
         
     }
     
@@ -87,7 +87,7 @@ class CompareTestCase: XCTestCase {
     func testArrayWithType() {
         expect(self.comparer.compare(
             ArrayElement([NumberElement(10), StringElement("foo"), StringElement("bar")]),
-            ArrayElement([TypeElement(NumberType.type), TypeElement(StringType.type), StringElement("bar")]))
+            ArrayElement([TypeElement(JSONType.Number.type), TypeElement(JSONType.String.type), StringElement("bar")]))
         ).to(beTrue())
     }
     

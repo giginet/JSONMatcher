@@ -16,11 +16,11 @@ struct  Comparer {
             return "expected <\(stringify(contract.actual))> to match, got <\(stringify(contract.expect))>"
         }
     }
-    
+
     mutating func compare<T, U>(lhs: T, _ rhs: U) -> Bool {
         return self.compareRawValueType(lhs, rhs)
     }
-    
+
     mutating func include<T, U>(lhs: T, _ rhs: U) -> Bool {
         return self.includeRawValueType(lhs, rhs)
     }
@@ -29,7 +29,7 @@ struct  Comparer {
         guard lhs.value.count == rhs.value.count else {
             return false
         }
-        
+
         for (element0, element1) in zip(lhs.value, rhs.value) {
             if (!compareRawValueType(element0, element1)) {
                 return false
@@ -37,12 +37,12 @@ struct  Comparer {
         }
         return true
     }
-    
+
     private mutating func compareDictionary(lhs: DictionaryElement, _ rhs: DictionaryElement) -> Bool {
         guard lhs.value.count == rhs.value.count else {
             return false
         }
-        
+
         for (k0, v0) in lhs.value {
             if let v1 = rhs.value[k0] {
                 if !compareRawValueType(v0, v1) {
@@ -54,8 +54,8 @@ struct  Comparer {
         }
         return true
     }
-    
-    
+
+
     private mutating func compareRawValueType<T, U>(lhs: T, _ rhs: U) -> Bool {
         let contract = Contract(actual: lhs, expect: rhs)
         self.contract = contract
@@ -90,7 +90,7 @@ struct  Comparer {
             return false
         }
     }
-    
+
     private mutating func includeRawValueType<T, U>(lhs: T, _ rhs: U) -> Bool {
         if let lhs = lhs as? ArrayElement {
             for element in lhs.value {
@@ -98,7 +98,8 @@ struct  Comparer {
                     return true
                 }
             }
-        } else if let lhs = lhs as? DictionaryElement, let rhs = rhs as? DictionaryElement {
+        } else if let lhs = lhs as? DictionaryElement,
+            rhs = rhs as? DictionaryElement {
             if includeDictionary(lhs, rhs) {
                 return true
             }
@@ -116,7 +117,7 @@ struct  Comparer {
         }
         return self.compareRawValueType(lhs, rhs)
     }
-    
+
     private mutating func includeDictionary(lhs: DictionaryElement, _ rhs: DictionaryElement) -> Bool {
         for (key1, value1) in rhs.value {
             if let value0 = lhs.value[key1] {

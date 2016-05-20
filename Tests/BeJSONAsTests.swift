@@ -23,7 +23,7 @@ class BeJSONAsTestCase: BaseTestCase {
     }
     
     func testBeJSONAsTypeMatching() {
-        expect("{\"name\": \"Snorlax\"}").to(beJSONAs(["name": StringType]))
+        expect("{\"name\": \"Snorlax\"}").to(beJSONAs(["name": JSONType.String]))
     }
     
     func testBeJSONAsRegexMatching() {
@@ -68,7 +68,7 @@ class BeJSONAsTestCase: BaseTestCase {
     
     func testBeJSONAsTypeWithObject() {
         let expected = [
-            "name" : StringType,
+            "name" : JSONType.String,
             "no" : 143,
             "species" : "Sleeping",
             "type" : ["n+".regex],

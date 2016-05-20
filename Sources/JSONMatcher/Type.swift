@@ -12,15 +12,15 @@ enum Type {
 
 public class JSONType {
     let type: Type
-    
+
     init(_ type: Type) {
         self.type = type
     }
-}
 
-public let NumberType = JSONType(Type.Number)
-public let StringType = JSONType(Type.String)
-public let BooleanType = JSONType(Type.Boolean)
-public let ArrayType = JSONType(Type.Array)
-public let DictionaryType = JSONType(Type.Dictionary)
-public let NullType = JSONType(Type.Null)
+    public static let Number = JSONType(Type.Number)
+    public static let String = JSONType(Type.String)
+    public static let Boolean = JSONType(Type.Boolean)
+    public static let Array = JSONType(Type.Array)
+    public static let Dictionary = JSONType(Type.Dictionary)
+    public static let Null = JSONType(Type.Null)
+}

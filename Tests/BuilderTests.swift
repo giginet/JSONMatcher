@@ -47,7 +47,7 @@ class BuilderTestCase: XCTestCase {
     }
     
     func testType() {
-        let type0 = self.builder.buildJSONElement(NumberType) as! TypeElement
+        let type0 = self.builder.buildJSONElement(JSONType.Number) as! TypeElement
         expect(type0.value).to(equal(Type.Number))
     }
     
@@ -61,7 +61,7 @@ class BuilderTestCase: XCTestCase {
             Model(),
             ".+".regex,
             JSONType(Type.Number),
-            NumberType,
+            JSONType.Number,
             ["Bulbasaur", "Charmander", "Squirtle", "Pikachu"],
             ["Grass" : "Bulbasaur", "Water" : "Squirtle", "Fire" : "Charmander"],
         ]) as! ArrayElement
@@ -127,7 +127,7 @@ class BuilderTestCase: XCTestCase {
             "null" : NSNull(),
             "unknown" : Model(),
             "regex" : ".+".regex,
-            "type" : NumberType,
+            "type" : JSONType.Number,
             "array" : ["Bulbasaur", "Charmander", "Squirtle", "Pikachu"],
             "dictionary" : ["Grass" : "Bulbasaur", "Water" : "Squirtle", "Fire" : "Charmander"]
         ]) as! DictionaryElement

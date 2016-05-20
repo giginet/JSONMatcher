@@ -13,7 +13,7 @@ struct Builder {
             return buildRawJSONElement(object)
         }
     }
-    
+
     private func buildRawJSONElement<T>(object: T) -> BaseElementType {
         switch object {
         case let double as Double:
@@ -36,7 +36,7 @@ struct Builder {
             return NullElement(NSNull())
         }
     }
-    
+
     private func buildJSONElementArray(array: NSArray) -> ElementArray {
         var result: ElementArray = []
         for element in array {
@@ -55,7 +55,7 @@ struct Builder {
         }
         return result
     }
-    
+
     private func buildJSONElementDictionary(dictionary: NSDictionary) -> ElementDictionary {
         var result: ElementDictionary = [:]
         for (k, v) in dictionary {

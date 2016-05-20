@@ -9,7 +9,7 @@ struct Extractor {
         }
         return builder.buildJSONElement(object)
     }
-    
+
     func isValid<T>(object: T) -> Bool {
         if object is NSNull {
             return true
@@ -20,7 +20,7 @@ struct Extractor {
         }
         return true
     }
-    
+
     private func extractJSONString(JSONString: String) -> AnyObject? {
         if let data = JSONString.dataUsingEncoding(NSUTF8StringEncoding) {
             return try? NSJSONSerialization.JSONObjectWithData(data, options: [])

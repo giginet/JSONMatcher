@@ -10,6 +10,8 @@ matrix:
 script: 
   - pod lib lint --allow-warnings
   - swiftlint
-  - ./run_tests
+  - ./run_tests ios
+  - ./run_tests osx
+  - ./run_tests tvos
 after_success:
   - bash <(curl -s https://codecov.io/bash)

@@ -1,11 +1,20 @@
-(
-  set -e;
-  set -x;
+function ios_tests {
+  xcodebuild test -workspace JSONMatcher.xcworkspace -scheme JSONMatcher-iOS -destination 'platform=iOS Simulator,name=iPhone 6' | xcpretty -c
+}
 
-  xcodebuild test -workspace JSONMatcher.xcworkspace -scheme JSONMatcher-iOS -destination 'platform=iOS Simulator,name=iPhone 6' &&
-  xcodebuild test -workspace JSONMatcher.xcworkspace -scheme JSONMatcher-OSX -destination 'platform=OS X' &&
-  xcodebuild test -workspace JSONMatcher.xcworkspace -scheme JSONMatcher-tvOS -destination 'platform=tvOS Simulator,name=Apple TV 1080p'
-)
+function osx_tests {
+  xcodebuild test -workspace JSONMatcher.xcworkspace -scheme JSONMatcher-OSX -destination 'platform=OS X' | xcpretty -c
+}
 
-echo
-echo "Xcode tests passed"
+function tvos_tests {
+  xcodebuild test -workspace JSONMatcher.xcworkspace -scheme JSONMatcher-tvOS -destination 'platform=tvOS Simulator,name=Apple TV 1080p' | xcpretty -c
+}
+
+for arg in "$@"
+do
+    case $arg in
+        "ios") ios_tests;;
+        "osx") osx_tests;;
+        "tvos") tvos_tests;;
+    esac
+done

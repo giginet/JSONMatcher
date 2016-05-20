@@ -17,6 +17,9 @@
 		07805B291CC386C900101893 /* Comparer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B281CC386C900101893 /* Comparer.swift */; };
 		07805B301CC38E4600101893 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B2F1CC38E4600101893 /* Regex.swift */; };
 		07805B341CCB4DD600101893 /* ComparerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B331CCB4DD600101893 /* ComparerTests.swift */; };
+		079AC7781CEF7FF600A12B3B /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079AC7771CEF7FF600A12B3B /* ExampleTests.swift */; };
+		079AC7791CEF7FF600A12B3B /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079AC7771CEF7FF600A12B3B /* ExampleTests.swift */; };
+		079AC77A1CEF7FF600A12B3B /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079AC7771CEF7FF600A12B3B /* ExampleTests.swift */; };
 		07A1AF531CC357C90033C783 /* JSONMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A1AF521CC357C90033C783 /* JSONMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07A1AF5D1CC3580A0033C783 /* JSONMatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A1AF471CC3576F0033C783 /* JSONMatcher.framework */; };
 		07A1AF721CC35A740033C783 /* BeJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1AF711CC35A740033C783 /* BeJSON.swift */; };
@@ -116,6 +119,7 @@
 		07805B2F1CC38E4600101893 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Regex.swift; path = Sources/JSONMatcher/Regex.swift; sourceTree = SOURCE_ROOT; };
 		07805B331CCB4DD600101893 /* ComparerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparerTests.swift; sourceTree = "<group>"; };
 		07805B351CCB4DF500101893 /* RegexTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexTests.swift; sourceTree = "<group>"; };
+		079AC7771CEF7FF600A12B3B /* ExampleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		07A1AF471CC3576F0033C783 /* JSONMatcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONMatcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A1AF521CC357C90033C783 /* JSONMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONMatcher.h; path = Sources/JSONMatcher/JSONMatcher.h; sourceTree = SOURCE_ROOT; };
 		07A1AF581CC3580A0033C783 /* JSONMatcher-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JSONMatcher-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -256,6 +260,7 @@
 				07D2ED801CCCF6A4003A5430 /* ElementTests.swift */,
 				07D2ED831CCE67EC003A5430 /* BuilderTests.swift */,
 				0737423B1CE4965B002A4A4B /* BaseTestCase.swift */,
+				079AC7771CEF7FF600A12B3B /* ExampleTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -542,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079AC7781CEF7FF600A12B3B /* ExampleTests.swift in Sources */,
 				077532CF1CEB4C3600E83F6C /* utils.swift in Sources */,
 				07A1AF761CC35C910033C783 /* BeJSONTests.swift in Sources */,
 				54E0623B1CCB25D900C174E1 /* BeJSONAsTests.swift in Sources */,
@@ -574,6 +580,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079AC7791CEF7FF600A12B3B /* ExampleTests.swift in Sources */,
 				07FCAD331CEF3CFE00FD7D41 /* utils.swift in Sources */,
 				07FCAD281CEF3C3500FD7D41 /* BeJSONTests.swift in Sources */,
 				07FCAD291CEF3C3500FD7D41 /* BeJSONAsTests.swift in Sources */,
@@ -606,6 +613,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079AC77A1CEF7FF600A12B3B /* ExampleTests.swift in Sources */,
 				07FCAD5A1CEF488600FD7D41 /* utils.swift in Sources */,
 				07FCAD541CEF487F00FD7D41 /* BeJSONTests.swift in Sources */,
 				07FCAD551CEF487F00FD7D41 /* BeJSONAsTests.swift in Sources */,

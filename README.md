@@ -14,41 +14,49 @@ This library is inspired by [rspec-json_matcher](https://github.com/r7kamura/rsp
 ### Example
 
 ```swift
-expect([
-    "name" : "Snorlax",
-    "no" : 143,
-    "species" : "Sleeping",
-    "type" : ["normal"],
-    "stats" : [
-        "hp" : 160,
-        "attack" : 110,
-        "defense" : 65,
-        "special_attack" : 65,
-        "special_defense" : 65,
-        "speed" : 30
-    ],
-    "moves" : [
-        ["name" : "Tackle", "type" : "normal", "level" : 1],
-        ["name" : "Hyper Beam", "type" : "normal", "level" : NSNull()],
-    ]
-]).to(beJSONAs([
-    "name" : "Snorlax",
-    "no" : JSONType.Number, // value type matching
-    "species" : "[a-zA-Z]+".regex, // regular expression matching
-    "type" : ["normal"],
-    "stats" : [
-        "hp" : 160,
-        "attack" : 110,
-        "defense" : 65,
-        "special_attack" : 65,
-        "special_defense" : 65,
-        "speed" : 30
-    ],
-    "moves" : [
-        ["name" : "Tackle", "type" : "[a-z]+".regex, "level" : JSONType.Number], // nested collection
-        ["name" : "Hyper Beam", "type" : "normal", "level" : NSNull()],
-    ]
-]))
+import XCTest
+import Nimble
+import JSONMatcher
+
+class ExampleTestCase: XCTestCase { 
+    func testComplexExample() {
+        expect([
+            "name" : "Snorlax",
+            "no" : 143,
+            "species" : "Sleeping",
+            "type" : ["normal"],
+            "stats" : [
+                "hp" : 160,
+                "attack" : 110,
+                "defense" : 65,
+                "special_attack" : 65,
+                "special_defense" : 65,
+                "speed" : 30
+            ],
+            "moves" : [
+                ["name" : "Tackle", "type" : "normal", "level" : 1],
+                ["name" : "Hyper Beam", "type" : "normal", "level" : NSNull()],
+            ]
+        ]).to(beJSONAs([
+            "name" : "Snorlax",
+            "no" : JSONType.Number, // value type matching
+            "species" : "[a-zA-Z]+".regex, // regular expression matching
+            "type" : ["normal"],
+            "stats" : [
+                "hp" : 160,
+                "attack" : 110,
+                "defense" : 65,
+                "special_attack" : 65,
+                "special_defense" : 65,
+                "speed" : 30
+            ],
+            "moves" : [
+                ["name" : "Tackle", "type" : "[a-z]+".regex, "level" : JSONType.Number], // nested collection
+                ["name" : "Hyper Beam", "type" : "normal", "level" : NSNull()],
+            ]
+        ]))
+    }
+}
 ```
 
 ### Matcher
@@ -96,3 +104,11 @@ target "YourApplicationTests" do
     pod 'JSONMatcher'
 end
 ```
+
+## Author
+
+giginet <giginet.net@gmail.com>
+
+## License
+
+MIT License

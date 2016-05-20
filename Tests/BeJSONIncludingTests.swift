@@ -2,7 +2,7 @@ import XCTest
 import Nimble
 @testable import JSONMatcher
 
-class BeJSONIncluding: BaseTestCase {
+class BeJSONIncludingTestCase: BaseTestCase {
     func testIncludingJSON() {
         expect(["name" : "Pikachu", "no" : 25]).to(beJSONIncluding(["name" : "Pikachu"]))
         expect(["name" : "Pikachu", "no" : 25]).to(beJSONIncluding([:]))

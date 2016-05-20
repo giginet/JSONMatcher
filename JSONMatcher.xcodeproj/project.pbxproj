@@ -124,13 +124,9 @@
 		07D2ED801CCCF6A4003A5430 /* ElementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementTests.swift; sourceTree = "<group>"; };
 		07D2ED831CCE67EC003A5430 /* BuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuilderTests.swift; sourceTree = "<group>"; };
 		07FCACEC1CEF2D5F00FD7D41 /* JSONMatcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONMatcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		07FCACF01CEF2D5F00FD7D41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07FCACF51CEF2D6000FD7D41 /* JSONMatcherOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONMatcherOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		07FCACFC1CEF2D6000FD7D41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07FCAD081CEF2D7700FD7D41 /* JSONMatcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONMatcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		07FCAD0C1CEF2D7700FD7D41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07FCAD111CEF2D7700FD7D41 /* JSONMatchertvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONMatchertvOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		07FCAD181CEF2D7800FD7D41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07FCAD341CEF3D4800FD7D41 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		07FCAD391CEF431400FD7D41 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		07FCAD3C1CEF482C00FD7D41 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "../../Develop/Debug-appletvos/Nimble.framework"; sourceTree = "<group>"; };
@@ -213,10 +209,6 @@
 				07FCAD341CEF3D4800FD7D41 /* Nimble.framework */,
 				07A1AF491CC3576F0033C783 /* JSONMatcher */,
 				07A1AF631CC3582E0033C783 /* Tests */,
-				07FCACED1CEF2D5F00FD7D41 /* JSONMatcher-OSX */,
-				07FCACF91CEF2D6000FD7D41 /* JSONMatcher-OSXTests */,
-				07FCAD091CEF2D7700FD7D41 /* JSONMatcher-tvOS */,
-				07FCAD151CEF2D7800FD7D41 /* JSONMatcher-tvOSTests */,
 				07A1AF481CC3576F0033C783 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -278,38 +270,6 @@
 			name = Matcher;
 			path = Sources/JSONMatcher/Matcher;
 			sourceTree = SOURCE_ROOT;
-		};
-		07FCACED1CEF2D5F00FD7D41 /* JSONMatcher-OSX */ = {
-			isa = PBXGroup;
-			children = (
-				07FCACF01CEF2D5F00FD7D41 /* Info.plist */,
-			);
-			path = "JSONMatcher-OSX";
-			sourceTree = "<group>";
-		};
-		07FCACF91CEF2D6000FD7D41 /* JSONMatcher-OSXTests */ = {
-			isa = PBXGroup;
-			children = (
-				07FCACFC1CEF2D6000FD7D41 /* Info.plist */,
-			);
-			path = "JSONMatcher-OSXTests";
-			sourceTree = "<group>";
-		};
-		07FCAD091CEF2D7700FD7D41 /* JSONMatcher-tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				07FCAD0C1CEF2D7700FD7D41 /* Info.plist */,
-			);
-			path = "JSONMatcher-tvOS";
-			sourceTree = "<group>";
-		};
-		07FCAD151CEF2D7800FD7D41 /* JSONMatcher-tvOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				07FCAD181CEF2D7800FD7D41 /* Info.plist */,
-			);
-			path = "JSONMatcher-tvOSTests";
-			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -865,7 +825,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "JSONMatcher-OSX/Info.plist";
+				INFOPLIST_FILE = Sources/JSONMatcher/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -896,7 +856,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "JSONMatcher-OSX/Info.plist";
+				INFOPLIST_FILE = Sources/JSONMatcher/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -921,7 +881,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = "JSONMatcher-OSXTests/Info.plist";
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.JSONMatcherTests;
@@ -939,7 +899,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = "JSONMatcher-OSXTests/Info.plist";
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.JSONMatcherTests;
@@ -956,7 +916,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = "JSONMatcher-tvOS/Info.plist";
+				INFOPLIST_FILE = Sources/JSONMatcher/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -981,7 +941,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = "JSONMatcher-tvOS/Info.plist";
+				INFOPLIST_FILE = Sources/JSONMatcher/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1002,7 +962,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = "JSONMatcher-tvOSTests/Info.plist";
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.JSONMatcherTests;
 				PRODUCT_NAME = JSONMatchertvOSTests;
@@ -1015,7 +975,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = "JSONMatcher-tvOSTests/Info.plist";
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.JSONMatcherTests;
 				PRODUCT_NAME = JSONMatchertvOSTests;

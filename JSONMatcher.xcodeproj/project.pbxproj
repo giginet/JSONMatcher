@@ -49,6 +49,27 @@
 		07FCAD381CEF430700FD7D41 /* snorlax.json in Resources */ = {isa = PBXBuildFile; fileRef = 0737423D1CE49827002A4A4B /* snorlax.json */; };
 		07FCAD3A1CEF431400FD7D41 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FCAD391CEF431400FD7D41 /* Nimble.framework */; };
 		07FCAD3B1CEF446A00FD7D41 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FCAD391CEF431400FD7D41 /* Nimble.framework */; };
+		07FCAD3D1CEF482C00FD7D41 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FCAD3C1CEF482C00FD7D41 /* Nimble.framework */; };
+		07FCAD3E1CEF483600FD7D41 /* pikachu.json in Resources */ = {isa = PBXBuildFile; fileRef = 0737423F1CE499F0002A4A4B /* pikachu.json */; };
+		07FCAD3F1CEF483600FD7D41 /* snorlax.json in Resources */ = {isa = PBXBuildFile; fileRef = 0737423D1CE49827002A4A4B /* snorlax.json */; };
+		07FCAD491CEF485800FD7D41 /* BeJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1AF711CC35A740033C783 /* BeJSON.swift */; };
+		07FCAD4A1CEF485800FD7D41 /* BeJSONAs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B261CC3852500101893 /* BeJSONAs.swift */; };
+		07FCAD4B1CEF485800FD7D41 /* BeJSONIncluding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073742411CE4BFB6002A4A4B /* BeJSONIncluding.swift */; };
+		07FCAD4C1CEF485800FD7D41 /* Comparer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B281CC386C900101893 /* Comparer.swift */; };
+		07FCAD4D1CEF485800FD7D41 /* Extractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540A8CCC1CDA49430050D3E4 /* Extractor.swift */; };
+		07FCAD4E1CEF485800FD7D41 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B2F1CC38E4600101893 /* Regex.swift */; };
+		07FCAD4F1CEF485800FD7D41 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E062401CCE1BFE00C174E1 /* Element.swift */; };
+		07FCAD501CEF485800FD7D41 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E062421CCE1D7B00C174E1 /* Builder.swift */; };
+		07FCAD511CEF485800FD7D41 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D2ED7E1CCCDAA6003A5430 /* Type.swift */; };
+		07FCAD531CEF486200FD7D41 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FCAD521CEF486200FD7D41 /* Nimble.framework */; };
+		07FCAD541CEF487F00FD7D41 /* BeJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1AF751CC35C910033C783 /* BeJSONTests.swift */; };
+		07FCAD551CEF487F00FD7D41 /* BeJSONAsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B2C1CC38A9400101893 /* BeJSONAsTests.swift */; };
+		07FCAD561CEF487F00FD7D41 /* ComparerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B331CCB4DD600101893 /* ComparerTests.swift */; };
+		07FCAD571CEF487F00FD7D41 /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B351CCB4DF500101893 /* RegexTests.swift */; };
+		07FCAD581CEF487F00FD7D41 /* ElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D2ED801CCCF6A4003A5430 /* ElementTests.swift */; };
+		07FCAD591CEF487F00FD7D41 /* BuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D2ED831CCE67EC003A5430 /* BuilderTests.swift */; };
+		07FCAD5A1CEF488600FD7D41 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077532CE1CEB4C3600E83F6C /* utils.swift */; };
+		07FCAD5B1CEF490400FD7D41 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737423B1CE4965B002A4A4B /* BaseTestCase.swift */; };
 		540A8CCD1CDA49430050D3E4 /* Extractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540A8CCC1CDA49430050D3E4 /* Extractor.swift */; };
 		54E0623B1CCB25D900C174E1 /* BeJSONAsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07805B2C1CC38A9400101893 /* BeJSONAsTests.swift */; };
 		54E062411CCE1BFE00C174E1 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E062401CCE1BFE00C174E1 /* Element.swift */; };
@@ -112,6 +133,8 @@
 		07FCAD181CEF2D7800FD7D41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07FCAD341CEF3D4800FD7D41 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		07FCAD391CEF431400FD7D41 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		07FCAD3C1CEF482C00FD7D41 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "../../Develop/Debug-appletvos/Nimble.framework"; sourceTree = "<group>"; };
+		07FCAD521CEF486200FD7D41 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "../../Develop/Debug-appletvos/Nimble.framework"; sourceTree = "<group>"; };
 		540A8CCC1CDA49430050D3E4 /* Extractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extractor.swift; path = Sources/JSONMatcher/Extractor.swift; sourceTree = SOURCE_ROOT; };
 		54E062401CCE1BFE00C174E1 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Element.swift; path = Sources/JSONMatcher/Element.swift; sourceTree = SOURCE_ROOT; };
 		54E062421CCE1D7B00C174E1 /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Builder.swift; path = Sources/JSONMatcher/Builder.swift; sourceTree = SOURCE_ROOT; };
@@ -156,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07FCAD3D1CEF482C00FD7D41 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07FCAD531CEF486200FD7D41 /* Nimble.framework in Frameworks */,
 				07FCAD121CEF2D7800FD7D41 /* JSONMatcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,6 +207,8 @@
 		07A1AF3D1CC3576F0033C783 = {
 			isa = PBXGroup;
 			children = (
+				07FCAD521CEF486200FD7D41 /* Nimble.framework */,
+				07FCAD3C1CEF482C00FD7D41 /* Nimble.framework */,
 				07FCAD391CEF431400FD7D41 /* Nimble.framework */,
 				07FCAD341CEF3D4800FD7D41 /* Nimble.framework */,
 				07A1AF491CC3576F0033C783 /* JSONMatcher */,
@@ -516,6 +543,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07FCAD3E1CEF483600FD7D41 /* pikachu.json in Resources */,
+				07FCAD3F1CEF483600FD7D41 /* snorlax.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +617,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07FCAD491CEF485800FD7D41 /* BeJSON.swift in Sources */,
+				07FCAD4A1CEF485800FD7D41 /* BeJSONAs.swift in Sources */,
+				07FCAD4B1CEF485800FD7D41 /* BeJSONIncluding.swift in Sources */,
+				07FCAD4C1CEF485800FD7D41 /* Comparer.swift in Sources */,
+				07FCAD4D1CEF485800FD7D41 /* Extractor.swift in Sources */,
+				07FCAD4E1CEF485800FD7D41 /* Regex.swift in Sources */,
+				07FCAD4F1CEF485800FD7D41 /* Element.swift in Sources */,
+				07FCAD501CEF485800FD7D41 /* Builder.swift in Sources */,
+				07FCAD511CEF485800FD7D41 /* Type.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +633,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07FCAD5A1CEF488600FD7D41 /* utils.swift in Sources */,
+				07FCAD541CEF487F00FD7D41 /* BeJSONTests.swift in Sources */,
+				07FCAD551CEF487F00FD7D41 /* BeJSONAsTests.swift in Sources */,
+				07FCAD561CEF487F00FD7D41 /* ComparerTests.swift in Sources */,
+				07FCAD571CEF487F00FD7D41 /* RegexTests.swift in Sources */,
+				07FCAD581CEF487F00FD7D41 /* ElementTests.swift in Sources */,
+				07FCAD591CEF487F00FD7D41 /* BuilderTests.swift in Sources */,
+				07FCAD5B1CEF490400FD7D41 /* BaseTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -909,6 +955,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				INFOPLIST_FILE = "JSONMatcher-tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -933,6 +980,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				INFOPLIST_FILE = "JSONMatcher-tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -953,6 +1001,7 @@
 		07FCAD1D1CEF2D7800FD7D41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				INFOPLIST_FILE = "JSONMatcher-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.JSONMatcherTests;
@@ -965,6 +1014,7 @@
 		07FCAD1E1CEF2D7800FD7D41 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				INFOPLIST_FILE = "JSONMatcher-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.JSONMatcherTests;

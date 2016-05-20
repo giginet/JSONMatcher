@@ -1,1 +1,10 @@
-xcodebuild test -workspace JSONMatcher.xcworkspace -scheme JSONMatcher -destination 'platform=iOS Simulator,name=iPhone 6'
+(
+  set -e;
+  set -x;
+
+  xcodebuild test -workspace JSONMatcher.xcworkspace -scheme JSONMatcher-iOS -destination 'platform=iOS Simulator,name=iPhone 6' &&
+  xcodebuild test -workspace JSONMatcher.xcworkspace -scheme JSONMatcher-OSX -destination 'platform=OS X'
+)
+
+echo
+echo "Xcode tests passed"

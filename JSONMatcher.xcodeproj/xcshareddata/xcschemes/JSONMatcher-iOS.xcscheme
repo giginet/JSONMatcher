@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "07A1AF571CC3580A0033C783"
-               BuildableName = "JSONMatcher-iOS Tests.xctest"
-               BlueprintName = "JSONMatcher-iOS Tests"
+               BuildableName = "JSONMatcher-iOSTests.xctest"
+               BlueprintName = "JSONMatcher-iOSTests"
                ReferencedContainer = "container:JSONMatcher.xcodeproj">
             </BuildableReference>
          </TestableReference>

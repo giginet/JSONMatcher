@@ -101,13 +101,13 @@ Declare following in your `Podfile`.
 use_frameworks!
 
 target "YourApplicationTests" do
-    pod 'JSONMatcher'
+  pod 'JSONMatcher'
 end
 ```
 
 ## Author
 
-giginet <giginet.net@gmail.com>
+giginet <<giginet.net@gmail.com>>
 
 ## License
 

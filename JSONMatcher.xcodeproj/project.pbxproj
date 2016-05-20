@@ -203,10 +203,7 @@
 		07A1AF3D1CC3576F0033C783 = {
 			isa = PBXGroup;
 			children = (
-				07FCAD521CEF486200FD7D41 /* Nimble.framework */,
-				07FCAD3C1CEF482C00FD7D41 /* Nimble.framework */,
-				07FCAD391CEF431400FD7D41 /* Nimble.framework */,
-				07FCAD341CEF3D4800FD7D41 /* Nimble.framework */,
+				07FCAD5C1CEF4C5000FD7D41 /* Frameworks */,
 				07A1AF491CC3576F0033C783 /* JSONMatcher */,
 				07A1AF631CC3582E0033C783 /* Tests */,
 				07A1AF481CC3576F0033C783 /* Products */,
@@ -270,6 +267,17 @@
 			name = Matcher;
 			path = Sources/JSONMatcher/Matcher;
 			sourceTree = SOURCE_ROOT;
+		};
+		07FCAD5C1CEF4C5000FD7D41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07FCAD521CEF486200FD7D41 /* Nimble.framework */,
+				07FCAD3C1CEF482C00FD7D41 /* Nimble.framework */,
+				07FCAD391CEF431400FD7D41 /* Nimble.framework */,
+				07FCAD341CEF3D4800FD7D41 /* Nimble.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -735,6 +743,7 @@
 				);
 				INFOPLIST_FILE = Sources/JSONMatcher/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -766,6 +775,7 @@
 				);
 				INFOPLIST_FILE = Sources/JSONMatcher/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
@@ -828,7 +838,7 @@
 				INFOPLIST_FILE = Sources/JSONMatcher/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					XCTest,
@@ -859,7 +869,7 @@
 				INFOPLIST_FILE = Sources/JSONMatcher/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					XCTest,
@@ -929,7 +939,7 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -954,7 +964,7 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};

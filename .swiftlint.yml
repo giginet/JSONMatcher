@@ -2,16 +2,8 @@ included:
   - Sources/JSONMatcher
   - Tests/JSONMatcher
 line_length: 120
-variable_name:
-  min_length:
-    warning: 0
-    error: 0
 disabled_rules:
-  - file_length
   - force_cast
   - force_try
-  - function_body_length
-  - todo
-  - type_body_length
 cyclomatic_complexity:
-  - 20
+  warning: 20

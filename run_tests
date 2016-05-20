@@ -2,9 +2,9 @@
   set -e;
   set -x;
 
-  xcodebuild test -workspace JSONMatcher.xcworkspace -scheme JSONMatcher-iOS -destination 'platform=iOS Simulator,name=iPhone 6' | xcpretty -c &&
-  xcodebuild test -workspace JSONMatcher.xcworkspace -scheme JSONMatcher-OSX -destination 'platform=OS X' | xcpretty -c &&
-  xcodebuild test -workspace JSONMatcher.xcworkspace -scheme JSONMatcher-tvOS -destination 'platform=tvOS Simulator,name=Apple TV 1080p' | xcpretty -c
+  xcodebuild test -workspace JSONMatcher.xcworkspace -scheme JSONMatcher-iOS -destination 'platform=iOS Simulator,name=iPhone 6' &&
+  xcodebuild test -workspace JSONMatcher.xcworkspace -scheme JSONMatcher-OSX -destination 'platform=OS X' &&
+  xcodebuild test -workspace JSONMatcher.xcworkspace -scheme JSONMatcher-tvOS -destination 'platform=tvOS Simulator,name=Apple TV 1080p'
 )
 
 echo

@@ -4,6 +4,6 @@ import Nimble
 
 class RegexTestCase: XCTestCase {
     func testMatch() {
-        expect(Regex(".+").match("foobar")).to(beTrue())
+        expect(".+".regex.match("foobar")).to(beTrue())
     }
 }

@@ -27,7 +27,7 @@ class BeJSONAsTestCase: BaseTestCase {
     }
 
     func testBeJSONAsRegexMatching() {
-        expect("{\"name\": \"Snorlax\"}").to(beJSONAs(["name": Regex("^S")]))
+        expect("{\"name\": \"Snorlax\"}").to(beJSONAs(["name": "^S".regex]))
     }
 
     func testBeJSONAsWithDifferentKey() {

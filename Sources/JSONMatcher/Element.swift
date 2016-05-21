@@ -86,10 +86,10 @@ struct DictionaryElement: ElementType {
 }
 
 struct RegexElement: ElementType {
-    let value: Regex
+    let value: NSRegularExpression
     let type: Type = .Unknown
 
-    init(_ regex: Regex) {
+    init(_ regex: NSRegularExpression) {
         self.value = regex
     }
 }

@@ -42,7 +42,7 @@ class BuilderTestCase: XCTestCase {
     }
 
     func testRegex() {
-        let regex0 = self.builder.buildJSONElement(Regex(".+")) as! RegexElement
+        let regex0 = self.builder.buildJSONElement(".+".regex) as! RegexElement
         expect(regex0.value.pattern).to(equal(".+"))
     }
 

@@ -29,7 +29,7 @@ class ExampleTestCase: XCTestCase {
             ]
         ]).to(beJSONAs([
             "name" : "Snorlax",
-            "no" : JSONType.Number, // value type matching
+            "no" : Type.Number, // value type matching
             "species" : "[a-zA-Z]+".regex, // regular expression matching
             "type" : ["normal"],
             "stats" : [
@@ -41,7 +41,7 @@ class ExampleTestCase: XCTestCase {
                 "speed" : 30
             ],
             "moves" : [
-                ["name" : "Tackle", "type" : "[a-z]+".regex, "level" : JSONType.Number], // nested collection
+                ["name" : "Tackle", "type" : "[a-z]+".regex, "level" : Type.Number], // nested collection
                 ["name" : "Hyper Beam", "type" : "normal", "level" : NSNull()],
             ]
         ]))

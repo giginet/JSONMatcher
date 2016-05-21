@@ -22,7 +22,7 @@ class BeJSONIncludingTestCase: BaseTestCase {
     func testComplexJSON() {
         let pikachu = loadJSONFile("pikachu")
         expect(pikachu).to(beJSONIncluding(["name" : "swift"]))
-        expect(pikachu).to(beJSONIncluding(["name" : "swift", "url" : JSONType.String]))
+        expect(pikachu).to(beJSONIncluding(["name" : "swift", "url" : Type.String]))
     }
 
     func testFailureMessages() {

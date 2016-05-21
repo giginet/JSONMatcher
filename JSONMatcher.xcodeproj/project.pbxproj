@@ -36,9 +36,6 @@
 		079AC79A1CF019A200A12B3B /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079AC7821CF019A200A12B3B /* ExampleTests.swift */; };
 		079AC79B1CF019A200A12B3B /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079AC7821CF019A200A12B3B /* ExampleTests.swift */; };
 		079AC79C1CF019A200A12B3B /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079AC7821CF019A200A12B3B /* ExampleTests.swift */; };
-		079AC79D1CF019A200A12B3B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 079AC7831CF019A200A12B3B /* Info.plist */; };
-		079AC79E1CF019A200A12B3B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 079AC7831CF019A200A12B3B /* Info.plist */; };
-		079AC79F1CF019A200A12B3B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 079AC7831CF019A200A12B3B /* Info.plist */; };
 		079AC7A01CF019A200A12B3B /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079AC7841CF019A200A12B3B /* RegexTests.swift */; };
 		079AC7A11CF019A200A12B3B /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079AC7841CF019A200A12B3B /* RegexTests.swift */; };
 		079AC7A21CF019A200A12B3B /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079AC7841CF019A200A12B3B /* RegexTests.swift */; };
@@ -491,7 +488,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				079AC7A81CF019AB00A12B3B /* snorlax.json in Resources */,
-				079AC79D1CF019A200A12B3B /* Info.plist in Resources */,
 				079AC7A51CF019AB00A12B3B /* pikachu.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,7 +504,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				079AC7A91CF019AB00A12B3B /* snorlax.json in Resources */,
-				079AC79E1CF019A200A12B3B /* Info.plist in Resources */,
 				079AC7A61CF019AB00A12B3B /* pikachu.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,7 +520,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				079AC7AA1CF019AB00A12B3B /* snorlax.json in Resources */,
-				079AC79F1CF019A200A12B3B /* Info.plist in Resources */,
 				079AC7A71CF019AB00A12B3B /* pikachu.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

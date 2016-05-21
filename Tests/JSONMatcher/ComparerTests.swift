@@ -52,29 +52,29 @@ class CompareTestCase: XCTestCase {
 
     func testSimpleType() {
         expect(self.comparer.compare(NumberElement(42),
-            TypeElement(JSONType.Number.type))).to(beTrue())
+            TypeElement(Type.Number))).to(beTrue())
         expect(self.comparer.compare(NumberElement(42.195),
-            TypeElement(JSONType.Number.type))).to(beTrue())
+            TypeElement(Type.Number))).to(beTrue())
         expect(self.comparer.compare(StringElement("sushi"),
-            TypeElement(JSONType.Number.type))).to(beFalse())
+            TypeElement(Type.Number))).to(beFalse())
         expect(self.comparer.compare(StringElement("🍣"),
-            TypeElement(JSONType.String.type))).to(beTrue())
+            TypeElement(Type.String))).to(beTrue())
         expect(self.comparer.compare(BooleanElement(true),
-            TypeElement(JSONType.Boolean.type))).to(beTrue())
+            TypeElement(Type.Boolean))).to(beTrue())
         expect(self.comparer.compare(BooleanElement(false),
-            TypeElement(JSONType.Boolean.type))).to(beTrue())
+            TypeElement(Type.Boolean))).to(beTrue())
         expect(self.comparer.compare(NullElement(NSNull()),
-            TypeElement(JSONType.Null.type))).to(beTrue())
+            TypeElement(Type.Null))).to(beTrue())
         expect(self.comparer.compare(ArrayElement([
             StringElement("a"),
             StringElement("b"),
             StringElement("c"), ]
-        ), TypeElement(JSONType.Array.type))).to(beTrue())
+        ), TypeElement(Type.Array))).to(beTrue())
         expect(self.comparer.compare(DictionaryElement([
             "a" : StringElement("a"),
             "b" : StringElement("b"),
             "c" : StringElement("c"), ]
-        ), TypeElement(JSONType.Dictionary.type))).to(beTrue())
+        ), TypeElement(Type.Dictionary))).to(beTrue())
 
     }
 
@@ -119,7 +119,7 @@ class CompareTestCase: XCTestCase {
     func testArrayWithType() {
         expect(self.comparer.compare(
             ArrayElement([NumberElement(10), StringElement("foo"), StringElement("bar")]),
-            ArrayElement([TypeElement(JSONType.Number.type), TypeElement(JSONType.String.type), StringElement("bar")]))
+            ArrayElement([TypeElement(Type.Number), TypeElement(Type.String), StringElement("bar")]))
         ).to(beTrue())
     }
 

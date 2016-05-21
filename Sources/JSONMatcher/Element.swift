@@ -10,7 +10,7 @@ protocol BaseElementType {
 protocol ElementType: BaseElementType, CustomStringConvertible {
     associatedtype T
     var value: T { get }
-    var type: Type { get }
+    var type: Type.RawType { get }
 }
 
 extension ElementType {
@@ -21,7 +21,7 @@ extension ElementType {
 
 struct NumberElement: ElementType {
     let value: NSNumber
-    let type: Type = .Number
+    let type: Type.RawType = .Number
 
     init(_ number: NSNumber) {
         self.value = number
@@ -38,7 +38,7 @@ struct NumberElement: ElementType {
 
 struct StringElement: ElementType {
     let value: String
-    let type: Type = .String
+    let type: Type.RawType = .String
 
     init(_ string: String) {
         self.value = string
@@ -47,7 +47,7 @@ struct StringElement: ElementType {
 
 struct BooleanElement: ElementType {
     let value: Bool
-    let type: Type = .Boolean
+    let type: Type.RawType = .Boolean
 
     init(_ bool: Bool) {
         self.value = bool
@@ -56,7 +56,7 @@ struct BooleanElement: ElementType {
 
 struct NullElement: ElementType {
     let value: NSNull
-    let type: Type = .Null
+    let type: Type.RawType = .Null
 
     init(_ null: NSNull) {
         self.value = null
@@ -69,7 +69,7 @@ struct NullElement: ElementType {
 
 struct ArrayElement: ElementType {
     let value: ElementArray
-    let type: Type = .Array
+    let type: Type.RawType = .Array
 
     init(_ array: ElementArray) {
         self.value = array
@@ -78,7 +78,7 @@ struct ArrayElement: ElementType {
 
 struct DictionaryElement: ElementType {
     let value: ElementDictionary
-    let type: Type = .Dictionary
+    let type: Type.RawType = .Dictionary
 
     init(_ dictionary: ElementDictionary) {
         self.value = dictionary
@@ -87,7 +87,7 @@ struct DictionaryElement: ElementType {
 
 struct RegexElement: ElementType {
     let value: NSRegularExpression
-    let type: Type = .Unknown
+    let type: Type.RawType = .Unknown
 
     init(_ regex: NSRegularExpression) {
         self.value = regex
@@ -96,7 +96,7 @@ struct RegexElement: ElementType {
 
 struct TypeElement: ElementType {
     let value: Type
-    let type: Type = .Unknown
+    let type: Type.RawType = .Unknown
 
     init(_ type: Type) {
         self.value = type

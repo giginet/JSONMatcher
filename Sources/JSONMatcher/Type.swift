@@ -1,26 +1,30 @@
 import Foundation
 
-enum Type {
-    case Number
-    case String
-    case Boolean
-    case Array
-    case Dictionary
-    case Null
-    case Unknown
-}
-
-public class JSONType {
-    let type: Type
-
-    init(_ type: Type) {
-        self.type = type
+public class Type: Equatable {
+    enum RawType {
+        case Number
+        case String
+        case Boolean
+        case Array
+        case Dictionary
+        case Null
+        case Unknown
     }
 
-    public static let Number = JSONType(Type.Number)
-    public static let String = JSONType(Type.String)
-    public static let Boolean = JSONType(Type.Boolean)
-    public static let Array = JSONType(Type.Array)
-    public static let Dictionary = JSONType(Type.Dictionary)
-    public static let Null = JSONType(Type.Null)
+    let rawType: RawType
+
+    init(_ rawType: RawType) {
+        self.rawType = rawType
+    }
+
+    public static let Number = Type(RawType.Number)
+    public static let String = Type(RawType.String)
+    public static let Boolean = Type(RawType.Boolean)
+    public static let Array = Type(RawType.Array)
+    public static let Dictionary = Type(RawType.Dictionary)
+    public static let Null = Type(RawType.Null)
+}
+
+public func == (lhs: Type, rhs: Type) -> Bool {
+    return lhs.rawType == rhs.rawType
 }

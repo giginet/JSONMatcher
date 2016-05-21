@@ -58,17 +58,17 @@ struct  Comparer {
         case let (string as StringElement, regex as RegexElement):
             return regex.value.match(string.value)
         case let (lhs as NumberElement, rhs as TypeElement):
-            return lhs.type == rhs.value
+            return lhs.type == rhs.value.rawType
         case let (lhs as StringElement, rhs as TypeElement):
-            return lhs.type == rhs.value
+            return lhs.type == rhs.value.rawType
         case let (lhs as BooleanElement, rhs as TypeElement):
-            return lhs.type == rhs.value
+            return lhs.type == rhs.value.rawType
         case let (lhs as ArrayElement, rhs as TypeElement):
-            return lhs.type == rhs.value
+            return lhs.type == rhs.value.rawType
         case let (lhs as DictionaryElement, rhs as TypeElement):
-            return lhs.type == rhs.value
+            return lhs.type == rhs.value.rawType
         case let (lhs as NullElement, rhs as TypeElement):
-            return lhs.type == rhs.value
+            return lhs.type == rhs.value.rawType
         default:
             return false
         }

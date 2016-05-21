@@ -30,8 +30,8 @@ struct Builder {
             return NullElement(null)
         case let regex as NSRegularExpression:
             return RegexElement(regex)
-        case let type as JSONType:
-            return TypeElement(type.type)
+        case let type as Type:
+            return TypeElement(type)
         default:
             return NullElement(NSNull())
         }

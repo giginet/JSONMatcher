@@ -10,7 +10,7 @@ class ElementTestCase: XCTestCase {
         expect(number0.type).to(equal(Type.Number))
         expect(number1.type).to(equal(Type.Number))
     }
-    
+
     func testStringElement() {
         let string0 = StringElement("sushi")
         let string1 = StringElement("🍣")
@@ -18,7 +18,7 @@ class ElementTestCase: XCTestCase {
         expect(string0.type).to(equal(Type.String))
         expect(string1.type).to(equal(Type.String))
     }
-    
+
     func testBooleanElement() {
         let bool0 = BooleanElement(true)
         let bool1 = BooleanElement(false)
@@ -26,13 +26,13 @@ class ElementTestCase: XCTestCase {
         expect(bool0.type).to(equal(Type.Boolean))
         expect(bool1.type).to(equal(Type.Boolean))
     }
-    
+
     func testNullElement() {
         let null0 = NullElement(NSNull())
         expect(null0.value).to(equal(NSNull()))
         expect(null0.type).to(equal(Type.Null))
     }
-    
+
     func testArrayElement() {
         let array0 = ArrayElement([
             NumberElement(10),
@@ -43,7 +43,7 @@ class ElementTestCase: XCTestCase {
         ])
         expect(array0.type).to(equal(Type.Array))
     }
-    
+
     func testDictionaryElement() {
         let dictionary0 = DictionaryElement([
             "int" : NumberElement(10),

@@ -17,19 +17,19 @@ class BeJSONAsTestCase: BaseTestCase {
             "speed" : 30
         ]
     ]
-    
+
     func testBeJSONAsExactMatch() {
         expect("{\"name\": \"Snorlax\"}").to(beJSONAs(["name": "Snorlax"]))
     }
-    
+
     func testBeJSONAsTypeMatching() {
         expect("{\"name\": \"Snorlax\"}").to(beJSONAs(["name": JSONType.String]))
     }
-    
+
     func testBeJSONAsRegexMatching() {
         expect("{\"name\": \"Snorlax\"}").to(beJSONAs(["name": Regex("^S")]))
     }
-    
+
     func testBeJSONAsWithDifferentKey() {
         let expected = [
             "name" : "Snorlax",
@@ -47,7 +47,7 @@ class BeJSONAsTestCase: BaseTestCase {
         ]
         expect(self.pokedex).toNot(beJSONAs(expected))
     }
-    
+
     func testBeJSONAsExactMatchWithObject() {
         let expected = [
             "name" : "Snorlax",
@@ -65,7 +65,7 @@ class BeJSONAsTestCase: BaseTestCase {
         ]
         expect(self.pokedex).to(beJSONAs(expected))
     }
-    
+
     func testBeJSONAsTypeWithObject() {
         let expected = [
             "name" : JSONType.String,
@@ -83,12 +83,12 @@ class BeJSONAsTestCase: BaseTestCase {
         ]
         expect(self.pokedex).to(beJSONAs(expected))
     }
-    
+
     func testBeJSONAsWithJSONString() {
         let snorlax = loadJSONFile("snorlax")
         expect(snorlax).to(beJSONAs(self.pokedex))
     }
-    
+
     func testFailureMessages() {
         failsWithErrorMessage("expected to equal to <[\"name\": Pikachu]>, got <[\"name\": \"Snorlax\"]>") {
             expect(["name": "Snorlax"]).to(beJSONAs(["name": "Pikachu"]))

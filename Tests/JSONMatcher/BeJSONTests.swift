@@ -10,7 +10,7 @@ class BeJSONTestCase: BaseTestCase {
         expect(NSNull()).to(beJSON())
         expect(NSObject()).toNot(beJSON())
     }
-    
+
     func testFailureMessages() {
         failsWithErrorMessage("expected to be JSON, got <{>") {
             expect("{").to(beJSON())
@@ -19,15 +19,15 @@ class BeJSONTestCase: BaseTestCase {
             expect("{}").toNot(beJSON())
         }
     }
-    
+
     func testBeJSONWithJSONString() {
         expect("Pikachu").toNot(beJSON())
         expect("{}").to(beJSON())
         expect("{").toNot(beJSON())
-        
+
         let json = loadJSONFile("snorlax")
         expect(json).to(beJSON())
-        
+
         let pikachu = loadJSONFile("pikachu")
         expect(pikachu).to(beJSON())
     }

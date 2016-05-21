@@ -6,51 +6,51 @@ class Model { }
 
 class BuilderTestCase: XCTestCase {
     var builder: Builder!
-    
+
     override func setUp() {
         super.setUp()
         self.builder = Builder()
     }
-    
+
     func testNumber() {
         let number0 = self.builder.buildJSONElement(10) as! NumberElement
         expect(number0.value).to(equal(10.0))
         let number1 = self.builder.buildJSONElement(10.5) as! NumberElement
         expect(number1.value).to(equal(10.5))
     }
-    
+
     func testString() {
         let string0 = self.builder.buildJSONElement("sushi") as! StringElement
         expect(string0.value).to(equal("sushi"))
     }
-    
+
     func testBoolean() {
         let bool0 = self.builder.buildJSONElement(true) as! BooleanElement
         let bool1 = self.builder.buildJSONElement(false) as! BooleanElement
         expect(bool0.value).to(equal(true))
         expect(bool1.value).to(equal(false))
     }
-    
+
     func testNull() {
         let null0 = self.builder.buildJSONElement(NSNull()) as! NullElement
         expect(null0.value).to(equal(NSNull()))
     }
-    
+
     func testUnknown() {
         let null0 = self.builder.buildJSONElement(Model()) as! NullElement
         expect(null0.value).to(equal(NSNull()))
     }
-    
+
     func testRegex() {
         let regex0 = self.builder.buildJSONElement(Regex(".+")) as! RegexElement
         expect(regex0.value.pattern).to(equal(".+"))
     }
-    
+
     func testType() {
         let type0 = self.builder.buildJSONElement(JSONType.Number) as! TypeElement
         expect(type0.value).to(equal(Type.Number))
     }
-    
+
     func testArray() {
         let array0 = self.builder.buildJSONElement([
             42,
@@ -117,7 +117,7 @@ class BuilderTestCase: XCTestCase {
             }
         }
     }
-    
+
     func testDictionary() {
         let dictionary = self.builder.buildJSONElement([
             "int" : 42,
@@ -183,7 +183,7 @@ class BuilderTestCase: XCTestCase {
             }
         }
     }
-    
+
     func testRecursiveArray() {
         let array = self.builder.buildJSONElement(["a", "b", "c", ["d", "e", ["f", "g", ["h"]]]]) as! ArrayElement
         if let array = array.value[3] as? ArrayElement {
@@ -196,9 +196,11 @@ class BuilderTestCase: XCTestCase {
             }
         }
     }
-    
+
     func testRecursiveDictionary() {
-        let dictionary = self.builder.buildJSONElement(["a" : ["b" : ["c" : ["d" : ["e", "f", "g", "h"]]]]]) as! DictionaryElement
+        let dictionary = self.builder.buildJSONElement([
+            "a" : ["b" : ["c" : ["d" : ["e", "f", "g", "h"]]]]
+        ]) as! DictionaryElement
         if let dictionary = dictionary.value["a"] as? DictionaryElement {
             if let dictionary = dictionary.value["b"] as? DictionaryElement {
                 if let dictionary = dictionary.value["c"] as? DictionaryElement {

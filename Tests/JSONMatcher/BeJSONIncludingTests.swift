@@ -8,7 +8,7 @@ class BeJSONIncludingTestCase: BaseTestCase {
         expect(["name" : "Pikachu", "no" : 25]).to(beJSONIncluding([:]))
         expect(["name" : "Pikachu", "no" : 25]).toNot(beJSONIncluding(["name" : "Mew"]))
     }
-    
+
     func testRecursiveDictionary() {
         let snorlax = loadJSONFile("snorlax")
         expect(snorlax).to(beJSONIncluding(["name" : "Snorlax"]))
@@ -18,13 +18,13 @@ class BeJSONIncludingTestCase: BaseTestCase {
         expect(snorlax).to(beJSONIncluding(["hp" : 160, "defense" : 65]))
         expect(snorlax).to(beJSONIncluding(["stats" : ["hp" : 160]]))
     }
-    
+
     func testComplexJSON() {
         let pikachu = loadJSONFile("pikachu")
         expect(pikachu).to(beJSONIncluding(["name" : "swift"]))
         expect(pikachu).to(beJSONIncluding(["name" : "swift", "url" : JSONType.String]))
     }
-    
+
     func testFailureMessages() {
         failsWithErrorMessage("expected to include <[\"name\": Pikachu]>, got <[\"no\": 25, \"name\": Pikachu]>") {
             expect(["name" : "Pikachu", "no" : 25]).to(beJSONIncluding(["name" : "Pikachu"]))

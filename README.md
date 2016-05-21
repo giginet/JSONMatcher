@@ -1,7 +1,12 @@
 JSONMatcher
 =================
 
-[![Build Status](https://travis-ci.org/giginet/JSONMatcher.svg?branch=master)](https://travis-ci.org/giginet/JSONMatcher) [![codecov](https://codecov.io/gh/giginet/JSONMatcher/branch/master/graph/badge.svg)](https://codecov.io/gh/giginet/JSONMatcher) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20OSX%20%7C%20tvOS-333333.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
+[![Build Status](https://travis-ci.org/giginet/JSONMatcher.svg?branch=master)](https://travis-ci.org/giginet/JSONMatcher) 
+[![codecov](https://codecov.io/gh/giginet/JSONMatcher/branch/master/graph/badge.svg)](https://codecov.io/gh/giginet/JSONMatcher) 
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/JSONMatcher.svg)](https://img.shields.io/cocoapods/v/JSONMatcher.svg)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) 
+[![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
+[![Platform](https://img.shields.io/cocoapods/p/JSONMatcher.svg?style=flat)](http://cocoadocs.org/docsets/JSONMatcher)
 
 JSONMatcher is a JSON matcher library for Swift testing. It works as an extension for [Nimble](https://github.com/Quick/Nimble/). 
 

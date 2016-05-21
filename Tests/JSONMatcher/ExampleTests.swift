@@ -30,8 +30,8 @@ class ExampleTestCase: XCTestCase {
         ]).to(beJSONAs([
             "name" : "Snorlax",
             "no" : Type.Number, // value type matching
-            "species" : "[a-zA-Z]+".regex, // regular expression matching
-            "type" : ["normal"],
+            "species" : try! NSRegularExpression(pattern: "[A-Z][a-z]+", options: []), // regular expression matching
+            "type" : ["[a-z]+".regex], // shorthands for NSRegularExpression
             "stats" : [
                 "hp" : 160,
                 "attack" : 110,

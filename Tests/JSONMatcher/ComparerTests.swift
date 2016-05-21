@@ -44,6 +44,8 @@ class CompareTestCase: XCTestCase {
             RegexElement(".+".regex))).to(beTrue())
         expect(self.comparer.compare(StringElement("10"),
             RegexElement("[0-9]{2}".regex))).to(beTrue())
+        expect(self.comparer.compare(StringElement("10"),
+            RegexElement(try! NSRegularExpression(pattern: "[0-9]+", options: [])))).to(beTrue())
         expect(self.comparer.compare(NumberElement(10),
             RegexElement("10".regex))).to(beFalse())
         expect(self.comparer.compare(BooleanElement(false),

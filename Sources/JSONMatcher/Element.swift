@@ -3,9 +3,7 @@ import Foundation
 typealias ElementArray = [BaseElementType]
 typealias ElementDictionary = [String: BaseElementType]
 
-protocol BaseElementType {
-
-}
+protocol BaseElementType { }
 
 protocol ElementType: BaseElementType, CustomStringConvertible {
     associatedtype T

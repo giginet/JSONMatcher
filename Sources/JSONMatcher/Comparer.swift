@@ -40,7 +40,6 @@ struct  Comparer {
         return true
     }
 
-
     private func compareRawValueType<T, U>(lhs: T, _ rhs: U) -> Bool {
         switch (lhs, rhs) {
         case let (number as NumberElement, expectedNumber as NumberElement):

@@ -88,6 +88,12 @@ class BeJSONAsTestCase: BaseTestCase {
         let snorlax = loadJSONFile("snorlax")
         expect(snorlax).to(beJSONAs(self.pokedex))
     }
+    
+    func testComplexJSON() {
+        let pikachu = loadJSONFile("pikachu")
+        let expected = try! NSJSONSerialization.JSONObjectWithData(pikachu.dataUsingEncoding(NSUTF8StringEncoding)!, options: [])
+        expect(pikachu).to(beJSONAs(expected))
+    }
 
     func testFailureMessages() {
         failsWithErrorMessage("expected to equal to <[\"name\": Pikachu]>, got <[\"name\": \"Snorlax\"]>") {

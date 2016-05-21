@@ -135,7 +135,8 @@ class CompareTestCase: XCTestCase {
                 ArrayElement([ArrayElement([
                     ArrayElement([StringElement("Zapdos")]),
                     RegexElement("[A-Z][a-z].+".regex)
-                ])])]))
+                ])])
+            ]))
         ).to(beTrue())
         expect(self.comparer.compare(
             ArrayElement([
@@ -212,7 +213,7 @@ class CompareTestCase: XCTestCase {
                 "special_attack" : NumberElement(109),
                 "special_defense" : NumberElement(85),
                 "speed" : NumberElement(100)
-                ])
+            ])
         ]))).to(beTrue())
     }
 }

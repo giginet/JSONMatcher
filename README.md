@@ -73,6 +73,10 @@ expect(["name" : "Pikachu", "no" : 25]).to(beJSONAs(["name": "Pikachu", "no" : 2
 
 ## Requirements
 
+### Supported Swift Version
+
+- Swift 2.2
+
 ### Dependencies
 
 - Nimble >= 4.0.0

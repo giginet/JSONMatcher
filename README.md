@@ -3,9 +3,7 @@ JSONMatcher
 
 [![Build Status](https://travis-ci.org/giginet/JSONMatcher.svg?branch=master)](https://travis-ci.org/giginet/JSONMatcher) [![codecov](https://codecov.io/gh/giginet/JSONMatcher/branch/master/graph/badge.svg)](https://codecov.io/gh/giginet/JSONMatcher) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20OSX%20%7C%20tvOS-333333.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 
-This is a JSON matcher library for Swift testing.
-
-It works as extension for [Nimble](https://github.com/Quick/Nimble/).
+JSONMatcher is a JSON matcher library for Swift testing. It works as an extension for [Nimble](https://github.com/Quick/Nimble/). 
 
 This library is inspired by [rspec-json_matcher](https://github.com/r7kamura/rspec-json_matcher).
 
@@ -19,12 +17,6 @@ import Nimble
 import JSONMatcher
 
 class ExampleTestCase: XCTestCase {
-    func testSimpleExamples() {
-        expect("{\"name\": \"Pikachu\"}").to(beJSON())
-        expect(["name" : "Pikachu", "no" : 25]).to(beJSONIncluding(["name" : "Pikachu"]))
-        expect(["name" : "Pikachu", "no" : 25]).to(beJSONAs(["name": "Pikachu", "no" : 25]))
-    }
-
     func testComplexExample() {
         expect([
             "name" : "Snorlax",

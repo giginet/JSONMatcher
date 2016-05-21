@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name         = "JSONMatcher"
-  s.version      = "0.0.1"
-  s.summary      = "JSON matcher extension for Nimble"
+  s.version      = "0.1.0"
+  s.summary      = "A JSON matcher extension for Nimble"
   s.description  = <<-DESC
-                   This is the extension for Nimble to support checking JSON strings/objects.
+                   JSONMatcher is a JSON matcher library for Swift testing. It works as an extension for Nimble. 
                    DESC
   s.homepage     = "https://github.com/giginet/JSONMatcher"
   s.license      = { :type => "MIT", :file => "LICENSE.md" }

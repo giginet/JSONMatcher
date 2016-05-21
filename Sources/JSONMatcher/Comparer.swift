@@ -1,31 +1,16 @@
 import Foundation
 import Nimble
 
-struct Contract {
-    let actual: Any
-    let expect: Any
-}
-
 struct  Comparer {
-    var contract: Contract?
-    var failureMessage: String? {
-        get {
-            guard let contract = self.contract else {
-                return nil
-            }
-            return "expected <\(stringify(contract.actual))> to match, got <\(stringify(contract.expect))>"
-        }
-    }
-
-    mutating func compare<T, U>(lhs: T, _ rhs: U) -> Bool {
+    func compare<T, U>(lhs: T, _ rhs: U) -> Bool {
         return self.compareRawValueType(lhs, rhs)
     }
 
-    mutating func include<T, U>(lhs: T, _ rhs: U) -> Bool {
+    func include<T, U>(lhs: T, _ rhs: U) -> Bool {
         return self.includeRawValueType(lhs, rhs)
     }
 
-    private mutating func compareArray(lhs: ArrayElement, _ rhs: ArrayElement) -> Bool {
+    private func compareArray(lhs: ArrayElement, _ rhs: ArrayElement) -> Bool {
         guard lhs.value.count == rhs.value.count else {
             return false
         }
@@ -38,7 +23,7 @@ struct  Comparer {
         return true
     }
 
-    private mutating func compareDictionary(lhs: DictionaryElement, _ rhs: DictionaryElement) -> Bool {
+    private func compareDictionary(lhs: DictionaryElement, _ rhs: DictionaryElement) -> Bool {
         guard lhs.value.count == rhs.value.count else {
             return false
         }
@@ -56,9 +41,7 @@ struct  Comparer {
     }
 
 
-    private mutating func compareRawValueType<T, U>(lhs: T, _ rhs: U) -> Bool {
-        let contract = Contract(actual: lhs, expect: rhs)
-        self.contract = contract
+    private func compareRawValueType<T, U>(lhs: T, _ rhs: U) -> Bool {
         switch (lhs, rhs) {
         case let (number as NumberElement, expectedNumber as NumberElement):
             return number.value == expectedNumber.value
@@ -91,7 +74,7 @@ struct  Comparer {
         }
     }
 
-    private mutating func includeRawValueType<T, U>(lhs: T, _ rhs: U) -> Bool {
+    private func includeRawValueType<T, U>(lhs: T, _ rhs: U) -> Bool {
         if let lhs = lhs as? ArrayElement {
             for element in lhs.value {
                 if includeRawValueType(element, rhs) {
@@ -118,7 +101,7 @@ struct  Comparer {
         return self.compareRawValueType(lhs, rhs)
     }
 
-    private mutating func includeDictionary(lhs: DictionaryElement, _ rhs: DictionaryElement) -> Bool {
+    private func includeDictionary(lhs: DictionaryElement, _ rhs: DictionaryElement) -> Bool {
         for (key1, value1) in rhs.value {
             if let value0 = lhs.value[key1] {
                 if !includeRawValueType(value0, value1) {

@@ -7,7 +7,7 @@ public func beJSONIncluding<T>(expected: AnyObject) -> MatcherFunc<T> {
         let object = try! actualExpression.evaluate()
         let lhs = extractor.extract(object)
         let rhs = extractor.extract(expected)
-        var comparer = Comparer()
+        let comparer = Comparer()
         failureMessage.postfixMessage = "include <\(stringify(rhs))>"
         return comparer.include(lhs, rhs)
     }

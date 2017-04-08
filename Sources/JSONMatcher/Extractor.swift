@@ -21,7 +21,7 @@ struct Extractor {
         return true
     }
 
-    fileprivate func extractJSONString(_ JSONString: String) -> AnyObject? {
+    fileprivate func extractJSONString(_ JSONString: String) -> Any? {
         if let data = JSONString.data(using: String.Encoding.utf8) {
             return try? JSONSerialization.jsonObject(with: data, options: [])
         }

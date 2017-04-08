@@ -13,7 +13,7 @@ protocol ElementType: BaseElementType, CustomStringConvertible {
 
 extension ElementType {
     var description: String {
-        return String(self.value)
+        return String(describing: self.value)
     }
 }
 

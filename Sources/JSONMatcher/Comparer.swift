@@ -81,7 +81,7 @@ struct  Comparer {
                 }
             }
         } else if let lhs = lhs as? DictionaryElement,
-            rhs = rhs as? DictionaryElement {
+            let rhs = rhs as? DictionaryElement {
             if includeDictionary(lhs, rhs) {
                 return true
             }

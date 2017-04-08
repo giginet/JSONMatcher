@@ -435,9 +435,11 @@
 				TargetAttributes = {
 					07A1AF461CC3576F0033C783 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0830;
 					};
 					07A1AF571CC3580A0033C783 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0830;
 					};
 					07FCACEB1CEF2D5F00FD7D41 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -769,6 +771,7 @@
 				PRODUCT_NAME = JSONMatcher;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -800,6 +803,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.JSONMatcher;
 				PRODUCT_NAME = JSONMatcher;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -816,6 +820,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.JSONMatcherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -831,6 +836,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.JSONMatcherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

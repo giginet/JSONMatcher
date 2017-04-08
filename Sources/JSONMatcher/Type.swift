@@ -1,14 +1,14 @@
 import Foundation
 
-public class Type: Equatable {
+open class Type: Equatable {
     enum RawType {
-        case Number
-        case String
-        case Boolean
-        case Array
-        case Dictionary
-        case Null
-        case Unknown
+        case number
+        case string
+        case boolean
+        case array
+        case dictionary
+        case null
+        case unknown
     }
 
     let rawType: RawType
@@ -17,12 +17,12 @@ public class Type: Equatable {
         self.rawType = rawType
     }
 
-    public static let Number = Type(RawType.Number)
-    public static let String = Type(RawType.String)
-    public static let Boolean = Type(RawType.Boolean)
-    public static let Array = Type(RawType.Array)
-    public static let Dictionary = Type(RawType.Dictionary)
-    public static let Null = Type(RawType.Null)
+    open static let Number = Type(RawType.number)
+    open static let String = Type(RawType.string)
+    open static let Boolean = Type(RawType.boolean)
+    open static let Array = Type(RawType.array)
+    open static let Dictionary = Type(RawType.dictionary)
+    open static let Null = Type(RawType.null)
 }
 
 public func == (lhs: Type, rhs: Type) -> Bool {

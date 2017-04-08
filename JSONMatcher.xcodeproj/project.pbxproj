@@ -108,7 +108,7 @@
 
 /* Begin PBXFileReference section */
 		073742411CE4BFB6002A4A4B /* BeJSONIncluding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeJSONIncluding.swift; sourceTree = "<group>"; };
-		077532CE1CEB4C3600E83F6C /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = utils.swift; path = ../Carthage/Checkouts/Nimble/Tests/Nimble/Helpers/utils.swift; sourceTree = "<group>"; };
+		077532CE1CEB4C3600E83F6C /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = utils.swift; path = ../Carthage/Checkouts/Nimble/Tests/NimbleTests/Helpers/utils.swift; sourceTree = "<group>"; };
 		07805B261CC3852500101893 /* BeJSONAs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeJSONAs.swift; sourceTree = "<group>"; };
 		07805B281CC386C900101893 /* Comparer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comparer.swift; path = Sources/JSONMatcher/Comparer.swift; sourceTree = SOURCE_ROOT; };
 		07805B2F1CC38E4600101893 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Regex.swift; path = Sources/JSONMatcher/Regex.swift; sourceTree = SOURCE_ROOT; };

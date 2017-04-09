@@ -1,7 +1,7 @@
 import Foundation
 import Nimble
 
-public func beJSONIncluding<T>(_ expected: AnyObject) -> MatcherFunc<T> {
+public func beJSONIncluding<T>(_ expected: Any) -> MatcherFunc<T> {
     return MatcherFunc { actualExpression, failureMessage in
         let extractor = Extractor()
         let object = try! actualExpression.evaluate()

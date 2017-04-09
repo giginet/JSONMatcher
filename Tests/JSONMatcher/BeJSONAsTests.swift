@@ -3,7 +3,7 @@ import Nimble
 @testable import JSONMatcher
 
 class BeJSONAsTestCase: BaseTestCase {
-    let pokedex = [
+    let pokedex: [String: Any] = [
         "name" : "Snorlax",
         "no" : 143,
         "species" : "Sleeping",
@@ -31,7 +31,7 @@ class BeJSONAsTestCase: BaseTestCase {
     }
 
     func testBeJSONAsWithDifferentKey() {
-        let expected = [
+        let expected: [String: Any] = [
             "name" : "Snorlax",
             "no" : 143,
             "species" : "Sleeping",
@@ -49,7 +49,7 @@ class BeJSONAsTestCase: BaseTestCase {
     }
 
     func testBeJSONAsExactMatchWithObject() {
-        let expected = [
+        let expected: [String: Any] = [
             "name" : "Snorlax",
             "no" : 143,
             "species" : "Sleeping",
@@ -67,7 +67,7 @@ class BeJSONAsTestCase: BaseTestCase {
     }
 
     func testBeJSONAsTypeWithObject() {
-        let expected = [
+        let expected: [String: Any] = [
             "name" : Type.String,
             "no" : 143,
             "species" : "Sleeping",

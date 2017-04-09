@@ -22,7 +22,7 @@ struct Extractor {
     }
 
     fileprivate func extractJSONString(_ JSONString: String) -> Any? {
-        if let data = JSONString.data(using: String.Encoding.utf8) {
+        if let data = JSONString.data(using: .utf8) {
             return try? JSONSerialization.jsonObject(with: data, options: [])
         }
         return nil

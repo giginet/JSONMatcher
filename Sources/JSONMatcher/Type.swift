@@ -1,6 +1,6 @@
 import Foundation
 
-open class Type: Equatable {
+public class Type: Equatable {
     enum RawType {
         case number
         case string
@@ -17,12 +17,12 @@ open class Type: Equatable {
         self.rawType = rawType
     }
 
-    open static let Number = Type(RawType.number)
-    open static let String = Type(RawType.string)
-    open static let Boolean = Type(RawType.boolean)
-    open static let Array = Type(RawType.array)
-    open static let Dictionary = Type(RawType.dictionary)
-    open static let Null = Type(RawType.null)
+    public static let Number = Type(RawType.number)
+    public static let String = Type(RawType.string)
+    public static let Boolean = Type(RawType.boolean)
+    public static let Array = Type(RawType.array)
+    public static let Dictionary = Type(RawType.dictionary)
+    public static let Null = Type(RawType.null)
 }
 
 public func == (lhs: Type, rhs: Type) -> Bool {

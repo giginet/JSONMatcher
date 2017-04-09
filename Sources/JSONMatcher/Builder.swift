@@ -17,10 +17,10 @@ struct Builder {
     fileprivate func buildRawJSONElement<T>(_ object: T) -> BaseElementType {
         switch object {
         case let double as Double:
-            let number = NSNumber(value: double as Double)
+            let number = NSNumber(value: double)
             return NumberElement(number)
         case let int as Int:
-            let number = NSNumber(value: int as Int)
+            let number = NSNumber(value: int)
             return NumberElement(number)
         case let bool as Bool:
             return BooleanElement(bool)

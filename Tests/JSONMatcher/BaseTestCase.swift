@@ -6,6 +6,6 @@ class BaseTestCase: XCTestCase {
         let bundle = Bundle(for: type(of: self))
         let path = bundle.path(forResource: JSONName, ofType: "json")!
         let jsonData = try? Data(contentsOf: URL(fileURLWithPath: path))
-        return String(data: jsonData!, encoding: String.Encoding.utf8)!
+        return String(data: jsonData!, encoding: .utf8)!
     }
 }

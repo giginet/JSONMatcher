@@ -26,11 +26,11 @@ struct NumberElement: ElementType {
     }
 
     init(_ number: Int) {
-        self.value = NSNumber(value: number as Int)
+        self.value = NSNumber(value: number)
     }
 
     init(_ number: Double) {
-        self.value = NSNumber(value: number as Double)
+        self.value = NSNumber(value: number)
     }
 }
 

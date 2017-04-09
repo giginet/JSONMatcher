@@ -91,7 +91,7 @@ class BeJSONAsTestCase: BaseTestCase {
     
     func testComplexJSON() {
         let pikachu = loadJSONFile("pikachu")
-        let expected = try! JSONSerialization.jsonObject(with: pikachu.data(using: String.Encoding.utf8)!, options: [])
+        let expected = try! JSONSerialization.jsonObject(with: pikachu.data(using: .utf8)!, options: [])
         expect(pikachu).to(beJSONAs(expected))
     }
 

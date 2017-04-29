@@ -46,11 +46,11 @@ class ElementTestCase: XCTestCase {
 
     func testDictionaryElement() {
         let dictionary0 = DictionaryElement([
-            "int" : NumberElement(10),
-            "double" : NumberElement(10.5),
-            "sushi" : StringElement("sushi"),
-            "bool" : BooleanElement(true),
-            "null" : NullElement(NSNull())
+            "int": NumberElement(10),
+            "double": NumberElement(10.5),
+            "sushi": StringElement("sushi"),
+            "bool": BooleanElement(true),
+            "null": NullElement(NSNull())
         ])
         expect(dictionary0.type).to(equal(Type.RawType.dictionary))
     }

@@ -5,44 +5,44 @@ import Nimble
 class ExampleTestCase: XCTestCase {
     func testSimpleExamples() {
         expect("{\"name\": \"Pikachu\"}").to(beJSON())
-        expect(["name" : "Pikachu", "no" : 25]).to(beJSONIncluding(["name" : "Pikachu"]))
-        expect(["name" : "Pikachu", "no" : 25]).to(beJSONAs(["name": "Pikachu", "no" : 25]))
+        expect(["name": "Pikachu", "no": 25]).to(beJSONIncluding(["name": "Pikachu"]))
+        expect(["name": "Pikachu", "no": 25]).to(beJSONAs(["name": "Pikachu", "no": 25]))
     }
 
     func testComplexExample() {
         expect([
-            "name" : "Snorlax",
-            "no" : 143,
-            "species" : "Sleeping",
-            "type" : ["normal"],
-            "stats" : [
-                "hp" : 160,
-                "attack" : 110,
-                "defense" : 65,
-                "special_attack" : 65,
-                "special_defense" : 65,
-                "speed" : 30
+            "name": "Snorlax",
+            "no": 143,
+            "species": "Sleeping",
+            "type": ["normal"],
+            "stats": [
+                "hp": 160,
+                "attack": 110,
+                "defense": 65,
+                "special_attack": 65,
+                "special_defense": 65,
+                "speed": 30
             ],
-            "moves" : [
-                ["name" : "Tackle", "type" : "normal", "level" : 1],
-                ["name" : "Hyper Beam", "type" : "normal", "level" : NSNull()],
+            "moves": [
+                ["name": "Tackle", "type": "normal", "level": 1],
+                ["name": "Hyper Beam", "type": "normal", "level": NSNull()],
             ]
         ]).to(beJSONAs([
-            "name" : "Snorlax",
-            "no" : Type.Number, // value type matching
-            "species" : try! NSRegularExpression(pattern: "[A-Z][a-z]+", options: []), // regular expression matching
-            "type" : ["[a-z]+".regex], // shorthands for NSRegularExpression
-            "stats" : [
-                "hp" : 160,
-                "attack" : 110,
-                "defense" : 65,
-                "special_attack" : 65,
-                "special_defense" : 65,
-                "speed" : 30
+            "name": "Snorlax",
+            "no": Type.Number, // value type matching
+            "species": try! NSRegularExpression(pattern: "[A-Z][a-z]+", options: []), // regular expression matching
+            "type": ["[a-z]+".regex], // shorthands for NSRegularExpression
+            "stats": [
+                "hp": 160,
+                "attack": 110,
+                "defense": 65,
+                "special_attack": 65,
+                "special_defense": 65,
+                "speed": 30
             ],
-            "moves" : [
-                ["name" : "Tackle", "type" : "[a-z]+".regex, "level" : Type.Number], // nested collection
-                ["name" : "Hyper Beam", "type" : "normal", "level" : NSNull()],
+            "moves": [
+                ["name": "Tackle", "type": "[a-z]+".regex, "level": Type.Number], // nested collection
+                ["name": "Hyper Beam", "type": "normal", "level": NSNull()],
             ]
         ]))
     }

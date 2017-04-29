@@ -4,17 +4,17 @@ import Nimble
 
 class BeJSONAsTestCase: BaseTestCase {
     let pokedex: [String: Any] = [
-        "name" : "Snorlax",
-        "no" : 143,
-        "species" : "Sleeping",
-        "type" : ["normal"],
-        "stats" : [
-            "hp" : 160,
-            "attack" : 110,
-            "defense" : 65,
-            "special_attack" : 65,
-            "special_defense" : 65,
-            "speed" : 30
+        "name": "Snorlax",
+        "no": 143,
+        "species": "Sleeping",
+        "type": ["normal"],
+        "stats": [
+            "hp": 160,
+            "attack": 110,
+            "defense": 65,
+            "special_attack": 65,
+            "special_defense": 65,
+            "speed": 30
         ]
     ]
 
@@ -32,17 +32,17 @@ class BeJSONAsTestCase: BaseTestCase {
 
     func testBeJSONAsWithDifferentKey() {
         let expected: [String: Any] = [
-            "name" : "Snorlax",
-            "no" : 143,
-            "species" : "Sleeping",
-            "type" : ["normal"],
-            "stats" : [
-                "hp" : 160,
-                "invalid" : 110,
-                "defense" : 65,
-                "special_attack" : 65,
-                "special_defense" : 65,
-                "speed" : 30
+            "name": "Snorlax",
+            "no": 143,
+            "species": "Sleeping",
+            "type": ["normal"],
+            "stats": [
+                "hp": 160,
+                "invalid": 110,
+                "defense": 65,
+                "special_attack": 65,
+                "special_defense": 65,
+                "speed": 30
             ]
         ]
         expect(self.pokedex).toNot(beJSONAs(expected))
@@ -50,17 +50,17 @@ class BeJSONAsTestCase: BaseTestCase {
 
     func testBeJSONAsExactMatchWithObject() {
         let expected: [String: Any] = [
-            "name" : "Snorlax",
-            "no" : 143,
-            "species" : "Sleeping",
-            "type" : ["normal"],
-            "stats" : [
-                "hp" : 160,
-                "attack" : 110,
-                "defense" : 65,
-                "special_attack" : 65,
-                "special_defense" : 65,
-                "speed" : 30
+            "name": "Snorlax",
+            "no": 143,
+            "species": "Sleeping",
+            "type": ["normal"],
+            "stats": [
+                "hp": 160,
+                "attack": 110,
+                "defense": 65,
+                "special_attack": 65,
+                "special_defense": 65,
+                "speed": 30
             ]
         ]
         expect(self.pokedex).to(beJSONAs(expected))
@@ -68,17 +68,17 @@ class BeJSONAsTestCase: BaseTestCase {
 
     func testBeJSONAsTypeWithObject() {
         let expected: [String: Any] = [
-            "name" : Type.String,
-            "no" : 143,
-            "species" : "Sleeping",
-            "type" : ["n+".regex],
-            "stats" : [
-                "hp" : 160,
-                "attack" : 110,
-                "defense" : 65,
-                "special_attack" : 65,
-                "special_defense" : 65,
-                "speed" : 30
+            "name": Type.String,
+            "no": 143,
+            "species": "Sleeping",
+            "type": ["n+".regex],
+            "stats": [
+                "hp": 160,
+                "attack": 110,
+                "defense": 65,
+                "special_attack": 65,
+                "special_defense": 65,
+                "speed": 30
             ]
         ]
         expect(self.pokedex).to(beJSONAs(expected))

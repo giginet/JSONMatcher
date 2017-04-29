@@ -14,7 +14,7 @@ struct Builder {
         }
     }
 
-    fileprivate func buildRawJSONElement<T>(_ object: T) -> BaseElementType {
+    private func buildRawJSONElement<T>(_ object: T) -> BaseElementType {
         switch object {
         case let double as Double:
             let number = NSNumber(value: double)
@@ -37,7 +37,7 @@ struct Builder {
         }
     }
 
-    fileprivate func buildJSONElementArray(_ array: NSArray) -> ElementArray {
+    private func buildJSONElementArray(_ array: NSArray) -> ElementArray {
         var result: ElementArray = []
         for element in array {
             if let innerRawArray = element as? NSArray {
@@ -56,7 +56,7 @@ struct Builder {
         return result
     }
 
-    fileprivate func buildJSONElementDictionary(_ dictionary: NSDictionary) -> ElementDictionary {
+    private func buildJSONElementDictionary(_ dictionary: NSDictionary) -> ElementDictionary {
         var result: ElementDictionary = [:]
         for (k, v) in dictionary {
             guard let k = k as? String else {

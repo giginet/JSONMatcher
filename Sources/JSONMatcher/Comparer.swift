@@ -10,7 +10,7 @@ struct  Comparer {
         return self.includeRawValueType(lhs, rhs)
     }
 
-    fileprivate func compareArray(_ lhs: ArrayElement, _ rhs: ArrayElement) -> Bool {
+    private func compareArray(_ lhs: ArrayElement, _ rhs: ArrayElement) -> Bool {
         guard lhs.value.count == rhs.value.count else {
             return false
         }
@@ -23,7 +23,7 @@ struct  Comparer {
         return true
     }
 
-    fileprivate func compareDictionary(_ lhs: DictionaryElement, _ rhs: DictionaryElement) -> Bool {
+    private func compareDictionary(_ lhs: DictionaryElement, _ rhs: DictionaryElement) -> Bool {
         guard lhs.value.count == rhs.value.count else {
             return false
         }
@@ -40,7 +40,7 @@ struct  Comparer {
         return true
     }
 
-    fileprivate func compareRawValueType<T, U>(_ lhs: T, _ rhs: U) -> Bool {
+    private func compareRawValueType<T, U>(_ lhs: T, _ rhs: U) -> Bool {
         switch (lhs, rhs) {
         case let (number as NumberElement, expectedNumber as NumberElement):
             return number.value == expectedNumber.value
@@ -73,7 +73,7 @@ struct  Comparer {
         }
     }
 
-    fileprivate func includeRawValueType<T, U>(_ lhs: T, _ rhs: U) -> Bool {
+    private func includeRawValueType<T, U>(_ lhs: T, _ rhs: U) -> Bool {
         if let lhs = lhs as? ArrayElement {
             for element in lhs.value {
                 if includeRawValueType(element, rhs) {
@@ -100,7 +100,7 @@ struct  Comparer {
         return self.compareRawValueType(lhs, rhs)
     }
 
-    fileprivate func includeDictionary(_ lhs: DictionaryElement, _ rhs: DictionaryElement) -> Bool {
+    private func includeDictionary(_ lhs: DictionaryElement, _ rhs: DictionaryElement) -> Bool {
         for (key1, value1) in rhs.value {
             if let value0 = lhs.value[key1] {
                 if !includeRawValueType(value0, value1) {

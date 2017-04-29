@@ -96,10 +96,10 @@ class BeJSONAsTestCase: BaseTestCase {
     }
 
     func testFailureMessages() {
-        failsWithErrorMessage("expected to equal to <[\"name\": Pikachu]>, got <[\"name\": \"Snorlax\"]>") {
+        failsWithErrorMessage("expected to equal to <[\"name\": \"Pikachu\"]>, got <[\"name\": \"Snorlax\"]>") {
             expect(["name": "Snorlax"]).to(beJSONAs(["name": "Pikachu"]))
         }
-        failsWithErrorMessage("expected to not equal to <[\"name\": Snorlax]>, got <[\"name\": \"Snorlax\"]>") {
+        failsWithErrorMessage("expected to not equal to <[\"name\": \"Snorlax\"]>, got <[\"name\": \"Snorlax\"]>") {
             expect(["name": "Snorlax"]).toNot(beJSONAs(["name": "Snorlax"]))
         }
     }

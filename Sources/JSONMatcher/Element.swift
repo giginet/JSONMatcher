@@ -41,6 +41,10 @@ struct StringElement: ElementType {
     init(_ string: String) {
         self.value = string
     }
+
+    var description: String {
+        return "\"\(value)\""
+    }
 }
 
 struct BooleanElement: ElementType {

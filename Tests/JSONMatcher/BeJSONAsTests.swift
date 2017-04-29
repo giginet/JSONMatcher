@@ -88,7 +88,7 @@ class BeJSONAsTestCase: BaseTestCase {
         let snorlax = loadJSONFile("snorlax")
         expect(snorlax).to(beJSONAs(self.pokedex))
     }
-    
+
     func testComplexJSON() {
         let pikachu = loadJSONFile("pikachu")
         let expected = try! JSONSerialization.jsonObject(with: pikachu.data(using: .utf8)!, options: [])

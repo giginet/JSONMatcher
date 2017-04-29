@@ -85,10 +85,8 @@ struct  Comparer {
             if includeDictionary(lhs, rhs) {
                 return true
             }
-            for (_, value0) in lhs.value {
-                if includeRawValueType(value0, rhs) {
-                    return true
-                }
+            if lhs.value.values.contains(where: { includeRawValueType($0, rhs) }) {
+                return true
             }
         } else if let lhs = lhs as? DictionaryElement {
             for (_, value) in lhs.value {

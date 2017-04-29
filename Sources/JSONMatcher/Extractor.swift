@@ -3,8 +3,8 @@ import Foundation
 struct Extractor {
     func extract<T>(_ object: T) -> BaseElementType {
         let builder = Builder()
-        if let JSONString = object as? String {
-            let JSONObject = self.extractJSONString(JSONString)
+        if let jsonString = object as? String {
+            let jsonObject = self.extractJSONString(JSONString)
             return builder.buildJSONElement(JSONObject)
         }
         return builder.buildJSONElement(object)
@@ -21,8 +21,8 @@ struct Extractor {
         return true
     }
 
-    private func extractJSONString(_ JSONString: String) -> Any? {
-        if let data = JSONString.data(using: .utf8) {
+    private func extractJSONString(_ jsonString: String) -> Any? {
+        if let data = jsonString.data(using: .utf8) {
             return try? JSONSerialization.jsonObject(with: data, options: [])
         }
         return nil

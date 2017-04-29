@@ -4,8 +4,8 @@ struct Extractor {
     func extract<T>(_ object: T) -> BaseElementType {
         let builder = Builder()
         if let jsonString = object as? String {
-            let jsonObject = self.extractJSONString(JSONString)
-            return builder.buildJSONElement(JSONObject)
+            let jsonObject = self.extractJSONString(jsonString)
+            return builder.buildJSONElement(jsonObject)
         }
         return builder.buildJSONElement(object)
     }

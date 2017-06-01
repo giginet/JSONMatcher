@@ -73,9 +73,9 @@ class CompareTestCase: XCTestCase {
             StringElement("c"), ]
         ), TypeElement(Type.Array))).to(beTrue())
         expect(self.comparer.compare(DictionaryElement([
-            "a" : StringElement("a"),
-            "b" : StringElement("b"),
-            "c" : StringElement("c"), ]
+            "a": StringElement("a"),
+            "b": StringElement("b"),
+            "c": StringElement("c"), ]
         ), TypeElement(Type.Dictionary))).to(beTrue())
 
     }
@@ -101,8 +101,8 @@ class CompareTestCase: XCTestCase {
 
     func testSimpleDictionary() {
         expect(self.comparer.compare(
-            DictionaryElement(["name" : StringElement("Jigglypuff"), "no": NumberElement(39)]),
-            DictionaryElement(["name" : StringElement("Jigglypuff"), "no": NumberElement(39)]))
+            DictionaryElement(["name": StringElement("Jigglypuff"), "no": NumberElement(39)]),
+            DictionaryElement(["name": StringElement("Jigglypuff"), "no": NumberElement(39)]))
         ).to(beTrue())
     }
 
@@ -156,63 +156,63 @@ class CompareTestCase: XCTestCase {
 
     func testRecursiveDictionary() {
         expect(self.comparer.compare(
-            DictionaryElement(["moves" : DictionaryElement([
-                "name" : StringElement("Swift"),
-                "type" : StringElement("normal")
+            DictionaryElement(["moves": DictionaryElement([
+                "name": StringElement("Swift"),
+                "type": StringElement("normal")
             ])]),
-            DictionaryElement(["moves" : DictionaryElement([
-                "name" : StringElement("Swift"),
-                "type" : StringElement("normal")
+            DictionaryElement(["moves": DictionaryElement([
+                "name": StringElement("Swift"),
+                "type": StringElement("normal")
             ])]))
         ).to(beTrue())
         expect(self.comparer.compare(
-            DictionaryElement(["moves" : DictionaryElement([
-                "name" : StringElement("Swift"),
-                "type" : StringElement("normal")
+            DictionaryElement(["moves": DictionaryElement([
+                "name": StringElement("Swift"),
+                "type": StringElement("normal")
             ])]),
-            DictionaryElement(["moves" : DictionaryElement([
-                "type" : StringElement("Swift"),
-                "name" : StringElement("normal")
+            DictionaryElement(["moves": DictionaryElement([
+                "type": StringElement("Swift"),
+                "name": StringElement("normal")
             ])]))
         ).to(beFalse())
         expect(self.comparer.compare(
-            DictionaryElement(["moves" : DictionaryElement([
-                "name" : StringElement("Swift"),
-                "type" : StringElement("normal")
+            DictionaryElement(["moves": DictionaryElement([
+                "name": StringElement("Swift"),
+                "type": StringElement("normal")
             ])]),
-            DictionaryElement(["moves" : DictionaryElement([
-                "invalid" : StringElement("Swift"),
-                "type" : StringElement("normal")
+            DictionaryElement(["moves": DictionaryElement([
+                "invalid": StringElement("Swift"),
+                "type": StringElement("normal")
             ])]))
         ).to(beFalse())
     }
 
     func testComplexObject() {
         expect(self.comparer.compare(DictionaryElement([
-            "name" : StringElement("Charizard"),
-            "no" : NumberElement(6),
-            "species" : StringElement("Flame"),
-            "type" : ArrayElement([StringElement("Fire"), StringElement("Frying")]),
-            "stats" : DictionaryElement([
-                "hp" : NumberElement(78),
-                "attack" : NumberElement(84),
-                "defense" : NumberElement(78),
-                "special_attack" : NumberElement(109),
-                "special_defense" : NumberElement(85),
-                "speed" : NumberElement(100)
+            "name": StringElement("Charizard"),
+            "no": NumberElement(6),
+            "species": StringElement("Flame"),
+            "type": ArrayElement([StringElement("Fire"), StringElement("Frying")]),
+            "stats": DictionaryElement([
+                "hp": NumberElement(78),
+                "attack": NumberElement(84),
+                "defense": NumberElement(78),
+                "special_attack": NumberElement(109),
+                "special_defense": NumberElement(85),
+                "speed": NumberElement(100)
             ])
         ]), DictionaryElement([
-            "name" : RegexElement("C.+".regex),
-            "no" : TypeElement(Type.Number),
-            "species" : StringElement("Flame"),
-            "type" : ArrayElement([StringElement("Fire"), StringElement("Frying")]),
-            "stats" : DictionaryElement([
-                "hp" : NumberElement(78),
-                "attack" : NumberElement(84),
-                "defense" : NumberElement(78),
-                "special_attack" : NumberElement(109),
-                "special_defense" : NumberElement(85),
-                "speed" : NumberElement(100)
+            "name": RegexElement("C.+".regex),
+            "no": TypeElement(Type.Number),
+            "species": StringElement("Flame"),
+            "type": ArrayElement([StringElement("Fire"), StringElement("Frying")]),
+            "stats": DictionaryElement([
+                "hp": NumberElement(78),
+                "attack": NumberElement(84),
+                "defense": NumberElement(78),
+                "special_attack": NumberElement(109),
+                "special_defense": NumberElement(85),
+                "speed": NumberElement(100)
             ])
         ]))).to(beTrue())
     }
@@ -269,10 +269,10 @@ class IncludeTestCase: XCTestCase {
 
     func testIncludeDictionary() {
         let dictionary = DictionaryElement([
-            "number" : NumberElement(151),
-            "string" : StringElement("Mew"),
-            "boolean" : BooleanElement(true),
-            "null" : NullElement(NSNull()),
+            "number": NumberElement(151),
+            "string": StringElement("Mew"),
+            "boolean": BooleanElement(true),
+            "null": NullElement(NSNull()),
         ])
         expect(self.comparer.include(dictionary, NumberElement(151))).to(beTrue())
         expect(self.comparer.include(dictionary, StringElement("Mew"))).to(beTrue())
@@ -310,16 +310,16 @@ class IncludeTestCase: XCTestCase {
 
     func testIncludeRecursiveDictionary() {
         expect(self.comparer.include(
-            DictionaryElement(["moves" : DictionaryElement([
-                "name" : StringElement("Swift"),
-                "type" : StringElement("normal")
+            DictionaryElement(["moves": DictionaryElement([
+                "name": StringElement("Swift"),
+                "type": StringElement("normal")
             ])]),
             StringElement("Swift")
         )).to(beTrue())
         expect(self.comparer.include(
-            DictionaryElement(["moves" : DictionaryElement([
-                "name" : StringElement("Swift"),
-                "type" : StringElement("normal")
+            DictionaryElement(["moves": DictionaryElement([
+                "name": StringElement("Swift"),
+                "type": StringElement("normal")
             ])]),
             StringElement("Tackle")
         )).to(beFalse())

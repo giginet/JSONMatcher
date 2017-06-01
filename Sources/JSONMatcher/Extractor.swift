@@ -1,16 +1,16 @@
 import Foundation
 
 struct Extractor {
-    func extract<T>(object: T) -> BaseElementType {
+    func extract<T>(_ object: T) -> BaseElementType {
         let builder = Builder()
-        if let JSONString = object as? String {
-            let JSONObject = self.extractJSONString(JSONString)
-            return builder.buildJSONElement(JSONObject)
+        if let jsonString = object as? String {
+            let jsonObject = self.extractJSONString(jsonString)
+            return builder.buildJSONElement(jsonObject)
         }
         return builder.buildJSONElement(object)
     }
 
-    func isValid<T>(object: T) -> Bool {
+    func isValid<T>(_ object: T) -> Bool {
         if object is NSNull {
             return true
         }
@@ -21,9 +21,9 @@ struct Extractor {
         return true
     }
 
-    private func extractJSONString(JSONString: String) -> AnyObject? {
-        if let data = JSONString.dataUsingEncoding(NSUTF8StringEncoding) {
-            return try? NSJSONSerialization.JSONObjectWithData(data, options: [])
+    private func extractJSONString(_ jsonString: String) -> Any? {
+        if let data = jsonString.data(using: .utf8) {
+            return try? JSONSerialization.jsonObject(with: data, options: [])
         }
         return nil
     }

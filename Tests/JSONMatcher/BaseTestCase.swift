@@ -2,10 +2,10 @@ import Foundation
 import XCTest
 
 class BaseTestCase: XCTestCase {
-    func loadJSONFile(JSONName: String) -> String {
-        let bundle = NSBundle(forClass: self.dynamicType)
-        let path = bundle.pathForResource(JSONName, ofType: "json")!
-        let jsonData = NSData(contentsOfFile: path)
-        return String(data: jsonData!, encoding: NSUTF8StringEncoding)!
+    func loadJSONFile(_ jsonName: String) -> String {
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle.path(forResource: jsonName, ofType: "json")!
+        let jsonData = try? Data(contentsOf: URL(fileURLWithPath: path))
+        return String(data: jsonData!, encoding: .utf8)!
     }
 }

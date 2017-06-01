@@ -2,15 +2,15 @@ import Foundation
 import Nimble
 
 struct  Comparer {
-    func compare<T, U>(lhs: T, _ rhs: U) -> Bool {
+    func compare<T, U>(_ lhs: T, _ rhs: U) -> Bool {
         return self.compareRawValueType(lhs, rhs)
     }
 
-    func include<T, U>(lhs: T, _ rhs: U) -> Bool {
+    func include<T, U>(_ lhs: T, _ rhs: U) -> Bool {
         return self.includeRawValueType(lhs, rhs)
     }
 
-    private func compareArray(lhs: ArrayElement, _ rhs: ArrayElement) -> Bool {
+    private func compareArray(_ lhs: ArrayElement, _ rhs: ArrayElement) -> Bool {
         guard lhs.value.count == rhs.value.count else {
             return false
         }
@@ -23,7 +23,7 @@ struct  Comparer {
         return true
     }
 
-    private func compareDictionary(lhs: DictionaryElement, _ rhs: DictionaryElement) -> Bool {
+    private func compareDictionary(_ lhs: DictionaryElement, _ rhs: DictionaryElement) -> Bool {
         guard lhs.value.count == rhs.value.count else {
             return false
         }
@@ -40,7 +40,7 @@ struct  Comparer {
         return true
     }
 
-    private func compareRawValueType<T, U>(lhs: T, _ rhs: U) -> Bool {
+    private func compareRawValueType<T, U>(_ lhs: T, _ rhs: U) -> Bool {
         switch (lhs, rhs) {
         case let (number as NumberElement, expectedNumber as NumberElement):
             return number.value == expectedNumber.value
@@ -73,7 +73,7 @@ struct  Comparer {
         }
     }
 
-    private func includeRawValueType<T, U>(lhs: T, _ rhs: U) -> Bool {
+    private func includeRawValueType<T, U>(_ lhs: T, _ rhs: U) -> Bool {
         if let lhs = lhs as? ArrayElement {
             for element in lhs.value {
                 if includeRawValueType(element, rhs) {
@@ -81,14 +81,12 @@ struct  Comparer {
                 }
             }
         } else if let lhs = lhs as? DictionaryElement,
-            rhs = rhs as? DictionaryElement {
+            let rhs = rhs as? DictionaryElement {
             if includeDictionary(lhs, rhs) {
                 return true
             }
-            for (_, value0) in lhs.value {
-                if includeRawValueType(value0, rhs) {
-                    return true
-                }
+            if lhs.value.values.contains(where: { includeRawValueType($0, rhs) }) {
+                return true
             }
         } else if let lhs = lhs as? DictionaryElement {
             for (_, value) in lhs.value {
@@ -100,7 +98,7 @@ struct  Comparer {
         return self.compareRawValueType(lhs, rhs)
     }
 
-    private func includeDictionary(lhs: DictionaryElement, _ rhs: DictionaryElement) -> Bool {
+    private func includeDictionary(_ lhs: DictionaryElement, _ rhs: DictionaryElement) -> Bool {
         for (key1, value1) in rhs.value {
             if let value0 = lhs.value[key1] {
                 if !includeRawValueType(value0, value1) {

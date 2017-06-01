@@ -62,7 +62,7 @@ class BuilderTestCase: XCTestCase {
             ".+".regex,
             Type.Number,
             ["Bulbasaur", "Charmander", "Squirtle", "Pikachu"],
-            ["Grass" : "Bulbasaur", "Water" : "Squirtle", "Fire" : "Charmander"],
+            ["Grass": "Bulbasaur", "Water": "Squirtle", "Fire": "Charmander"],
         ]) as! ArrayElement
         if let element = array0.value[0] as? NumberElement {
             expect(element.value).to(equal(42))
@@ -119,16 +119,16 @@ class BuilderTestCase: XCTestCase {
 
     func testDictionary() {
         let dictionary = self.builder.buildJSONElement([
-            "int" : 42,
-            "double" : 10.5,
-            "string" : "🍺",
-            "bool" : true,
-            "null" : NSNull(),
-            "unknown" : Model(),
-            "regex" : ".+".regex,
-            "type" : Type.Number,
-            "array" : ["Bulbasaur", "Charmander", "Squirtle", "Pikachu"],
-            "dictionary" : ["Grass" : "Bulbasaur", "Water" : "Squirtle", "Fire" : "Charmander"]
+            "int": 42,
+            "double": 10.5,
+            "string": "🍺",
+            "bool": true,
+            "null": NSNull(),
+            "unknown": Model(),
+            "regex": ".+".regex,
+            "type": Type.Number,
+            "array": ["Bulbasaur", "Charmander", "Squirtle", "Pikachu"],
+            "dictionary": ["Grass": "Bulbasaur", "Water": "Squirtle", "Fire": "Charmander"]
         ]) as! DictionaryElement
         if let element = dictionary.value["int"] as? NumberElement {
             expect(element.value).to(equal(42))
@@ -198,7 +198,7 @@ class BuilderTestCase: XCTestCase {
 
     func testRecursiveDictionary() {
         let dictionary = self.builder.buildJSONElement([
-            "a" : ["b" : ["c" : ["d" : ["e", "f", "g", "h"]]]]
+            "a": ["b": ["c": ["d": ["e", "f", "g", "h"]]]]
         ]) as! DictionaryElement
         if let dictionary = dictionary.value["a"] as? DictionaryElement {
             if let dictionary = dictionary.value["b"] as? DictionaryElement {

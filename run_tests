@@ -1,3 +1,5 @@
+set -e -o pipefail
+
 function ios_tests {
   xcodebuild test -workspace JSONMatcher.xcworkspace -scheme JSONMatcher-iOS -destination 'platform=iOS Simulator,name=iPhone 6' | xcpretty -c
 }

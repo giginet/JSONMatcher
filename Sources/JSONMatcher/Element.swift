@@ -13,39 +13,43 @@ protocol ElementType: BaseElementType, CustomStringConvertible {
 
 extension ElementType {
     var description: String {
-        return String(self.value)
+        return String(describing: self.value)
     }
 }
 
 struct NumberElement: ElementType {
     let value: NSNumber
-    let type: Type.RawType = .Number
+    let type: Type.RawType = .number
 
     init(_ number: NSNumber) {
         self.value = number
     }
 
     init(_ number: Int) {
-        self.value = NSNumber(integer: number)
+        self.value = NSNumber(value: number)
     }
 
     init(_ number: Double) {
-        self.value = NSNumber(double: number)
+        self.value = NSNumber(value: number)
     }
 }
 
 struct StringElement: ElementType {
     let value: String
-    let type: Type.RawType = .String
+    let type: Type.RawType = .string
 
     init(_ string: String) {
         self.value = string
+    }
+
+    var description: String {
+        return "\"\(value)\""
     }
 }
 
 struct BooleanElement: ElementType {
     let value: Bool
-    let type: Type.RawType = .Boolean
+    let type: Type.RawType = .boolean
 
     init(_ bool: Bool) {
         self.value = bool
@@ -54,7 +58,7 @@ struct BooleanElement: ElementType {
 
 struct NullElement: ElementType {
     let value: NSNull
-    let type: Type.RawType = .Null
+    let type: Type.RawType = .null
 
     init(_ null: NSNull) {
         self.value = null
@@ -67,7 +71,7 @@ struct NullElement: ElementType {
 
 struct ArrayElement: ElementType {
     let value: ElementArray
-    let type: Type.RawType = .Array
+    let type: Type.RawType = .array
 
     init(_ array: ElementArray) {
         self.value = array
@@ -76,7 +80,7 @@ struct ArrayElement: ElementType {
 
 struct DictionaryElement: ElementType {
     let value: ElementDictionary
-    let type: Type.RawType = .Dictionary
+    let type: Type.RawType = .dictionary
 
     init(_ dictionary: ElementDictionary) {
         self.value = dictionary
@@ -85,7 +89,7 @@ struct DictionaryElement: ElementType {
 
 struct RegexElement: ElementType {
     let value: NSRegularExpression
-    let type: Type.RawType = .Unknown
+    let type: Type.RawType = .unknown
 
     init(_ regex: NSRegularExpression) {
         self.value = regex
@@ -94,7 +98,7 @@ struct RegexElement: ElementType {
 
 struct TypeElement: ElementType {
     let value: Type
-    let type: Type.RawType = .Unknown
+    let type: Type.RawType = .unknown
 
     init(_ type: Type) {
         self.value = type

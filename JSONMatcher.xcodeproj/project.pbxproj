@@ -108,7 +108,7 @@
 
 /* Begin PBXFileReference section */
 		073742411CE4BFB6002A4A4B /* BeJSONIncluding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeJSONIncluding.swift; sourceTree = "<group>"; };
-		077532CE1CEB4C3600E83F6C /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = utils.swift; path = ../Carthage/Checkouts/Nimble/Tests/Nimble/Helpers/utils.swift; sourceTree = "<group>"; };
+		077532CE1CEB4C3600E83F6C /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = utils.swift; path = ../Carthage/Checkouts/Nimble/Tests/NimbleTests/Helpers/utils.swift; sourceTree = "<group>"; };
 		07805B261CC3852500101893 /* BeJSONAs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeJSONAs.swift; sourceTree = "<group>"; };
 		07805B281CC386C900101893 /* Comparer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comparer.swift; path = Sources/JSONMatcher/Comparer.swift; sourceTree = SOURCE_ROOT; };
 		07805B2F1CC38E4600101893 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Regex.swift; path = Sources/JSONMatcher/Regex.swift; sourceTree = SOURCE_ROOT; };
@@ -435,21 +435,27 @@
 				TargetAttributes = {
 					07A1AF461CC3576F0033C783 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0830;
 					};
 					07A1AF571CC3580A0033C783 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0830;
 					};
 					07FCACEB1CEF2D5F00FD7D41 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0830;
 					};
 					07FCACF41CEF2D6000FD7D41 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0830;
 					};
 					07FCAD071CEF2D7700FD7D41 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0830;
 					};
 					07FCAD101CEF2D7700FD7D41 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -769,6 +775,7 @@
 				PRODUCT_NAME = JSONMatcher;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -800,6 +807,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.JSONMatcher;
 				PRODUCT_NAME = JSONMatcher;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -816,6 +824,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.JSONMatcherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -831,6 +840,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.JSONMatcherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -852,7 +862,7 @@
 				INFOPLIST_FILE = Sources/JSONMatcher/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					XCTest,
@@ -862,6 +872,7 @@
 				PRODUCT_NAME = JSONMatcher;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -883,7 +894,7 @@
 				INFOPLIST_FILE = Sources/JSONMatcher/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					XCTest,
@@ -893,6 +904,7 @@
 				PRODUCT_NAME = JSONMatcher;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -911,6 +923,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.JSONMatcherTests;
 				PRODUCT_NAME = JSONMatcherOSXTests;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -929,6 +942,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.JSONMatcherTests;
 				PRODUCT_NAME = JSONMatcherOSXTests;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -952,6 +966,7 @@
 				PRODUCT_NAME = JSONMatcher;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -977,6 +992,7 @@
 				PRODUCT_NAME = JSONMatcher;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -991,6 +1007,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.JSONMatcherTests;
 				PRODUCT_NAME = JSONMatchertvOSTests;
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
 			name = Debug;
@@ -1004,6 +1021,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.JSONMatcherTests;
 				PRODUCT_NAME = JSONMatchertvOSTests;
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
 			name = Release;
